@@ -323,8 +323,8 @@ void __debugbreak();
 #undef sCONFIG_ASM_MSC_IA32
 #undef sCONFIG_ASM_87
 #undef sCONFIG_ASM_SSE
-#define sCONFIG_NATIVEINT         __int64 _w64
-#define sCONFIG_INT64             __int64 _w64
+#define sCONFIG_NATIVEINT         __int64
+#define sCONFIG_INT64             __int64
 #define sCONFIG_SIZET             unsigned __int64
 #define sCONFIG_32BIT             0
 #define sCONFIG_64BIT             1
