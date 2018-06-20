@@ -7,18 +7,6 @@ Debug/
 ipch/
 
 
-# File types
-*.sln
-*.vcproj*
-*.vcxproj*
-*_ops.?pp
-*_shader.?pp
-*.sdf
-*.suo
-*.opensdf
-*.ogg.raw
-*.v2m.raw
-
 *.o
 *.a
 *.swp
