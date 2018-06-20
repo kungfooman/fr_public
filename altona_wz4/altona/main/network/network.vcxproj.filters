@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClInclude Include="sockets.hpp" />
+		<ClInclude Include="http.hpp" />
+		<ClInclude Include="miniftp.hpp" />
+		<ClInclude Include="netdebug.hpp" />
+		<ClInclude Include="netdebug_plugins.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="sockets.cpp" />
+		<ClCompile Include="sockets_bsd.cpp" />
+		<ClCompile Include="sockets_dummy.cpp" />
+		<ClCompile Include="http.cpp" />
+		<ClCompile Include="miniftp.cpp" />
+		<ClCompile Include="netdebug.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="network.mp.txt" />
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>

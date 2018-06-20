@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ASC Include="shaders.asc" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="camera.hpp" />
+		<ClInclude Include="effect.hpp" />
+		<ClInclude Include="image.hpp" />
+		<ClInclude Include="musicplayer.hpp" />
+		<ClInclude Include="painter.hpp" />
+		<ClInclude Include="scanner.hpp" />
+		<ClInclude Include="scanconfig.hpp" />
+		<ClInclude Include="animation.hpp" />
+		<ClInclude Include="shaders.hpp" />
+		<ClInclude Include="movieplayer.hpp" />
+		<ClInclude Include="perfmon.hpp" />
+		<ClInclude Include="stb_image_write.h" />
+		<ClInclude Include="taskscheduler.hpp" />
+		<ClInclude Include="algorithms.hpp" />
+		<ClInclude Include="ipp.hpp" />
+		<ClInclude Include="rasterizer.hpp" />
+		<ClInclude Include="simd_float.hpp" />
+		<ClInclude Include="json.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="camera.cpp" />
+		<ClCompile Include="effect.cpp" />
+		<ClCompile Include="image.cpp" />
+		<ClCompile Include="musicplayer.cpp" />
+		<ClCompile Include="painter.cpp" />
+		<ClCompile Include="scanner.cpp" />
+		<ClCompile Include="scanconfig.cpp" />
+		<ClCompile Include="animation.cpp" />
+		<ClCompile Include="shaders.cpp" />
+		<ClCompile Include="movieplayer.cpp" />
+		<ClCompile Include="perfmon.cpp" />
+		<ClCompile Include="stb_image.c" />
+		<ClCompile Include="taskscheduler.cpp" />
+		<ClCompile Include="ipp.cpp" />
+		<ClCompile Include="rasterizer.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="util.mp.txt" />
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>

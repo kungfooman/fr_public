@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClInclude Include="server.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="server.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>

@@ -1,0 +1,68 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "miniftp", "miniftp.vcxproj", "{DE742074-74B7-4636-92BC-76816EF3AEF0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C1879B8-F7E3-415F-8F5A-BEB977C19935} = {2C1879B8-F7E3-415F-8F5A-BEB977C19935}
+		{0446A505-08CF-41AB-A587-693481BEDF56} = {0446A505-08CF-41AB-A587-693481BEDF56}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "client", "client.vcxproj", "{2C1879B8-F7E3-415F-8F5A-BEB977C19935}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660} = {83DACCFD-BCC0-4451-9CCF-A822E349F660}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base", "..\..\main\base\base.vcxproj", "{F13B45DE-3700-45FB-B651-E652B962BE4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "network", "..\..\main\network\network.vcxproj", "{83DACCFD-BCC0-4451-9CCF-A822E349F660}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+		{9575FAD3-F5A4-4909-B20E-145A5024C578} = {9575FAD3-F5A4-4909-B20E-145A5024C578}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "util", "..\..\main\util\util.vcxproj", "{9575FAD3-F5A4-4909-B20E-145A5024C578}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "server", "server.vcxproj", "{0446A505-08CF-41AB-A587-693481BEDF56}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660} = {83DACCFD-BCC0-4451-9CCF-A822E349F660}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_blank_shell|x64 = debug_blank_shell|x64
+		release_blank_shell|x64 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0446A505-08CF-41AB-A587-693481BEDF56}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{0446A505-08CF-41AB-A587-693481BEDF56}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{0446A505-08CF-41AB-A587-693481BEDF56}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{0446A505-08CF-41AB-A587-693481BEDF56}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{DE742074-74B7-4636-92BC-76816EF3AEF0}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{DE742074-74B7-4636-92BC-76816EF3AEF0}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{DE742074-74B7-4636-92BC-76816EF3AEF0}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{DE742074-74B7-4636-92BC-76816EF3AEF0}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{2C1879B8-F7E3-415F-8F5A-BEB977C19935}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{2C1879B8-F7E3-415F-8F5A-BEB977C19935}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{2C1879B8-F7E3-415F-8F5A-BEB977C19935}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{2C1879B8-F7E3-415F-8F5A-BEB977C19935}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

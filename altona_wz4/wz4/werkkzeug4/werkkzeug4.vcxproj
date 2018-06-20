@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug_dx9|x64">
+      <Configuration>debug_dx9</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debugfast_dx9|x64">
+      <Configuration>debugfast_dx9</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release_dx9|x64">
+      <Configuration>release_dx9</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{74F17E89-915F-4264-B67A-2A655B65325A}</ProjectGuid>
+    <RootNamespace>werkkzeug4</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <AltonaRoot>G:/fr_public/altona_wz4/</AltonaRoot>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(AltonaRoot)\altona\doc\altona.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\yasm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x64;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x74F17E89,{0x915F,0x4264,0xB67A},{0x2A,0x65,0x5B,0x65,0x32,0x5A}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x74F17E89,{0x915F,0x4264,0xB67A},{0x2A,0x65,0x5B,0x65,0x32,0x5A}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions);__PLACEMENT_NEW_INLINE=1;__PLACEMENT_VEC_NEW_INLINE</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x74F17E89,{0x915F,0x4264,0xB67A},{0x2A,0x65,0x5B,0x65,0x32,0x5A}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="werkkzeug4.mp.txt" />
+    <None Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/base/base.vcxproj">
+      <Project>{F13B45DE-3700-45FB-B651-E652B962BE4F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/util/util.vcxproj">
+      <Project>{9575FAD3-F5A4-4909-B20E-145A5024C578}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/gui/gui.vcxproj">
+      <Project>{32F4A637-1097-40B1-8D78-C4D8917E64B7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/shadercomp/shadercomp.vcxproj">
+      <Project>{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/wz4lib/wz4lib.vcxproj">
+      <Project>{76A7AACC-4853-4BEF-9C17-7BF204C51270}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/wiki/wiki.vcxproj">
+      <Project>{0BCE9F23-C97F-4F0A-BB12-8F2A2CE75E2B}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/extra/extra.vcxproj">
+      <Project>{36014AD8-5EA0-4D34-A04A-40DC4BE27C31}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/wz4/wz4frlib/wz4frlib.vcxproj">
+      <Project>{511A8CA6-3C5A-4259-B010-6EDD8979A70F}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="G:/fr_public/altona_wz4/\altona\doc\altona.targets" />
+    <Import Project="G:/fr_public/altona_wz4/\altona\doc\yasm.targets" />
+  </ImportGroup>
+</Project>

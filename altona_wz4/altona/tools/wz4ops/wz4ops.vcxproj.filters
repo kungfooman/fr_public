@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClInclude Include="main.hpp" />
+		<ClInclude Include="doc.hpp" />
+		<ClInclude Include="test.hpp">
+			<Filter>test</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp" />
+		<ClCompile Include="doc.cpp" />
+		<ClCompile Include="parse.cpp" />
+		<ClCompile Include="output.cpp" />
+		<ClCompile Include="wikitext.cpp" />
+		<ClCompile Include="test.cpp">
+			<Filter>test</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="wz4ops.mp.txt" />
+		<None Include="test.txt">
+			<Filter>test</Filter>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="test">
+			<UniqueIdentifier>{258d6feb-63a9-706c-6511-33ae774d934}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+</Project>

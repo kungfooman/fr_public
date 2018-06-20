@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Library Include="libv2/libv2.lib">
+			<Filter>libv2</Filter>
+		</Library>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="selector_win.hpp" />
+		<ClInclude Include="vorbisplayer.hpp" />
+		<ClInclude Include="libv2/libv2.h">
+			<Filter>libv2</Filter>
+		</ClInclude>
+		<ClInclude Include="libv2/v2mplayer.h">
+			<Filter>libv2</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp" />
+		<ClCompile Include="selector_win.cpp" />
+		<ClCompile Include="vorbisplayer.cpp" />
+		<ClCompile Include="libv2/v2mplayer.cpp">
+			<Filter>libv2</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="wz4player.mp.txt" />
+		<None Include="wz4player.manifest" />
+		<None Include="resources/icon.ico">
+			<Filter>resources</Filter>
+		</None>
+		<None Include="resources/share_twitter.ico">
+			<Filter>resources</Filter>
+		</None>
+		<None Include="resources/share_facebook.ico">
+			<Filter>resources</Filter>
+		</None>
+		<None Include="resources/share_myspace.ico">
+			<Filter>resources</Filter>
+		</None>
+		<None Include="resources/share_digg.ico">
+			<Filter>resources</Filter>
+		</None>
+		<None Include="resources/share_stumbleupon.ico">
+			<Filter>resources</Filter>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="resources">
+			<UniqueIdentifier>{f93f6ace-eab-cbf1-17ac-f1672dde788b}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="libv2">
+			<UniqueIdentifier>{238c4542-cfbc-46ff-db5c-6098eba3a444}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+</Project>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc">
+			<Filter>resources</Filter>
+		</ResourceCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="vorbisplayer.hpp" />
+		<ClInclude Include="network.hpp" />
+		<ClInclude Include="playlists.hpp" />
+		<ClInclude Include="config.hpp" />
+		<ClInclude Include="image_win.hpp" />
+		<ClInclude Include="webview.hpp" />
+		<ClInclude Include="pugiconfig.hpp">
+			<Filter>3rdparty</Filter>
+		</ClInclude>
+		<ClInclude Include="pugixml.hpp">
+			<Filter>3rdparty</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp" />
+		<ClCompile Include="vorbisplayer.cpp" />
+		<ClCompile Include="network.cpp" />
+		<ClCompile Include="playlists.cpp" />
+		<ClCompile Include="image_win.cpp" />
+		<ClCompile Include="movieplayer_win7.cpp" />
+		<ClCompile Include="webview.cpp" />
+		<ClCompile Include="pugixml.cpp">
+			<Filter>3rdparty</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="screens4.mp.txt" />
+		<None Include="config.txt" />
+		<None Include="resources/icon.ico">
+			<Filter>resources</Filter>
+		</None>
+		<None Include="config.txt">
+			<Filter>data</Filter>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="resources">
+			<UniqueIdentifier>{f0c522fb-b9d5-525b-a050-1625432dab2}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="data">
+			<UniqueIdentifier>{8dc98162-5a29-5e0e-fae-897aeee649e}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="3rdparty">
+			<UniqueIdentifier>{af11c3f2-389a-4992-7475-db4c64808a53}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+</Project>

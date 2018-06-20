@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "asc", "asc.vcxproj", "{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB} = {A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base", "..\..\main\base\base.vcxproj", "{F13B45DE-3700-45FB-B651-E652B962BE4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shadercomp", "..\..\main\shadercomp\shadercomp.vcxproj", "{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_blank_shell|x64 = debug_blank_shell|x64
+		release_blank_shell|x64 = release_blank_shell|x64
+		stripped_blank_shell|x64 = stripped_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}.stripped_blank_shell|x64.ActiveCfg = stripped_blank_shell|x64
+		{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}.stripped_blank_shell|x64.Build.0 = stripped_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.stripped_blank_shell|x64.ActiveCfg = stripped_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.stripped_blank_shell|x64.Build.0 = stripped_blank_shell|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.stripped_blank_shell|x64.ActiveCfg = stripped_blank_shell|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.stripped_blank_shell|x64.Build.0 = stripped_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

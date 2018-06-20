@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stackdump", "stackdump.vcxproj", "{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base", "..\..\main\base\base.vcxproj", "{F13B45DE-3700-45FB-B651-E652B962BE4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_blank_shell|x64 = debug_blank_shell|x64
+		debugfast_blank_shell|x64 = debugfast_blank_shell|x64
+		release_blank_shell|x64 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}.debugfast_blank_shell|x64.ActiveCfg = debugfast_blank_shell|x64
+		{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}.debugfast_blank_shell|x64.Build.0 = debugfast_blank_shell|x64
+		{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debugfast_blank_shell|x64.ActiveCfg = debugfast_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debugfast_blank_shell|x64.Build.0 = debugfast_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

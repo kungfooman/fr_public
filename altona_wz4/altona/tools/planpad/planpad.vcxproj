@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="debug_blank|x64">
+			<Configuration>debug_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debugfast_blank|x64">
+			<Configuration>debugfast_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="release_blank|x64">
+			<Configuration>release_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="stripped_blank|x64">
+			<Configuration>stripped_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>{8293D35A-4CF4-4ABA-84DD-3B6FA7281247}</ProjectGuid>
+		<RootNamespace>planpad</RootNamespace>
+		<Keyword>Win32Proj</Keyword>
+		<AltonaRoot>G:/fr_public/altona_wz4/</AltonaRoot>
+	</PropertyGroup>
+
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Label="ExtensionSettings">
+		<Import Project="$(AltonaRoot)\altona\doc\altona.props"/>
+		<Import Project="$(AltonaRoot)\altona\doc\yasm.props"/>
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros" />
+
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x8293D35A,{0x4CF4,0x4ABA,0x84DD},{0x3B,0x6F,0xA7,0x28,0x12,0x47}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x8293D35A,{0x4CF4,0x4ABA,0x84DD},{0x3B,0x6F,0xA7,0x28,0x12,0x47}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x8293D35A,{0x4CF4,0x4ABA,0x84DD},{0x3B,0x6F,0xA7,0x28,0x12,0x47}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x8293D35A,{0x4CF4,0x4ABA,0x84DD},{0x3B,0x6F,0xA7,0x28,0x12,0x47}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+
+	<ItemGroup>
+		<ResourceCompile Include="resource.rc" />
+	</ItemGroup>
+	<ItemGroup>
+		<YASM Include="incbin.asm">
+		</YASM>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="main.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="planpad.mp.txt" />
+		<None Include="planpad.wire.txt" />
+		<None Include="icon.ico" />
+		<None Include="index.wiki.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/base/base.vcxproj">
+			<Project>{F13B45DE-3700-45FB-B651-E652B962BE4F}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/util/util.vcxproj">
+			<Project>{9575FAD3-F5A4-4909-B20E-145A5024C578}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/gui/gui.vcxproj">
+			<Project>{32F4A637-1097-40B1-8D78-C4D8917E64B7}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/wiki/wiki.vcxproj">
+			<Project>{0BCE9F23-C97F-4F0A-BB12-8F2A2CE75E2B}</Project>
+		</ProjectReference>
+	</ItemGroup>
+
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ImportGroup Label="ExtensionTargets">
+		<Import Project="G:/fr_public/altona_wz4/\altona\doc\altona.targets"/>
+		<Import Project="G:/fr_public/altona_wz4/\altona\doc\yasm.targets"/>
+	</ImportGroup>
+</Project>

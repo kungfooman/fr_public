@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug_blank|x64">
+      <Configuration>debug_blank</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debugfast_blank|x64">
+      <Configuration>debugfast_blank</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release_blank|x64">
+      <Configuration>release_blank</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="stripped_blank|x64">
+      <Configuration>stripped_blank</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug_dx9|x64">
+      <Configuration>debug_dx9</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debugfast_dx9|x64">
+      <Configuration>debugfast_dx9</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release_dx9|x64">
+      <Configuration>release_dx9</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="stripped_dx9|x64">
+      <Configuration>stripped_dx9</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug_blank_shell|x64">
+      <Configuration>debug_blank_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debugfast_blank_shell|x64">
+      <Configuration>debugfast_blank_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release_blank_shell|x64">
+      <Configuration>release_blank_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="stripped_blank_shell|x64">
+      <Configuration>stripped_blank_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debug_dx9_shell|x64">
+      <Configuration>debug_dx9_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="debugfast_dx9_shell|x64">
+      <Configuration>debugfast_dx9_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release_dx9_shell|x64">
+      <Configuration>release_dx9_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="stripped_dx9_shell|x64">
+      <Configuration>stripped_dx9_shell</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{511A8CA6-3C5A-4259-B010-6EDD8979A70F}</ProjectGuid>
+    <RootNamespace>wz4frlib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <AltonaRoot>G:/fr_public/altona_wz4/</AltonaRoot>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_blank_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+    <IntDir>$(Configuration)_x64\</IntDir>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(AltonaRoot)\altona\doc\altona.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\yasm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_blank_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+    <Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'">
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions);__PLACEMENT_NEW_INLINE=1;__PLACEMENT_VEC_NEW_INLINE</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_blank_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;G:/fr_public/altona_wz4/wz4;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>sCONFIG_GUID={0x511A8CA6,{0x3C5A,0x4259,0xB010},{0x6E,0xDD,0x89,0x79,0xA7,0x0F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ops Include="fr062_ops.ops" />
+    <ops Include="fr063_chaos_ops.ops" />
+    <ops Include="fr063_mandelbulb_ops.ops" />
+    <ops Include="fr063_tron_ops.ops" />
+    <ops Include="fr063_sph_ops.ops" />
+    <ops Include="fr067_ops.ops" />
+    <ops Include="easter_ops.ops" />
+    <ops Include="wz3_bitmap_ops.ops" />
+    <ops Include="chaosmesh_ops.ops" />
+    <ops Include="wz4_mtrl_ops.ops" />
+    <ops Include="chaos_font_ops.ops" />
+    <ops Include="wz4_anim_ops.ops" />
+    <ops Include="wz4_mesh_ops.ops" />
+    <ops Include="wz4_demo2_ops.ops" />
+    <ops Include="wz4_mtrl2_ops.ops" />
+    <ops Include="wz4_rovemtrl_ops.ops" />
+    <ops Include="wz4_modmtrl_ops.ops" />
+    <ops Include="wz4_modmtrlmod_ops.ops" />
+    <ops Include="wz4_ipp_ops.ops" />
+    <ops Include="wz4_bsp_ops.ops" />
+    <ops Include="chaosfx_ops.ops" />
+    <ops Include="fxparticle_ops.ops" />
+    <ops Include="wz4_audio_ops.ops" />
+    <ops Include="adf_ops.ops" />
+    <ops Include="pdf_ops.ops" />
+    <ops Include="tron_ops.ops" />
+    <ops Include="kbfx_ops.ops" />
+    <ops Include="screens4_ops.ops" />
+  </ItemGroup>
+  <ItemGroup>
+    <ASC Include="fr063_mandelbulb_shader.asc" />
+    <ASC Include="fr063_tron_shader.asc" />
+    <ASC Include="fr067_shader.asc" />
+    <ASC Include="easter_shader.asc" />
+    <ASC Include="wz4_mtrl_shader.asc" />
+    <ASC Include="wz4_mtrl2_shader.asc" />
+    <ASC Include="wz4_rovemtrl_shader.asc" />
+    <ASC Include="wz4_ipp_shader.asc" />
+    <ASC Include="chaosfx_shader.asc" />
+    <ASC Include="fxparticle_shader.asc" />
+    <ASC Include="adf_shader.asc" />
+    <ASC Include="tron_shader.asc" />
+    <ASC Include="kbfx_shader.asc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bspline.hpp" />
+    <ClInclude Include="packfile.hpp" />
+    <ClInclude Include="packfilegen.hpp" />
+    <ClInclude Include="fr062.hpp" />
+    <ClInclude Include="fr063_chaos.hpp" />
+    <ClInclude Include="fr063_mandelbulb.hpp" />
+    <ClInclude Include="fr063_tron.hpp" />
+    <ClInclude Include="fr063_sph.hpp" />
+    <ClInclude Include="fr067.hpp" />
+    <ClInclude Include="easter.hpp" />
+    <ClInclude Include="wz3_bitmap_code.hpp" />
+    <ClInclude Include="genvector.hpp" />
+    <ClInclude Include="chaosmesh_code.hpp" />
+    <ClInclude Include="chaosmesh_xsi.hpp" />
+    <ClInclude Include="chaosmesh_fx.hpp" />
+    <ClInclude Include="wz4_mtrl.hpp" />
+    <ClInclude Include="chaos_font.hpp" />
+    <ClInclude Include="wz4_anim.hpp" />
+    <ClInclude Include="wz4_mesh.hpp" />
+    <ClInclude Include="wz4_demo2.hpp" />
+    <ClInclude Include="wz4_demo2nodes.hpp" />
+    <ClInclude Include="wz4_mtrl2.hpp" />
+    <ClInclude Include="wz4_rovemtrl.hpp" />
+    <ClInclude Include="wz4_modmtrl.hpp" />
+    <ClInclude Include="wz4_modmtrlmod.hpp" />
+    <ClInclude Include="wz4_modmtrlsc.hpp" />
+    <ClInclude Include="wz4_ipp.hpp" />
+    <ClInclude Include="wz4_bsp.hpp" />
+    <ClInclude Include="chaosfx.hpp" />
+    <ClInclude Include="fxparticle.hpp" />
+    <ClInclude Include="fxparticle_mc.hpp" />
+    <ClInclude Include="wz4_audio.hpp" />
+    <ClInclude Include="wz4_gui.hpp" />
+    <ClInclude Include="adf.hpp" />
+    <ClInclude Include="pdf.hpp" />
+    <ClInclude Include="tron.hpp" />
+    <ClInclude Include="tADF.hpp" />
+    <ClInclude Include="kbfx.hpp" />
+    <ClInclude Include="screens4fx.hpp" />
+    <ClInclude Include="wz3_bitmap_ops.hpp" />
+    <ClInclude Include="wz4_anim_ops.hpp" />
+    <ClInclude Include="chaosfx_ops.hpp" />
+    <ClInclude Include="chaosfx_shader.hpp" />
+    <ClInclude Include="fxparticle_ops.hpp" />
+    <ClInclude Include="fxparticle_shader.hpp" />
+    <ClInclude Include="wz4_mtrl2_ops.hpp" />
+    <ClInclude Include="wz4_mtrl2_shader.hpp" />
+    <ClInclude Include="wz4_rovemtrl_ops.hpp" />
+    <ClInclude Include="wz4_rovemtrl_shader.hpp" />
+    <ClInclude Include="wz4_modmtrl_ops.hpp" />
+    <ClInclude Include="wz4_modmtrlmod_ops.hpp" />
+    <ClInclude Include="wz4_demo2_ops.hpp" />
+    <ClInclude Include="wz4_mesh_ops.hpp" />
+    <ClInclude Include="wz4_bsp_ops.hpp" />
+    <ClInclude Include="wz4_ipp_ops.hpp" />
+    <ClInclude Include="wz4_ipp_shader.hpp" />
+    <ClInclude Include="wz4_audio_ops.hpp" />
+    <ClInclude Include="chaos_font_ops.hpp" />
+    <ClInclude Include="chaosmesh_ops.hpp" />
+    <ClInclude Include="wz4_mtrl_ops.hpp" />
+    <ClInclude Include="wz4_mtrl_shader.hpp" />
+    <ClInclude Include="fr062_ops.hpp" />
+    <ClInclude Include="fr063_chaos_ops.hpp" />
+    <ClInclude Include="fr063_sph_ops.hpp" />
+    <ClInclude Include="fr063_tron_ops.hpp" />
+    <ClInclude Include="fr063_mandelbulb_ops.hpp" />
+    <ClInclude Include="fr063_mandelbulb_shader.hpp" />
+    <ClInclude Include="fr063_tron_shader.hpp" />
+    <ClInclude Include="easter_ops.hpp" />
+    <ClInclude Include="easter_shader.hpp" />
+    <ClInclude Include="fr067_shader.hpp" />
+    <ClInclude Include="fr067_ops.hpp" />
+    <ClInclude Include="adf_ops.hpp" />
+    <ClInclude Include="adf_shader.hpp" />
+    <ClInclude Include="pdf_ops.hpp" />
+    <ClInclude Include="tron_ops.hpp" />
+    <ClInclude Include="tron_shader.hpp" />
+    <ClInclude Include="screens4_ops.hpp" />
+    <ClInclude Include="kbfx_ops.hpp" />
+    <ClInclude Include="kbfx_shader.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bspline.cpp" />
+    <ClCompile Include="packfile.cpp" />
+    <ClCompile Include="packfilegen.cpp" />
+    <ClCompile Include="fr062.cpp" />
+    <ClCompile Include="fr063_chaos.cpp" />
+    <ClCompile Include="fr063_mandelbulb.cpp" />
+    <ClCompile Include="fr063_tron.cpp" />
+    <ClCompile Include="fr063_sph.cpp" />
+    <ClCompile Include="fr067.cpp" />
+    <ClCompile Include="easter.cpp" />
+    <ClCompile Include="wz3_bitmap_code.cpp" />
+    <ClCompile Include="genvector.cpp" />
+    <ClCompile Include="chaosmesh_code.cpp" />
+    <ClCompile Include="chaosmesh_xsi.cpp" />
+    <ClCompile Include="chaosmesh_fx.cpp" />
+    <ClCompile Include="wz4_mtrl.cpp" />
+    <ClCompile Include="chaos_font.cpp" />
+    <ClCompile Include="wz4_anim.cpp" />
+    <ClCompile Include="wz4_mesh.cpp" />
+    <ClCompile Include="wz4_mesh_xsi.cpp" />
+    <ClCompile Include="wz4_mesh_lwo.cpp" />
+    <ClCompile Include="wz4_mesh_obj.cpp" />
+    <ClCompile Include="wz4_demo2.cpp" />
+    <ClCompile Include="wz4_demo2nodes.cpp" />
+    <ClCompile Include="wz4_mtrl2.cpp" />
+    <ClCompile Include="wz4_rovemtrl.cpp" />
+    <ClCompile Include="wz4_modmtrl.cpp" />
+    <ClCompile Include="wz4_modmtrlmod.cpp" />
+    <ClCompile Include="wz4_modmtrlsc.cpp" />
+    <ClCompile Include="wz4_ipp.cpp" />
+    <ClCompile Include="wz4_bsp.cpp">
+    </ClCompile>
+    <ClCompile Include="chaosfx.cpp" />
+    <ClCompile Include="fxparticle.cpp" />
+    <ClCompile Include="fxparticle_mc.cpp" />
+    <ClCompile Include="wz4_audio.cpp" />
+    <ClCompile Include="wz4_gui.cpp" />
+    <ClCompile Include="adf.cpp" />
+    <ClCompile Include="pdf.cpp" />
+    <ClCompile Include="tron.cpp" />
+    <ClCompile Include="tADF.cpp" />
+    <ClCompile Include="kbfx.cpp" />
+    <ClCompile Include="screens4fx.cpp" />
+    <ClCompile Include="wz3_bitmap_ops.cpp" />
+    <ClCompile Include="wz4_anim_ops.cpp" />
+    <ClCompile Include="chaosfx_ops.cpp" />
+    <ClCompile Include="chaosfx_shader.cpp" />
+    <ClCompile Include="fxparticle_ops.cpp" />
+    <ClCompile Include="fxparticle_shader.cpp" />
+    <ClCompile Include="wz4_mtrl2_ops.cpp" />
+    <ClCompile Include="wz4_mtrl2_shader.cpp" />
+    <ClCompile Include="wz4_rovemtrl_ops.cpp" />
+    <ClCompile Include="wz4_rovemtrl_shader.cpp" />
+    <ClCompile Include="wz4_modmtrl_ops.cpp" />
+    <ClCompile Include="wz4_modmtrlmod_ops.cpp" />
+    <ClCompile Include="wz4_demo2_ops.cpp" />
+    <ClCompile Include="wz4_mesh_ops.cpp" />
+    <ClCompile Include="wz4_bsp_ops.cpp" />
+    <ClCompile Include="wz4_ipp_ops.cpp" />
+    <ClCompile Include="wz4_ipp_shader.cpp" />
+    <ClCompile Include="wz4_audio_ops.cpp" />
+    <ClCompile Include="chaos_font_ops.cpp" />
+    <ClCompile Include="chaosmesh_ops.cpp" />
+    <ClCompile Include="wz4_mtrl_ops.cpp" />
+    <ClCompile Include="wz4_mtrl_shader.cpp" />
+    <ClCompile Include="fr062_ops.cpp" />
+    <ClCompile Include="fr063_chaos_ops.cpp" />
+    <ClCompile Include="fr063_sph_ops.cpp" />
+    <ClCompile Include="fr063_tron_ops.cpp" />
+    <ClCompile Include="fr063_mandelbulb_ops.cpp" />
+    <ClCompile Include="fr063_mandelbulb_shader.cpp" />
+    <ClCompile Include="fr063_tron_shader.cpp" />
+    <ClCompile Include="easter_ops.cpp" />
+    <ClCompile Include="easter_shader.cpp" />
+    <ClCompile Include="fr067_shader.cpp" />
+    <ClCompile Include="fr067_ops.cpp" />
+    <ClCompile Include="adf_ops.cpp" />
+    <ClCompile Include="adf_shader.cpp" />
+    <ClCompile Include="pdf_ops.cpp" />
+    <ClCompile Include="tron_ops.cpp" />
+    <ClCompile Include="tron_shader.cpp" />
+    <ClCompile Include="screens4_ops.cpp" />
+    <ClCompile Include="kbfx_ops.cpp" />
+    <ClCompile Include="kbfx_shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wz4frlib.mp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/base/base.vcxproj">
+      <Project>{F13B45DE-3700-45FB-B651-E652B962BE4F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/util/util.vcxproj">
+      <Project>{9575FAD3-F5A4-4909-B20E-145A5024C578}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/gui/gui.vcxproj">
+      <Project>{32F4A637-1097-40B1-8D78-C4D8917E64B7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/wz4lib/wz4lib.vcxproj">
+      <Project>{76A7AACC-4853-4BEF-9C17-7BF204C51270}</Project>
+    </ProjectReference>
+    <ProjectReference Include="G:/fr_public/altona_wz4/altona/main/wiki/wiki.vcxproj">
+      <Project>{0BCE9F23-C97F-4F0A-BB12-8F2A2CE75E2B}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="G:/fr_public/altona_wz4/\altona\doc\altona.targets" />
+    <Import Project="G:/fr_public/altona_wz4/\altona\doc\yasm.targets" />
+  </ImportGroup>
+</Project>

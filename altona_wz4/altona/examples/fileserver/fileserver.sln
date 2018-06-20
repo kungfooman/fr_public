@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fileserver", "fileserver.vcxproj", "{A54558AC-96BB-418F-92BF-5B362E987CFD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660} = {83DACCFD-BCC0-4451-9CCF-A822E349F660}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base", "..\..\main\base\base.vcxproj", "{F13B45DE-3700-45FB-B651-E652B962BE4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "network", "..\..\main\network\network.vcxproj", "{83DACCFD-BCC0-4451-9CCF-A822E349F660}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+		{9575FAD3-F5A4-4909-B20E-145A5024C578} = {9575FAD3-F5A4-4909-B20E-145A5024C578}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "util", "..\..\main\util\util.vcxproj", "{9575FAD3-F5A4-4909-B20E-145A5024C578}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_blank_shell|x64 = debug_blank_shell|x64
+		release_blank_shell|x64 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A54558AC-96BB-418F-92BF-5B362E987CFD}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{A54558AC-96BB-418F-92BF-5B362E987CFD}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{A54558AC-96BB-418F-92BF-5B362E987CFD}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{A54558AC-96BB-418F-92BF-5B362E987CFD}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{83DACCFD-BCC0-4451-9CCF-A822E349F660}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

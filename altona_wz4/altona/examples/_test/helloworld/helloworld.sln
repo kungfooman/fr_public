@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "helloworld", "helloworld.vcxproj", "{5D54DEC1-0103-48AF-A6BB-454D91433F57}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base", "..\..\..\main\base\base.vcxproj", "{F13B45DE-3700-45FB-B651-E652B962BE4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_blank_shell|x64 = debug_blank_shell|x64
+		debugfast_blank_shell|x64 = debugfast_blank_shell|x64
+		release_blank_shell|x64 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D54DEC1-0103-48AF-A6BB-454D91433F57}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{5D54DEC1-0103-48AF-A6BB-454D91433F57}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{5D54DEC1-0103-48AF-A6BB-454D91433F57}.debugfast_blank_shell|x64.ActiveCfg = debugfast_blank_shell|x64
+		{5D54DEC1-0103-48AF-A6BB-454D91433F57}.debugfast_blank_shell|x64.Build.0 = debugfast_blank_shell|x64
+		{5D54DEC1-0103-48AF-A6BB-454D91433F57}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{5D54DEC1-0103-48AF-A6BB-454D91433F57}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.ActiveCfg = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank_shell|x64.Build.0 = debug_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debugfast_blank_shell|x64.ActiveCfg = debugfast_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debugfast_blank_shell|x64.Build.0 = debugfast_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.ActiveCfg = release_blank_shell|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank_shell|x64.Build.0 = release_blank_shell|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

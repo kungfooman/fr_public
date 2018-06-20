@@ -1,0 +1,66 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prim", "prim.vcxproj", "{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+		{9575FAD3-F5A4-4909-B20E-145A5024C578} = {9575FAD3-F5A4-4909-B20E-145A5024C578}
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB} = {A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "base", "..\..\main\base\base.vcxproj", "{F13B45DE-3700-45FB-B651-E652B962BE4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "util", "..\..\main\util\util.vcxproj", "{9575FAD3-F5A4-4909-B20E-145A5024C578}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shadercomp", "..\..\main\shadercomp\shadercomp.vcxproj", "{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F13B45DE-3700-45FB-B651-E652B962BE4F} = {F13B45DE-3700-45FB-B651-E652B962BE4F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_blank|x64 = debug_blank|x64
+		release_blank|x64 = release_blank|x64
+		debug_dx9|x64 = debug_dx9|x64
+		release_dx9|x64 = release_dx9|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.debug_blank|x64.ActiveCfg = debug_blank|x64
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.debug_blank|x64.Build.0 = debug_blank|x64
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.release_blank|x64.ActiveCfg = release_blank|x64
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.release_blank|x64.Build.0 = release_blank|x64
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.debug_dx9|x64.ActiveCfg = debug_dx9|x64
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.debug_dx9|x64.Build.0 = debug_dx9|x64
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.release_dx9|x64.ActiveCfg = release_dx9|x64
+		{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}.release_dx9|x64.Build.0 = release_dx9|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank|x64.ActiveCfg = debug_blank|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_blank|x64.Build.0 = debug_blank|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank|x64.ActiveCfg = release_blank|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_blank|x64.Build.0 = release_blank|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_dx9|x64.ActiveCfg = debug_dx9|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.debug_dx9|x64.Build.0 = debug_dx9|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_dx9|x64.ActiveCfg = release_dx9|x64
+		{F13B45DE-3700-45FB-B651-E652B962BE4F}.release_dx9|x64.Build.0 = release_dx9|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_blank|x64.ActiveCfg = debug_blank|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_blank|x64.Build.0 = debug_blank|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_blank|x64.ActiveCfg = release_blank|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_blank|x64.Build.0 = release_blank|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_dx9|x64.ActiveCfg = debug_dx9|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.debug_dx9|x64.Build.0 = debug_dx9|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_dx9|x64.ActiveCfg = release_dx9|x64
+		{9575FAD3-F5A4-4909-B20E-145A5024C578}.release_dx9|x64.Build.0 = release_dx9|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.debug_blank|x64.ActiveCfg = debug_blank|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.debug_blank|x64.Build.0 = debug_blank|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.release_blank|x64.ActiveCfg = release_blank|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.release_blank|x64.Build.0 = release_blank|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.debug_dx9|x64.ActiveCfg = debug_dx9|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.debug_dx9|x64.Build.0 = debug_dx9|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.release_dx9|x64.ActiveCfg = release_dx9|x64
+		{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}.release_dx9|x64.Build.0 = release_dx9|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClInclude Include="main.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="config.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="doc.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="gui.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="codec_old.hpp">
+			<Filter>codecs</Filter>
+		</ClInclude>
+		<ClInclude Include="codec_test.hpp">
+			<Filter>codecs</Filter>
+		</ClInclude>
+		<ClInclude Include="codec_ms.hpp">
+			<Filter>codecs</Filter>
+		</ClInclude>
+		<ClInclude Include="codec_altona.hpp">
+			<Filter>codecs</Filter>
+		</ClInclude>
+		<ClInclude Include="codec_nvidia.hpp">
+			<Filter>codecs</Filter>
+		</ClInclude>
+		<ClInclude Include="codec_ati.hpp">
+			<Filter>codecs</Filter>
+		</ClInclude>
+		<ClInclude Include="codec_ryg.hpp">
+			<Filter>codecs</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="doc.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="gui.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="codec_old.cpp">
+			<Filter>codecs</Filter>
+		</ClCompile>
+		<ClCompile Include="codec_test.cpp">
+			<Filter>codecs</Filter>
+		</ClCompile>
+		<ClCompile Include="codec_ms.cpp">
+			<Filter>codecs</Filter>
+		</ClCompile>
+		<ClCompile Include="codec_altona.cpp">
+			<Filter>codecs</Filter>
+		</ClCompile>
+		<ClCompile Include="codec_nvidia.cpp">
+			<Filter>codecs</Filter>
+		</ClCompile>
+		<ClCompile Include="codec_ati.cpp">
+			<Filter>codecs</Filter>
+		</ClCompile>
+		<ClCompile Include="codec_ryg.cpp">
+			<Filter>codecs</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="dxt.mp.txt">
+			<Filter>app</Filter>
+		</None>
+		<None Include="dxt.wire.txt">
+			<Filter>app</Filter>
+		</None>
+		<None Include="todo.txt">
+			<Filter>app</Filter>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="app">
+			<UniqueIdentifier>{3ab7f1e8-665-ba24-7470-1cc2579f5f1}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="codecs">
+			<UniqueIdentifier>{ce407cd7-ed4-202a-911f-becf7c3f884}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+</Project>

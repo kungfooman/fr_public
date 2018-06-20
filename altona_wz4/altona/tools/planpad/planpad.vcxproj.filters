@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ResourceCompile Include="resource.rc" />
+	</ItemGroup>
+	<ItemGroup>
+		<YASM Include="incbin.asm" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="main.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="planpad.mp.txt" />
+		<None Include="planpad.wire.txt" />
+		<None Include="icon.ico" />
+		<None Include="index.wiki.txt" />
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>

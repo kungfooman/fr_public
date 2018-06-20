@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ops Include="basic_ops.ops">
+			<Filter>misc</Filter>
+		</ops>
+		<ops Include="poc_ops.ops">
+			<Filter>misc</Filter>
+		</ops>
+	</ItemGroup>
+	<ItemGroup>
+		<ASC Include="wz4shaders.asc">
+			<Filter>app</Filter>
+		</ASC>
+	</ItemGroup>
+	<ItemGroup>
+		<YASM Include="incbin.asm">
+			<Filter>app</Filter>
+		</YASM>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="doc.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="gui.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="view.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="build.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="script.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="serials.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="version.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="stb_vorbis.inl">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="wiki.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="videoencoder.hpp">
+			<Filter>app</Filter>
+		</ClInclude>
+		<ClInclude Include="basic.hpp">
+			<Filter>misc</Filter>
+		</ClInclude>
+		<ClInclude Include="poc.hpp">
+			<Filter>misc</Filter>
+		</ClInclude>
+		<ClInclude Include="poc_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="basic_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4shaders.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="doc.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="gui.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="view.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="build.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="script.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="wiki.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="videoencoder_win.cpp">
+			<Filter>app</Filter>
+		</ClCompile>
+		<ClCompile Include="basic.cpp">
+			<Filter>misc</Filter>
+		</ClCompile>
+		<ClCompile Include="poc.cpp">
+			<Filter>misc</Filter>
+		</ClCompile>
+		<ClCompile Include="poc_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="basic_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4shaders.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="wz4lib.mp.txt">
+			<Filter>app</Filter>
+		</None>
+		<None Include="werkkzeug4.wire.txt">
+			<Filter>app</Filter>
+		</None>
+		<None Include="todo.txt">
+			<Filter>app</Filter>
+		</None>
+		<None Include="doc.txt">
+			<Filter>app</Filter>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="app">
+			<UniqueIdentifier>{6f44be9b-b2e4-d611-d943-8bce8675f43d}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="misc">
+			<UniqueIdentifier>{a8b2bc2-f4ba-c3e4-6733-fd8746e14cf1}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="_generated">
+			<UniqueIdentifier>{9386dd2-f450-7e24-aef8-e3ea8b44186}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+</Project>

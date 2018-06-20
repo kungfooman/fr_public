@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ops Include="fr062_ops.ops">
+			<Filter>oneshot</Filter>
+		</ops>
+		<ops Include="fr063_chaos_ops.ops">
+			<Filter>oneshot</Filter>
+		</ops>
+		<ops Include="fr063_mandelbulb_ops.ops">
+			<Filter>oneshot</Filter>
+		</ops>
+		<ops Include="fr063_tron_ops.ops">
+			<Filter>oneshot</Filter>
+		</ops>
+		<ops Include="fr063_sph_ops.ops">
+			<Filter>oneshot</Filter>
+		</ops>
+		<ops Include="fr067_ops.ops">
+			<Filter>oneshot</Filter>
+		</ops>
+		<ops Include="easter_ops.ops">
+			<Filter>oneshot</Filter>
+		</ops>
+		<ops Include="wz3_bitmap_ops.ops">
+			<Filter>wz3</Filter>
+		</ops>
+		<ops Include="chaosmesh_ops.ops">
+			<Filter>wz4_old</Filter>
+		</ops>
+		<ops Include="wz4_mtrl_ops.ops">
+			<Filter>wz4_old</Filter>
+		</ops>
+		<ops Include="chaos_font_ops.ops">
+			<Filter>wz4_old</Filter>
+		</ops>
+		<ops Include="wz4_anim_ops.ops">
+			<Filter>wz4</Filter>
+		</ops>
+		<ops Include="wz4_mesh_ops.ops">
+			<Filter>wz4</Filter>
+		</ops>
+		<ops Include="wz4_demo2_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="wz4_mtrl2_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="wz4_rovemtrl_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="wz4_modmtrl_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="wz4_modmtrlmod_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="wz4_ipp_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="wz4_bsp_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="chaosfx_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="fxparticle_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="wz4_audio_ops.ops">
+			<Filter>wz4_rove</Filter>
+		</ops>
+		<ops Include="adf_ops.ops">
+			<Filter>tron</Filter>
+		</ops>
+		<ops Include="pdf_ops.ops">
+			<Filter>tron</Filter>
+		</ops>
+		<ops Include="tron_ops.ops">
+			<Filter>tron</Filter>
+		</ops>
+		<ops Include="kbfx_ops.ops">
+			<Filter>kb</Filter>
+		</ops>
+		<ops Include="screens4_ops.ops">
+			<Filter>screens4</Filter>
+		</ops>
+	</ItemGroup>
+	<ItemGroup>
+		<ASC Include="fr063_mandelbulb_shader.asc">
+			<Filter>oneshot</Filter>
+		</ASC>
+		<ASC Include="fr063_tron_shader.asc">
+			<Filter>oneshot</Filter>
+		</ASC>
+		<ASC Include="fr067_shader.asc">
+			<Filter>oneshot</Filter>
+		</ASC>
+		<ASC Include="easter_shader.asc">
+			<Filter>oneshot</Filter>
+		</ASC>
+		<ASC Include="wz4_mtrl_shader.asc">
+			<Filter>wz4_old</Filter>
+		</ASC>
+		<ASC Include="wz4_mtrl2_shader.asc">
+			<Filter>wz4_rove</Filter>
+		</ASC>
+		<ASC Include="wz4_rovemtrl_shader.asc">
+			<Filter>wz4_rove</Filter>
+		</ASC>
+		<ASC Include="wz4_ipp_shader.asc">
+			<Filter>wz4_rove</Filter>
+		</ASC>
+		<ASC Include="chaosfx_shader.asc">
+			<Filter>wz4_rove</Filter>
+		</ASC>
+		<ASC Include="fxparticle_shader.asc">
+			<Filter>wz4_rove</Filter>
+		</ASC>
+		<ASC Include="adf_shader.asc">
+			<Filter>tron</Filter>
+		</ASC>
+		<ASC Include="tron_shader.asc">
+			<Filter>tron</Filter>
+		</ASC>
+		<ASC Include="kbfx_shader.asc">
+			<Filter>kb</Filter>
+		</ASC>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="bspline.hpp">
+			<Filter>tools</Filter>
+		</ClInclude>
+		<ClInclude Include="packfile.hpp">
+			<Filter>tools</Filter>
+		</ClInclude>
+		<ClInclude Include="packfilegen.hpp">
+			<Filter>tools</Filter>
+		</ClInclude>
+		<ClInclude Include="fr062.hpp">
+			<Filter>oneshot</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_chaos.hpp">
+			<Filter>oneshot</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_mandelbulb.hpp">
+			<Filter>oneshot</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_tron.hpp">
+			<Filter>oneshot</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_sph.hpp">
+			<Filter>oneshot</Filter>
+		</ClInclude>
+		<ClInclude Include="fr067.hpp">
+			<Filter>oneshot</Filter>
+		</ClInclude>
+		<ClInclude Include="easter.hpp">
+			<Filter>oneshot</Filter>
+		</ClInclude>
+		<ClInclude Include="wz3_bitmap_code.hpp">
+			<Filter>wz3</Filter>
+		</ClInclude>
+		<ClInclude Include="genvector.hpp">
+			<Filter>wz3</Filter>
+		</ClInclude>
+		<ClInclude Include="chaosmesh_code.hpp">
+			<Filter>wz4_old</Filter>
+		</ClInclude>
+		<ClInclude Include="chaosmesh_xsi.hpp">
+			<Filter>wz4_old</Filter>
+		</ClInclude>
+		<ClInclude Include="chaosmesh_fx.hpp">
+			<Filter>wz4_old</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mtrl.hpp">
+			<Filter>wz4_old</Filter>
+		</ClInclude>
+		<ClInclude Include="chaos_font.hpp">
+			<Filter>wz4_old</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_anim.hpp">
+			<Filter>wz4</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mesh.hpp">
+			<Filter>wz4</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_demo2.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_demo2nodes.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mtrl2.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_rovemtrl.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_modmtrl.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_modmtrlmod.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_modmtrlsc.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_ipp.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_bsp.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="chaosfx.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="fxparticle.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="fxparticle_mc.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_audio.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_gui.hpp">
+			<Filter>wz4_rove</Filter>
+		</ClInclude>
+		<ClInclude Include="adf.hpp">
+			<Filter>tron</Filter>
+		</ClInclude>
+		<ClInclude Include="pdf.hpp">
+			<Filter>tron</Filter>
+		</ClInclude>
+		<ClInclude Include="tron.hpp">
+			<Filter>tron</Filter>
+		</ClInclude>
+		<ClInclude Include="tADF.hpp">
+			<Filter>tron</Filter>
+		</ClInclude>
+		<ClInclude Include="kbfx.hpp">
+			<Filter>kb</Filter>
+		</ClInclude>
+		<ClInclude Include="screens4fx.hpp">
+			<Filter>screens4</Filter>
+		</ClInclude>
+		<ClInclude Include="wz3_bitmap_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_anim_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="chaosfx_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="chaosfx_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fxparticle_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fxparticle_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mtrl2_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mtrl2_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_rovemtrl_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_rovemtrl_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_modmtrl_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_modmtrlmod_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_demo2_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mesh_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_bsp_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_ipp_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_ipp_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_audio_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="chaos_font_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="chaosmesh_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mtrl_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="wz4_mtrl_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr062_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_chaos_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_sph_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_tron_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_mandelbulb_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_mandelbulb_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr063_tron_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="easter_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="easter_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr067_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="fr067_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="adf_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="adf_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="pdf_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="tron_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="tron_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="screens4_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="kbfx_ops.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+		<ClInclude Include="kbfx_shader.hpp">
+			<Filter>_generated</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="bspline.cpp">
+			<Filter>tools</Filter>
+		</ClCompile>
+		<ClCompile Include="packfile.cpp">
+			<Filter>tools</Filter>
+		</ClCompile>
+		<ClCompile Include="packfilegen.cpp">
+			<Filter>tools</Filter>
+		</ClCompile>
+		<ClCompile Include="fr062.cpp">
+			<Filter>oneshot</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_chaos.cpp">
+			<Filter>oneshot</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_mandelbulb.cpp">
+			<Filter>oneshot</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_tron.cpp">
+			<Filter>oneshot</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_sph.cpp">
+			<Filter>oneshot</Filter>
+		</ClCompile>
+		<ClCompile Include="fr067.cpp">
+			<Filter>oneshot</Filter>
+		</ClCompile>
+		<ClCompile Include="easter.cpp">
+			<Filter>oneshot</Filter>
+		</ClCompile>
+		<ClCompile Include="wz3_bitmap_code.cpp">
+			<Filter>wz3</Filter>
+		</ClCompile>
+		<ClCompile Include="genvector.cpp">
+			<Filter>wz3</Filter>
+		</ClCompile>
+		<ClCompile Include="chaosmesh_code.cpp">
+			<Filter>wz4_old</Filter>
+		</ClCompile>
+		<ClCompile Include="chaosmesh_xsi.cpp">
+			<Filter>wz4_old</Filter>
+		</ClCompile>
+		<ClCompile Include="chaosmesh_fx.cpp">
+			<Filter>wz4_old</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mtrl.cpp">
+			<Filter>wz4_old</Filter>
+		</ClCompile>
+		<ClCompile Include="chaos_font.cpp">
+			<Filter>wz4_old</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_anim.cpp">
+			<Filter>wz4</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mesh.cpp">
+			<Filter>wz4</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mesh_xsi.cpp">
+			<Filter>wz4</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mesh_lwo.cpp">
+			<Filter>wz4</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mesh_obj.cpp">
+			<Filter>wz4</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_demo2.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_demo2nodes.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mtrl2.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_rovemtrl.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_modmtrl.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_modmtrlmod.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_modmtrlsc.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_ipp.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_bsp.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="chaosfx.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="fxparticle.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="fxparticle_mc.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_audio.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_gui.cpp">
+			<Filter>wz4_rove</Filter>
+		</ClCompile>
+		<ClCompile Include="adf.cpp">
+			<Filter>tron</Filter>
+		</ClCompile>
+		<ClCompile Include="pdf.cpp">
+			<Filter>tron</Filter>
+		</ClCompile>
+		<ClCompile Include="tron.cpp">
+			<Filter>tron</Filter>
+		</ClCompile>
+		<ClCompile Include="tADF.cpp">
+			<Filter>tron</Filter>
+		</ClCompile>
+		<ClCompile Include="kbfx.cpp">
+			<Filter>kb</Filter>
+		</ClCompile>
+		<ClCompile Include="screens4fx.cpp">
+			<Filter>screens4</Filter>
+		</ClCompile>
+		<ClCompile Include="wz3_bitmap_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_anim_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="chaosfx_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="chaosfx_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fxparticle_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fxparticle_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mtrl2_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mtrl2_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_rovemtrl_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_rovemtrl_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_modmtrl_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_modmtrlmod_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_demo2_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mesh_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_bsp_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_ipp_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_ipp_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_audio_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="chaos_font_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="chaosmesh_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mtrl_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="wz4_mtrl_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr062_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_chaos_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_sph_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_tron_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_mandelbulb_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_mandelbulb_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr063_tron_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="easter_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="easter_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr067_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="fr067_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="adf_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="adf_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="pdf_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="tron_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="tron_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="screens4_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="kbfx_ops.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+		<ClCompile Include="kbfx_shader.cpp">
+			<Filter>_generated</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="wz4frlib.mp.txt" />
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="tools">
+			<UniqueIdentifier>{8d24a7a2-dcfa-89b8-6c30-309a40a332c}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="oneshot">
+			<UniqueIdentifier>{5fb8bf1b-5d46-c874-6d62-2a407b1cc59}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="wz3">
+			<UniqueIdentifier>{4e37fc65-f65f-618d-f392-416a11aad185}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="wz4_old">
+			<UniqueIdentifier>{3fb9d600-6e3c-d506-f028-505833ac872b}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="wz4">
+			<UniqueIdentifier>{8840b6f5-df9d-4587-615-14156211cf9c}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="wz4_rove">
+			<UniqueIdentifier>{46f7e816-665b-c768-d8f7-3e1389e89d75}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="tron">
+			<UniqueIdentifier>{d09c57fb-9a15-50be-8340-a6347a4b95f5}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="kb">
+			<UniqueIdentifier>{7a26c5b8-e840-66c1-d298-5c2136ccc97}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="screens4">
+			<UniqueIdentifier>{e6de23a0-23f6-8e8b-65b2-1decc6cca6f2}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="_generated">
+			<UniqueIdentifier>{153ea27c-cd5e-796f-5e3a-13f6f61c25e6}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+</Project>

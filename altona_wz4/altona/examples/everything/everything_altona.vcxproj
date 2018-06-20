@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="debug_blank|x64">
+			<Configuration>debug_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debugfast_blank|x64">
+			<Configuration>debugfast_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="release_blank|x64">
+			<Configuration>release_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="stripped_blank|x64">
+			<Configuration>stripped_blank</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debug_dx9|x64">
+			<Configuration>debug_dx9</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debugfast_dx9|x64">
+			<Configuration>debugfast_dx9</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="release_dx9|x64">
+			<Configuration>release_dx9</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="stripped_dx9|x64">
+			<Configuration>stripped_dx9</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debug_blank_shell|x64">
+			<Configuration>debug_blank_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debugfast_blank_shell|x64">
+			<Configuration>debugfast_blank_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="release_blank_shell|x64">
+			<Configuration>release_blank_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="stripped_blank_shell|x64">
+			<Configuration>stripped_blank_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debug_dx9_shell|x64">
+			<Configuration>debug_dx9_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="debugfast_dx9_shell|x64">
+			<Configuration>debugfast_dx9_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="release_dx9_shell|x64">
+			<Configuration>release_dx9_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="stripped_dx9_shell|x64">
+			<Configuration>stripped_dx9_shell</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>{38F7D3D0-023C-470C-ADAF-B21DD052D748}</ProjectGuid>
+		<RootNamespace>everything_altona</RootNamespace>
+		<Keyword>Win32Proj</Keyword>
+		<AltonaRoot>G:/fr_public/altona_wz4/</AltonaRoot>
+	</PropertyGroup>
+
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_blank_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<OutDir>$(SolutionDir)$(Configuration)_x64\</OutDir>
+		<IntDir>$(Configuration)_x64\</IntDir>
+		<PlatformToolset>v110</PlatformToolset>
+	</PropertyGroup>
+
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Label="ExtensionSettings">
+		<Import Project="$(AltonaRoot)\altona\doc\altona.props"/>
+		<Import Project="$(AltonaRoot)\altona\doc\yasm.props"/>
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_blank_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debug.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.debugfast.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.props" />
+		<Import Project="$(AltonaRoot)\altona\doc\altona.win32.shell.props" />
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros" />
+
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_BLANK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_blank_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_blank_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_blank_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_BLANK;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_dx9_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUG;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release_dx9_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_RELEASE;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'">
+		<ClCompile>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+			<PreprocessorDefinitions>sCONFIG_GUID={0x38F7D3D0,{0x023C,0x470C,0xADAF},{0xB2,0x1D,0xD0,0x52,0xD7,0x48}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_STRIPPED;sCONFIG_RENDER_DX9;sCONFIG_OPTION_SHELL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+		</ClCompile>
+		<Link>
+			<AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+		</Link>
+	</ItemDefinitionGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/audiotest/audiotest.vcxproj">
+			<Project>{2C01C664-69BF-4EF3-847E-771AD812D41E}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/base/base.vcxproj">
+			<Project>{F13B45DE-3700-45FB-B651-E652B962BE4F}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/util/util.vcxproj">
+			<Project>{9575FAD3-F5A4-4909-B20E-145A5024C578}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/bitiotest/bitiotest.vcxproj">
+			<Project>{9406C63E-F0B7-4E3C-8086-47D469380066}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/containertest/containertest.vcxproj">
+			<Project>{AC77A0ED-6AD7-4D9E-BC4A-EEE7461E97D1}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/dxt/dxt.vcxproj">
+			<Project>{091900DB-59DD-4FF0-B9B7-3D029044E7FD}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/gui/gui.vcxproj">
+			<Project>{32F4A637-1097-40B1-8D78-C4D8917E64B7}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/dxtdecomp/dxtdecomp.vcxproj">
+			<Project>{59179F14-E0A7-4660-90EE-61A9E6164639}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/fastcompress/fastcompress.vcxproj">
+			<Project>{B849843A-E142-4155-9210-4D7886D34A6C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/fileclient/fileclient.vcxproj">
+			<Project>{01A6F154-D1A6-418F-BBD4-D38190D7E0D1}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/network/network.vcxproj">
+			<Project>{83DACCFD-BCC0-4451-9CCF-A822E349F660}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/fileserver/fileserver.vcxproj">
+			<Project>{A54558AC-96BB-418F-92BF-5B362E987CFD}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/input/input.vcxproj">
+			<Project>{8CCAB11E-434E-4816-899E-68385C477888}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/intersect_perf/intersect_perf.vcxproj">
+			<Project>{E0F7785C-DA64-4422-B9D1-B6C780C802A9}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/midi/midi.vcxproj">
+			<Project>{7657E128-D0BA-41D9-8832-0B1F5ED6E1E8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/miniftp/miniftp.vcxproj">
+			<Project>{DE742074-74B7-4636-92BC-76816EF3AEF0}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/miniftp/client.vcxproj">
+			<Project>{2C1879B8-F7E3-415F-8F5A-BEB977C19935}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/miniftp/server.vcxproj">
+			<Project>{0446A505-08CF-41AB-A587-693481BEDF56}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/netdebugging/netdebugging.vcxproj">
+			<Project>{84285236-45F4-4005-A111-167B2B91B9FF}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/netserver/netserver.vcxproj">
+			<Project>{3CB75054-03F2-4E95-BB4A-0496DD774DCD}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/nettest/nettest.vcxproj">
+			<Project>{B0B94CB6-1E10-46B1-B67F-3D3ED870F362}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/npcube/npcube.vcxproj">
+			<Project>{4474B8BD-F42D-444B-8268-087AAD502330}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/prim/prim.vcxproj">
+			<Project>{6D5EDFBD-700E-4D2D-85CC-D816177CC33C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/shadercomp/shadercomp.vcxproj">
+			<Project>{A36D3ED2-7C93-4EB8-98C3-77DBA9ADDAEB}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/scanner/scanner.vcxproj">
+			<Project>{9F597D8F-1BC7-48F8-9350-393F340C1C25}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/solopong/solopong.vcxproj">
+			<Project>{4580BA02-5470-4DE1-BC65-200D1DCA211E}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/stackdump/stackdump.vcxproj">
+			<Project>{9A26A1A7-CF31-46F5-B79F-98DC9B0975F5}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/wz4example/wz4example.vcxproj">
+			<Project>{9C917075-CB94-4B0F-A0D9-1E39C6B192AF}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/wz4lib/wz4lib.vcxproj">
+			<Project>{76A7AACC-4853-4BEF-9C17-7BF204C51270}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/wiki/wiki.vcxproj">
+			<Project>{0BCE9F23-C97F-4F0A-BB12-8F2A2CE75E2B}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/cs/cs.vcxproj">
+			<Project>{724A07BA-381B-4EC8-9164-1AFF661AD79F}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/cs_instances/cs_instances.vcxproj">
+			<Project>{67F40B2F-C43B-4D9B-BCF0-708E4CC30880}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/cs_isosurf/cs_isosurf.vcxproj">
+			<Project>{2AF79C23-F8E6-4D1A-A0EB-CABA63D1463D}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/cs_mandelbulb/cs_mandelbulb.vcxproj">
+			<Project>{290A2550-C8C6-4DE2-8F24-2CB6A94909EC}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/extra/extra.vcxproj">
+			<Project>{36014AD8-5EA0-4D34-A04A-40DC4BE27C31}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/cs_vertices/cs_vertices.vcxproj">
+			<Project>{0D3367C7-E1CE-462D-A5CA-6D86A3304B37}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/gs/gs.vcxproj">
+			<Project>{A5B6477C-7092-4E25-BA8C-5D20DB8C1B8B}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/gs_wireframe/gs_wireframe.vcxproj">
+			<Project>{3B6BF0B6-D8CA-4DBF-98AA-8BC061B96B6C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/tesselate/tesselate.vcxproj">
+			<Project>{6D48054B-C787-4390-96A4-3E448928A09F}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_dx11/tesselate2/tesselate2.vcxproj">
+			<Project>{6D48054B-C787-4390-96A4-3E448928A09E}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/cbuffer/cbuffer.vcxproj">
+			<Project>{9CB5EDB9-31CF-472A-924C-D451C83316ED}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/clearscreen/clearscreen.vcxproj">
+			<Project>{D0680A16-2E58-4F6C-8DE9-98A31BE3B548}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/cube/cube.vcxproj">
+			<Project>{AE74C0FA-985C-40D1-B3A1-1176576F36A9}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/cubemap/cubemap.vcxproj">
+			<Project>{1B10C898-20E1-4E55-BC69-FD25AD9ABA96}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/ipp/ipp.vcxproj">
+			<Project>{FABBFEE1-CBD2-4783-9898-96E52CC25074}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/ippz/ippz.vcxproj">
+			<Project>{A68D1CBA-D0B4-47BB-A17B-30475A8CFB5E}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/mandelbulb/mandelbulb.vcxproj">
+			<Project>{34B16C3B-6D3C-4862-9EB3-B9AA3A2EE1F6}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/mrt/mrt.vcxproj">
+			<Project>{A799E1C0-3306-454E-AFAE-C30178CAA4BE}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/multihead/multihead.vcxproj">
+			<Project>{4B02B333-F783-496F-903D-4E17492043D8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/occlusionquery/occlusionquery.vcxproj">
+			<Project>{FC208165-7232-4EAB-B71E-88F824CEE314}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/render2texture/render2texture.vcxproj">
+			<Project>{24841DE4-241F-4500-A1AB-2378E9A2DB5D}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/renderstates/renderstates.vcxproj">
+			<Project>{A07F5FB9-E9CF-4A03-A044-36798333C17B}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/screenmode/screenmode.vcxproj">
+			<Project>{5E05D004-9AA1-400A-BDB9-136B6C9C18B6}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/shader/shader.vcxproj">
+			<Project>{4978FBC4-1BD4-410C-898E-42A8278CF659}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/vertextexture/vertextexture.vcxproj">
+			<Project>{3B622118-29C2-42B2-8242-A3BAE7AC7A02}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/vertices/vertices.vcxproj">
+			<Project>{E2F8A7A1-A234-472C-81D2-152AB23D0E3C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_graphics/volumetexture/volumetexture.vcxproj">
+			<Project>{B01DF07D-9E30-4DAF-9159-5533EB589EF8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_gui/backbuffer/backbuffer.vcxproj">
+			<Project>{11048E21-E746-4319-9ABB-C503941AA8BA}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_gui/forms/forms.vcxproj">
+			<Project>{5F5B29C7-36D2-4700-873C-D0577590E6D8}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_gui/recttoy/recttoy.vcxproj">
+			<Project>{E1344963-E400-453B-8031-E6DE0DEECF07}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_gui/window/window.vcxproj">
+			<Project>{BECC2C49-CCDB-41EE-814C-290BB143EE13}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_gui/wireapp/wireapp.vcxproj">
+			<Project>{D7E236DF-397C-4B7E-8209-1BF60EF38380}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_network/simple/simple.vcxproj">
+			<Project>{B6953DB5-DE19-4771-8EAE-58162461C467}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_taskstealing/graphics/graphics.vcxproj">
+			<Project>{F7BE36EF-859A-497C-86EC-886E3B752326}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_taskstealing/mandelbrot/mandelbrot.vcxproj">
+			<Project>{471CCC47-CFB1-48FB-A79B-5CE18B9E78E6}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_taskstealing/mcubes/mcubes.vcxproj">
+			<Project>{468F845B-6FCF-481C-AEEC-76E5F032515E}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_taskstealing/mergesort/mergesort.vcxproj">
+			<Project>{471CCC47-CFB1-48FB-A79B-5CE18B9EFFFF}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_taskstealing/pipeline/pipeline.vcxproj">
+			<Project>{942317E3-B1BB-4A48-8B6C-09416B456836}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_taskstealing/primes/primes.vcxproj">
+			<Project>{BB035F2C-6ADF-44E4-A786-2C305A0B6468}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_taskstealing/water/water.vcxproj">
+			<Project>{216DB065-93BC-41A3-A35A-38856DBDFF6C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_test/basetest/basetest.vcxproj">
+			<Project>{38B8F604-EB8F-4965-A79C-4E7F9F9D5F1D}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_test/compilers/compilers.vcxproj">
+			<Project>{8A7641AB-3755-4B39-99E9-34604A9C16AC}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/examples/_test/helloworld/helloworld.vcxproj">
+			<Project>{5D54DEC1-0103-48AF-A6BB-454D91433F57}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/main/ogg/ogg.vcxproj">
+			<Project>{364E7899-3744-4402-BA5B-E4586F318FC5}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/tools/asc/asc.vcxproj">
+			<Project>{A143CFE3-894F-4C7C-9D72-DEB94AA70DDF}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/tools/compoview/compoview.vcxproj">
+			<Project>{5645F39A-CA4F-4595-A773-9F8522673846}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/tools/makeproject/makeproject.vcxproj">
+			<Project>{B405548B-F306-45C9-856B-767BB3F6B6E0}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/tools/planpad/planpad.vcxproj">
+			<Project>{8293D35A-4CF4-4ABA-84DD-3B6FA7281247}</Project>
+		</ProjectReference>
+		<ProjectReference Include="G:/fr_public/altona_wz4/altona/tools/wz4ops/wz4ops.vcxproj">
+			<Project>{91E5538A-BDF7-46E7-AB98-34F1BD4F49F8}</Project>
+		</ProjectReference>
+	</ItemGroup>
+
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ImportGroup Label="ExtensionTargets">
+		<Import Project="G:/fr_public/altona_wz4/\altona\doc\altona.targets"/>
+		<Import Project="G:/fr_public/altona_wz4/\altona\doc\yasm.targets"/>
+	</ImportGroup>
+</Project>

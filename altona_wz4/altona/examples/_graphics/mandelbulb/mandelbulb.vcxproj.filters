@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ASC Include="mandelshader.asc" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="main.hpp" />
+		<ClInclude Include="mandel.hpp" />
+		<ClInclude Include="mandelshader.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp" />
+		<ClCompile Include="mandel.cpp" />
+		<ClCompile Include="mandelshader.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="mandelbulb.mp.txt" />
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>

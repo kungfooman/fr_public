@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ResourceCompile Include="npcube.rc" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="main.hpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="main.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="npcube.mp.txt" />
+		<None Include="test.html" />
+	</ItemGroup>
+	<ItemGroup>
+	</ItemGroup>
+</Project>

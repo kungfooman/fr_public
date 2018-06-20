@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClInclude Include="gui.hpp">
+			<Filter>system</Filter>
+		</ClInclude>
+		<ClInclude Include="manager.hpp">
+			<Filter>system</Filter>
+		</ClInclude>
+		<ClInclude Include="window.hpp">
+			<Filter>system</Filter>
+		</ClInclude>
+		<ClInclude Include="wire.hpp">
+			<Filter>system</Filter>
+		</ClInclude>
+		<ClInclude Include="borders.hpp">
+			<Filter>general</Filter>
+		</ClInclude>
+		<ClInclude Include="controls.hpp">
+			<Filter>general</Filter>
+		</ClInclude>
+		<ClInclude Include="dialog.hpp">
+			<Filter>general</Filter>
+		</ClInclude>
+		<ClInclude Include="frames.hpp">
+			<Filter>general</Filter>
+		</ClInclude>
+		<ClInclude Include="3dwindow.hpp">
+			<Filter>special</Filter>
+		</ClInclude>
+		<ClInclude Include="listwindow.hpp">
+			<Filter>special</Filter>
+		</ClInclude>
+		<ClInclude Include="overlapped.hpp">
+			<Filter>special</Filter>
+		</ClInclude>
+		<ClInclude Include="textwindow.hpp">
+			<Filter>special</Filter>
+		</ClInclude>
+		<ClInclude Include="timeline.hpp">
+			<Filter>special</Filter>
+		</ClInclude>
+		<ClInclude Include="color.hpp">
+			<Filter>special</Filter>
+		</ClInclude>
+		<ClInclude Include="tabs.hpp">
+			<Filter>special</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="gui.cpp">
+			<Filter>system</Filter>
+		</ClCompile>
+		<ClCompile Include="manager.cpp">
+			<Filter>system</Filter>
+		</ClCompile>
+		<ClCompile Include="window.cpp">
+			<Filter>system</Filter>
+		</ClCompile>
+		<ClCompile Include="wire.cpp">
+			<Filter>system</Filter>
+		</ClCompile>
+		<ClCompile Include="borders.cpp">
+			<Filter>general</Filter>
+		</ClCompile>
+		<ClCompile Include="controls.cpp">
+			<Filter>general</Filter>
+		</ClCompile>
+		<ClCompile Include="dialog.cpp">
+			<Filter>general</Filter>
+		</ClCompile>
+		<ClCompile Include="frames.cpp">
+			<Filter>general</Filter>
+		</ClCompile>
+		<ClCompile Include="3dwindow.cpp">
+			<Filter>special</Filter>
+		</ClCompile>
+		<ClCompile Include="listwindow.cpp">
+			<Filter>special</Filter>
+		</ClCompile>
+		<ClCompile Include="overlapped.cpp">
+			<Filter>special</Filter>
+		</ClCompile>
+		<ClCompile Include="textwindow.cpp">
+			<Filter>special</Filter>
+		</ClCompile>
+		<ClCompile Include="timeline.cpp">
+			<Filter>special</Filter>
+		</ClCompile>
+		<ClCompile Include="color.cpp">
+			<Filter>special</Filter>
+		</ClCompile>
+		<ClCompile Include="tabs.cpp">
+			<Filter>special</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="gui.mp.txt">
+			<Filter>system</Filter>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="system">
+			<UniqueIdentifier>{8bd2a838-634e-f489-ad81-3e8ceb342b4b}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="general">
+			<UniqueIdentifier>{a6ef9e76-517f-248-68f0-6fdc3f2cdebe}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="special">
+			<UniqueIdentifier>{a37c48c1-7a02-91e4-60bf-bca4bc586a5}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+</Project>
