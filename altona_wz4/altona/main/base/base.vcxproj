@@ -422,6 +422,14 @@
   <ItemGroup>
     <ClInclude Include="gl.h" />
     <ClInclude Include="glext.h" />
+    <ClInclude Include="imgui\examples\imgui_impl_dx9.h" />
+    <ClInclude Include="imgui\examples\imgui_impl_win32.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\stb_rect_pack.h" />
+    <ClInclude Include="imgui\stb_textedit.h" />
+    <ClInclude Include="imgui\stb_truetype.h" />
     <ClInclude Include="opengles2_shaderutils.h" />
     <ClInclude Include="wglext.h" />
     <ClInclude Include="glprocs.h" />
@@ -576,6 +584,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='release_dx9_shell|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="imgui\examples\example_win32_directx9\main.cpp" />
+    <ClCompile Include="imgui\examples\imgui_impl_dx9.cpp" />
+    <ClCompile Include="imgui\examples\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
     <ClCompile Include="math.cpp" />
     <ClCompile Include="opengles2_shaderutils.cpp" />
     <ClCompile Include="sound.cpp" />

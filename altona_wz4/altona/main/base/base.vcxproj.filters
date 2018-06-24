@@ -27,6 +27,30 @@
       <Filter>glsdk</Filter>
     </ClInclude>
     <ClInclude Include="opengles2_shaderutils.h" />
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_rect_pack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\stb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\examples\imgui_impl_dx9.h">
+      <Filter>imgui\dx9</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\examples\imgui_impl_win32.h">
+      <Filter>imgui\dx9</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
@@ -52,6 +76,24 @@
       <Filter>glsdk</Filter>
     </ClCompile>
     <ClCompile Include="opengles2_shaderutils.cpp" />
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\examples\imgui_impl_dx9.cpp">
+      <Filter>imgui\dx9</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\examples\example_win32_directx9\main.cpp">
+      <Filter>imgui\dx9</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\examples\imgui_impl_win32.cpp">
+      <Filter>imgui\dx9</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="npplugin.def" />
@@ -60,6 +102,12 @@
   <ItemGroup>
     <Filter Include="glsdk">
       <UniqueIdentifier>{eb537f6e-8376-2d7e-e813-59d7deeb0fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{7db8bca1-eddd-441d-9c29-49fa23391708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui\dx9">
+      <UniqueIdentifier>{790186bc-aa99-4d56-932f-646c8c9bc30e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
