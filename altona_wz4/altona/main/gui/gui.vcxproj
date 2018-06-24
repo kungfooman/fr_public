@@ -326,6 +326,7 @@
     <ClCompile>
       <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>sCONFIG_GUID={0x32F4A637,{0x1097,0x40B1,0x8D78},{0xC4,0xD8,0x91,0x7E,0x64,0xB7}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions);__PLACEMENT_NEW_INLINE=1;__PLACEMENT_VEC_NEW_INLINE</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>

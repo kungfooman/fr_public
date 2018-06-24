@@ -272,7 +272,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared;G:\angle\include;G:\angle\src\common\third_party\numerics;G:\angle\src;G:\angle\src\libANGLE</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">
     <ClCompile>
@@ -322,7 +322,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>G:/fr_public/altona_wz4/altona/main;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>sCONFIG_GUID={0xF13B45DE,{0x3700,0x45FB,0xB651},{0xE6,0x52,0xB9,0x62,0xBE,0x4F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions);__PLACEMENT_NEW_INLINE=1;__PLACEMENT_VEC_NEW_INLINE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>sCONFIG_GUID={0xF13B45DE,{0x3700,0x45FB,0xB651},{0xE6,0x52,0xB9,0x62,0xBE,0x4F}};WIN32;NDEBUG;_WINDOWS;sCONFIG_BUILD_DEBUGFAST;sCONFIG_RENDER_DX9;%(PreprocessorDefinitions);__PLACEMENT_NEW_INLINE=1;__PLACEMENT_VEC_NEW_INLINE;ANGLE_STANDALONE_BUILD;GL_GLEXT_PROTOTYPES;EGL_EGLEXT_PROTOTYPES;NOMINMAX;LIBANGLE_IMPLEMENTATION</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>user32.lib;gdi32.lib;ole32.lib;winmm.lib;dsound.lib;dinput8.lib;dxguid.lib;comdlg32.lib;xinput.lib;d3d9.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -421,6 +422,7 @@
   <ItemGroup>
     <ClInclude Include="gl.h" />
     <ClInclude Include="glext.h" />
+    <ClInclude Include="opengles2_shaderutils.h" />
     <ClInclude Include="wglext.h" />
     <ClInclude Include="glprocs.h" />
     <ClInclude Include="graphics.hpp" />
@@ -575,6 +577,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="math.cpp" />
+    <ClCompile Include="opengles2_shaderutils.cpp" />
     <ClCompile Include="sound.cpp" />
     <ClCompile Include="system.cpp" />
     <ClCompile Include="system_win.cpp">

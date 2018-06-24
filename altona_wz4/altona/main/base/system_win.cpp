@@ -292,9 +292,10 @@ void DXError(sU32 err,const sChar *file,sInt line,const sChar *system)
   {
     sString<1024> buffer;
 
-    sSPrintF(buffer,L"%s(%d): %s error %08x (%d): %s (%s)",file,line,system,err,err&0x3fff,
-      DXGetErrorStringW(err),DXGetErrorDescriptionW(err));
-    sFatal(buffer);
+	const WCHAR *err1 = DXGetErrorStringW(err);
+	const WCHAR *err2 = DXGetErrorDescriptionW(err);
+    sSPrintF(buffer,L"%s(%d): %s error %08x (%d): %s (%s)",file,line,system,err,err&0x3fff, err1, err2);
+    //sFatal(buffer);
   }
 }
 #define DIErr(hr) { sU32 err=hr; if(FAILED(err)) DXError(err,sTXT(__FILE__),__LINE__,L"dinput"); }

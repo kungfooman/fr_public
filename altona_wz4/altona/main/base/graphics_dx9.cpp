@@ -28,6 +28,12 @@
 #include "base/serialize.hpp"
 #include "util/image.hpp"
 
+
+#include <EGL/egl.h>
+#include <EGL/eglext.h>
+
+#include "opengles2_shaderutils.h"
+
 extern sInt sSystemFlags;
 
 sInt sEngineHacks;
@@ -269,6 +275,8 @@ static void MakeDX9()
   }
 }
 
+extern "C" __declspec(dllimport) void force_this_d3d9_device(/*LPDIRECT3D9 pD3D,*/ IDirect3DDevice9 *mDevice, IDirect3D9 *mD3d9);
+
 void InitGFX(sInt flags_,sInt xs_,sInt ys_)
 {
   DontCheckMtrlPrepare = !sGetShellSwitch(L"checkmtrlprepare");
@@ -400,8 +408,15 @@ void InitGFX(sInt flags_,sInt xs_,sInt ys_)
 
     sCheckCapsHook->Call();
 
-    HRESULT hr = DX9->CreateDevice(adapter,DevType,sHWND,behaviorfFlags,d3dpp,&DXDev);
+    HRESULT hr = DX9->CreateDevice(adapter,DevType,sHWND,behaviorfFlags |D3DCREATE_PUREDEVICE|D3DCREATE_FPU_PRESERVE | D3DCREATE_NOWINDOWCHANGES | D3DCREATE_MULTITHREADED,d3dpp,&DXDev);
 
+	// hook libangle into this device
+	force_this_d3d9_device(DXDev, DX9);
+	EGLWindow_initializeGL();
+	compile_program();
+	compile_program();
+	compile_program();
+	
     if(FAILED(hr) && DXScreenCount==1)
     {
       DXScreenMode.ScreenX = d3dpp[0].BackBufferWidth = 800;
@@ -409,6 +424,7 @@ void InitGFX(sInt flags_,sInt xs_,sInt ys_)
       DXScreenMode.Aspect = sF32(DXScreenMode.ScreenX) / sF32(DXScreenMode.ScreenY);
       sLogF(L"gfx",L"retry d3d %d x %d\n",DXScreenMode.ScreenX,DXScreenMode.ScreenY);
       hr = DX9->CreateDevice(adapter,DevType,sHWND,behaviorfFlags,d3dpp,&DXDev);
+
     }
     if(FAILED(hr))
       sFatal(L"failed to initialize 3d graphics");
@@ -492,6 +508,8 @@ void InitGFX(sInt flags_,sInt xs_,sInt ys_)
   GraphicsCapsMaster.UVOffset =  0.0f;
   GraphicsCapsMaster.XYOffset = -0.5f;
 
+
+
   // get caps
 
   DXErr(DXDev->GetDeviceCaps(&DXCaps));
@@ -533,6 +551,10 @@ void InitGFX(sInt flags_,sInt xs_,sInt ys_)
     zmode = sTEX_DEPTH24;
   else
     zmode = sTEX_DEPTH24NOREAD;
+
+
+
+
 
   DXZBuffer = new sTexture2D(xs,ys,tmode|zmode|sTEX_NORESOLVE,1);
   for(sInt i=0;i<DXScreenCount;i++)
@@ -578,6 +600,8 @@ void InitGFX(sInt flags_,sInt xs_,sInt ys_)
 
   DXRestore = 0;
   DXActive = 1;
+
+
 }
 
 /****************************************************************************/
@@ -1515,7 +1539,8 @@ void sSetTarget(const sTargetPara &para)
   while(i<count)
   {
     tex = para.Target[i];
-
+	//if (tex->Tex2D == NULL)
+	//	continue;
     // find surface
 
     dest = 0;
@@ -4853,9 +4878,26 @@ void sSetRenderClipping(sRect *r,sInt count)
   RenderClippingFlag = 1;
 }
 
+
+/*
+
+				//glScissor(0,0,800,600);
+				//glViewport(0, 0, 800, 600);
+				glClear(GL_COLOR_BUFFER_BIT);
+				triangle_draw();
+				ImGui::Render();
+
+				
+				g_pd3dDevice->BeginScene();
+				ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
+				g_pd3dDevice->EndScene();
+				eglSwapBuffers(mDisplay, mSurface);
+*/
+
 sBool sRender3DBegin()
 {
   // restore system
+
 
   sVERIFY(DXActiveRT==0);
   sVERIFY(Render3DInProgress==sFALSE);
@@ -4976,7 +5018,8 @@ sBool sRender3DBegin()
   }
 
   sGeoBufferUnlockAll();
-
+  
+	glClear(GL_COLOR_BUFFER_BIT);
   return 1;
 }
 
@@ -5017,6 +5060,7 @@ void sRender3DEnd(sBool flip)
 
   sGeoBufferFrame();
 
+
   // perform flip
 
   if(flip)
@@ -5051,6 +5095,11 @@ void sRender3DEnd(sBool flip)
   }
   BufferedStats.StaticVertexMem = mem;
 
+
+  
+  triangle_draw();
+
+  eglSwapBuffers(mDisplay, mSurface);
 
   sClear(Stats);
 
