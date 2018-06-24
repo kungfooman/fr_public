@@ -34,6 +34,13 @@
 
 #include "opengles2_shaderutils.h"
 
+
+#undef new
+#include "imgui/imgui.h"
+#include "imgui/examples/imgui_impl_dx9.h"
+#include "imgui/examples/imgui_impl_win32.h"
+#define new sDEFINE_NEW
+
 extern sInt sSystemFlags;
 
 sInt sEngineHacks;
@@ -277,6 +284,9 @@ static void MakeDX9()
 
 extern "C" __declspec(dllimport) void force_this_d3d9_device(/*LPDIRECT3D9 pD3D,*/ IDirect3DDevice9 *mDevice, IDirect3D9 *mD3d9);
 
+
+
+
 void InitGFX(sInt flags_,sInt xs_,sInt ys_)
 {
   DontCheckMtrlPrepare = !sGetShellSwitch(L"checkmtrlprepare");
@@ -410,13 +420,32 @@ void InitGFX(sInt flags_,sInt xs_,sInt ys_)
 
     HRESULT hr = DX9->CreateDevice(adapter,DevType,sHWND,behaviorfFlags |D3DCREATE_PUREDEVICE|D3DCREATE_FPU_PRESERVE | D3DCREATE_NOWINDOWCHANGES | D3DCREATE_MULTITHREADED,d3dpp,&DXDev);
 
-	// hook libangle into this device
-	force_this_d3d9_device(DXDev, DX9);
-	EGLWindow_initializeGL();
-	compile_program();
-	compile_program();
-	compile_program();
+	//// hook libangle into this device
+	//force_this_d3d9_device(DXDev, DX9);
+	//EGLWindow_initializeGL();
+	//compile_program();
+	//compile_program();
+	//compile_program();
 	
+
+
+
+    // Setup Dear ImGui binding
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;  // Enable Keyboard Controls
+    ImGui_ImplWin32_Init(sHWND);
+    ImGui_ImplDX9_Init(DXDev);
+
+
+
+
+
+
+
+
+
     if(FAILED(hr) && DXScreenCount==1)
     {
       DXScreenMode.ScreenX = d3dpp[0].BackBufferWidth = 800;
@@ -5019,8 +5048,91 @@ sBool sRender3DBegin()
 
   sGeoBufferUnlockAll();
   
-	glClear(GL_COLOR_BUFFER_BIT);
+	//glClear(GL_COLOR_BUFFER_BIT);
   return 1;
+}
+
+
+void imgui_render() {
+    bool show_demo_window = true;
+    bool show_another_window = false;
+    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+
+    // Main loop
+    //MSG msg;
+    //ZeroMemory(&msg, sizeof(msg));
+    //ShowWindow(sHWND, SW_SHOWDEFAULT);
+    //UpdateWindow(hwnd);
+    //while (msg.message != WM_QUIT)
+    //{
+        // Poll and handle messages (inputs, window resize, etc.)
+        // You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
+        // - When io.WantCaptureMouse is true, do not dispatch mouse input data to your main application.
+        // - When io.WantCaptureKeyboard is true, do not dispatch keyboard input data to your main application.
+        // Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
+        //if (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE))
+        //{
+        //    TranslateMessage(&msg);
+        //    DispatchMessage(&msg);
+        //    continue;
+        //}
+
+        // Start the ImGui frame
+        ImGui_ImplDX9_NewFrame();
+        ImGui_ImplWin32_NewFrame();
+        ImGui::NewFrame();
+
+        // 1. Show a simple window.
+        // Tip: if we don't call ImGui::Begin()/ImGui::End() the widgets automatically appears in a window called "Debug".
+        {
+            static float f = 0.0f;
+            static int counter = 0;
+            ImGui::Text("Hello, world!");                           // Display some text (you can use a format string too)
+            ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f    
+            ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
+
+            ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our windows open/close state
+            ImGui::Checkbox("Another Window", &show_another_window);
+
+            if (ImGui::Button("Button"))                            // Buttons return true when clicked (NB: most widgets return true when edited/activated)
+                counter++;
+            ImGui::SameLine();
+            ImGui::Text("counter = %d", counter);
+
+            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+        }
+
+        // 2. Show another simple window. In most cases you will use an explicit Begin/End pair to name your windows.
+        if (show_another_window)
+        {
+            ImGui::Begin("Another Window", &show_another_window);
+            ImGui::Text("Hello from another window!");
+            if (ImGui::Button("Close Me"))
+                show_another_window = false;
+            ImGui::End();
+        }
+
+        // 3. Show the ImGui demo window. Most of the sample code is in ImGui::ShowDemoWindow(). Read its code to learn more about Dear ImGui!
+        if (show_demo_window)
+        {
+            ImGui::SetNextWindowPos(ImVec2(650, 20), ImGuiCond_FirstUseEver); // Normally user code doesn't need/want to call this because positions are saved in .ini file anyway. Here we just want to make the demo initial state a bit more friendly!
+            ImGui::ShowDemoWindow(&show_demo_window);
+        }
+
+        // Rendering
+        ImGui::EndFrame();
+        DXDev->SetRenderState(D3DRS_ZENABLE, false);
+        DXDev->SetRenderState(D3DRS_ALPHABLENDENABLE, false);
+        DXDev->SetRenderState(D3DRS_SCISSORTESTENABLE, false);
+        D3DCOLOR clear_col_dx = D3DCOLOR_RGBA((int)(clear_color.x*255.0f), (int)(clear_color.y*255.0f), (int)(clear_color.z*255.0f), (int)(clear_color.w*255.0f));
+        DXDev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, clear_col_dx, 1.0f, 0);
+        if (DXDev->BeginScene() >= 0)
+        {
+            ImGui::Render();
+            ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
+            DXDev->EndScene();
+        }
+	//}
 }
 
 void sRender3DEnd(sBool flip)
@@ -5061,6 +5173,8 @@ void sRender3DEnd(sBool flip)
   sGeoBufferFrame();
 
 
+  imgui_render();
+
   // perform flip
 
   if(flip)
@@ -5097,9 +5211,8 @@ void sRender3DEnd(sBool flip)
 
 
   
-  triangle_draw();
-
-  eglSwapBuffers(mDisplay, mSurface);
+  //triangle_draw();
+  //eglSwapBuffers(mDisplay, mSurface);
 
   sClear(Stats);
 
