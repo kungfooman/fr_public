@@ -2943,6 +2943,8 @@ sBool sIsFormatDXT(sInt format)
 }
 
 
+void imgui_render();
+
 void Render3D()
 {
   if(sRender3DBegin())
@@ -2950,6 +2952,16 @@ void Render3D()
     if(sGetApp())
       sGetApp()->OnPaint3D();
     
+
+#if 1
+		// sSetRenderClipping(0,0);
+		
+		//sSetRenderClipping(&Region3D.Rects[0],Region3D.Rects.GetCount());
+		sRect rect(0,0,1000,1000);
+		//sSetRenderClipping(&rect, 1);
+		//imgui_render();
+#endif
+
     sRender3DEnd();
   }
 }

@@ -26,7 +26,7 @@
 #include <dinput.h>
 
 // DirectX data
-static LPDIRECT3DDEVICE9        g_pd3dDevice = NULL;
+LPDIRECT3DDEVICE9        g_pd3dDevice = NULL;
 static LPDIRECT3DVERTEXBUFFER9  g_pVB = NULL;
 static LPDIRECT3DINDEXBUFFER9   g_pIB = NULL;
 static LPDIRECT3DTEXTURE9       g_FontTexture = NULL;

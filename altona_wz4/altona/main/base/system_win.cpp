@@ -42,6 +42,14 @@
 
 #define sCRASHDUMP (sCONFIG_OPTION_XSI || sCONFIG_OPTION_AGEINGTEST)  // save crashdumps in ageing tests always
 
+
+#undef new
+#include "imgui/imgui.h"
+#include "imgui/examples/imgui_impl_dx9.h"
+#include "imgui/examples/imgui_impl_win32.h"
+#define new sDEFINE_NEW
+
+
 // exit==sTRUE: application exit, forces collection of all objects
 // iterates collection until all objects are destroyed or gives warning if not all roots are removed
 // without this flag in the case of sRemRoot in collected objects or in root object dtors
@@ -95,6 +103,13 @@ typedef BOOL  (sSTDCALL *RegisterRawInputDevicesProc)(PCRAWINPUTDEVICE pRawInput
 
 static RegisterRawInputDevicesProc  RegisterRawInputDevicesPtr=0L;
 static GetRawInputDataProc          GetRawInputDataPtr=0L;
+
+
+
+
+void redraw() {
+	InvalidateRect(sHWND, NULL, TRUE);
+}
 
 /****************************************************************************/
 /***                                                                      ***/
@@ -1855,9 +1870,15 @@ namespace sWin32
 #define INPUT2_EVENT_QUEUE_SIZE 64
 extern sLockQueue<sInput2Event, INPUT2_EVENT_QUEUE_SIZE>* sInput2EventQueue;
 
+void imgui_render();
+void imgui_present();
+extern bool show_imgui;
 LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
 {
   LPEXCEPTION_POINTERS exceptInfo = 0;
+
+  
+    ImGuiIO& io = ImGui::GetIO();
 
   __try {
 
@@ -1947,6 +1968,15 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
             sAppPtr->OnInput(event);
         }
       }
+	  
+	  
+	  if (show_imgui) {
+		imgui_render();
+		imgui_present();
+
+		sInPaint=0;
+		break;
+	  }
 
       sBool app_fullpaint = sFALSE;
 #if sRENDERER==sRENDER_DX9 || sRENDERER==sRENDER_DX11
@@ -2018,7 +2048,11 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
   #else
           Render3D();
   #endif
-        }
+		}
+
+
+
+
       }
       sPingSound();
 #if !sCONFIG_OPTION_NPP
@@ -2169,6 +2203,16 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
 
   case WM_KEYDOWN:
   case WM_SYSKEYDOWN:
+
+	if (wparam == VK_F11) {
+		show_imgui = !show_imgui;
+		redraw();
+	}
+
+  if (show_imgui) {
+
+  } else {
+
     i = sInt(lparam & 0x01000000);
 
     if(wparam==VK_SHIFT && !i)    sKeyQual |= sKEYQ_SHIFTL;
@@ -2193,13 +2237,21 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
       Keyboard->keys[(lparam >> 16) & 0xff] = sTRUE;
       InputThreadLock->Unlock();
     }
+	  }
     break;
 
-  case WM_MOUSEMOVE:
-    Mouse[0].X = sS16(lparam&0xffff);
-    Mouse[0].Y = sS16(lparam>>16);
-    sInput2SendEvent(sInput2Event(sKEY_MOUSEMOVE, 0, (Mouse[0].X << 16) | Mouse[0].Y));
-    break;
+	case WM_MOUSEMOVE:
+		if (show_imgui) {
+
+			redraw();
+
+			
+		} else {
+			Mouse[0].X = sS16(lparam&0xffff);
+			Mouse[0].Y = sS16(lparam>>16);
+			sInput2SendEvent(sInput2Event(sKEY_MOUSEMOVE, 0, (Mouse[0].X << 16) | Mouse[0].Y));
+		}
+		break;
   case WM_MOUSEWHEEL:
     sMouseWheelAkku += sS16((wparam>>16)&0xffff);
     while(sMouseWheelAkku>=120)
@@ -2216,21 +2268,38 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
     }
     break;
 
-  case WM_LBUTTONDOWN:
-    Mouse[0].Buttons |= sMouseData::sMB_LEFT;
-    sInput2SendEvent(sInput2Event(sKEY_LMB));
-    SetCapture(win);
-    break;
-  case WM_RBUTTONDOWN:
-    Mouse[0].Buttons |= sMouseData::sMB_RIGHT;
-    sInput2SendEvent(sInput2Event(sKEY_RMB));
-    SetCapture(win);
-    break;
-  case WM_MBUTTONDOWN:
-    Mouse[0].Buttons |= sMouseData::sMB_MIDDLE;
-    sInput2SendEvent(sInput2Event(sKEY_MMB));
-    SetCapture(win);
-    break;
+	case WM_LBUTTONDOWN:
+		if (show_imgui) {
+			io.MouseDown[0] = true;
+			redraw();
+		} else {
+			Mouse[0].Buttons |= sMouseData::sMB_LEFT;
+			sInput2SendEvent(sInput2Event(sKEY_LMB));
+			SetCapture(win);
+		}
+		break;
+	case WM_RBUTTONDOWN:
+		if (show_imgui) {
+			io.MouseDown[1] = true;
+			redraw();
+		} else {
+			Mouse[0].Buttons |= sMouseData::sMB_RIGHT;
+			sInput2SendEvent(sInput2Event(sKEY_RMB));
+			SetCapture(win);
+		}
+		break;
+	case WM_MBUTTONDOWN:
+		if (show_imgui) {
+			io.MouseDown[2] = true;
+			redraw();
+		} else {
+			Mouse[0].Buttons |= sMouseData::sMB_MIDDLE;
+			sInput2SendEvent(sInput2Event(sKEY_MMB));
+			SetCapture(win);
+		}
+		break;
+
+
   case WM_XBUTTONDOWN:
     SetCapture(win);
     switch(HIWORD(wparam))
@@ -2246,21 +2315,37 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
     }
     break;
 
-  case WM_LBUTTONDBLCLK:
-    Mouse[0].Buttons |= sMouseData::sMB_LEFT;
-    sInput2SendEvent(sInput2Event(sKEY_LMB|sKEYQ_REPEAT));
-    SetCapture(win);
-    break;
-  case WM_RBUTTONDBLCLK:
-    Mouse[0].Buttons |= sMouseData::sMB_RIGHT;
-    sInput2SendEvent(sInput2Event(sKEY_RMB|sKEYQ_REPEAT));
-    SetCapture(win);
-    break;
-  case WM_MBUTTONDBLCLK:
-    Mouse[0].Buttons |= sMouseData::sMB_MIDDLE;
-    sInput2SendEvent(sInput2Event(sKEY_MMB|sKEYQ_REPEAT));
-    SetCapture(win);
-    break;
+	case WM_LBUTTONDBLCLK:
+		if (show_imgui) {
+			io.MouseDown[0] = true;
+			redraw();
+		} else {
+			Mouse[0].Buttons |= sMouseData::sMB_LEFT;
+			sInput2SendEvent(sInput2Event(sKEY_LMB|sKEYQ_REPEAT));
+			SetCapture(win);
+		}
+		break;
+	case WM_RBUTTONDBLCLK:
+		if (show_imgui) {
+			io.MouseDown[1] = true;
+			redraw();
+		} else {
+			Mouse[0].Buttons |= sMouseData::sMB_RIGHT;
+			sInput2SendEvent(sInput2Event(sKEY_RMB|sKEYQ_REPEAT));
+			SetCapture(win);
+		}
+		break;
+	case WM_MBUTTONDBLCLK:
+		if (show_imgui) {
+			io.MouseDown[2] = true;
+			redraw();
+		} else {
+			Mouse[0].Buttons |= sMouseData::sMB_MIDDLE;
+			sInput2SendEvent(sInput2Event(sKEY_MMB|sKEYQ_REPEAT));
+			SetCapture(win);
+		}
+		break;
+
   case WM_XBUTTONDBLCLK:
     SetCapture(win);
     switch(HIWORD(wparam))
@@ -2277,21 +2362,38 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
     break;
 
 
-  case WM_LBUTTONUP:
-    Mouse[0].Buttons &= ~sMouseData::sMB_LEFT;
-    sInput2SendEvent(sInput2Event(sKEY_LMB | sKEYQ_BREAK));
-    if(Mouse[0].Buttons==0) ReleaseCapture();
-    break;
-  case WM_RBUTTONUP:
-    Mouse[0].Buttons &= ~sMouseData::sMB_RIGHT;
-    sInput2SendEvent(sInput2Event(sKEY_RMB | sKEYQ_BREAK));
-    if(Mouse[0].Buttons==0) ReleaseCapture();
-    break;
-  case WM_MBUTTONUP:
-    Mouse[0].Buttons &= ~sMouseData::sMB_MIDDLE;
-    sInput2SendEvent(sInput2Event(sKEY_MMB | sKEYQ_BREAK));
-    if(Mouse[0].Buttons==0) ReleaseCapture();
-    break;
+	case WM_LBUTTONUP:
+		if (show_imgui) {
+			io.MouseDown[0] = false;
+			redraw();
+		} else {
+			Mouse[0].Buttons &= ~sMouseData::sMB_LEFT;
+			sInput2SendEvent(sInput2Event(sKEY_LMB | sKEYQ_BREAK));
+			if(Mouse[0].Buttons==0) ReleaseCapture();
+		}
+		break;
+	case WM_RBUTTONUP:
+		if (show_imgui) {
+			io.MouseDown[1] = false;
+			redraw();
+		} else {
+			Mouse[0].Buttons &= ~sMouseData::sMB_RIGHT;
+			sInput2SendEvent(sInput2Event(sKEY_RMB | sKEYQ_BREAK));
+			if(Mouse[0].Buttons==0) ReleaseCapture();
+		}
+		break;
+	case WM_MBUTTONUP:
+		if (show_imgui) {
+			io.MouseDown[2] = false;
+			redraw();
+		} else {
+			Mouse[0].Buttons &= ~sMouseData::sMB_MIDDLE;
+			sInput2SendEvent(sInput2Event(sKEY_MMB | sKEYQ_BREAK));
+			if(Mouse[0].Buttons==0) ReleaseCapture();
+		}
+		break;
+
+
   case WM_XBUTTONUP:
     if(Mouse[0].Buttons==0) ReleaseCapture();
     switch(HIWORD(wparam))

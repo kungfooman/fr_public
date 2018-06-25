@@ -4954,15 +4954,15 @@ sBool sRender3DBegin()
       return 0;
     }
   }
-
+  
   if(RenderClippingFlag && ((RGNDATAHEADER *) RenderClippingData)->nCount==0)
   {
     sLogF(L"gfx",L"sRender3DBegin() fail: zero area\n");
     return 0;
   }
-
+  
   Render3DInProgress = sTRUE;
-
+  
   if(SUCCEEDED(DXDev->BeginScene()))
   {
     // anti-lagging
@@ -4972,7 +4972,6 @@ sBool sRender3DBegin()
     volatile sInt dummy;
 
     DXDev->ColorFill(DXBlockSurface[dblock],0,0xff002050);
-
     dblock = 1-dblock;
 
     if(!FAILED((DXBlockSurface[dblock]->LockRect(&lr,0,D3DLOCK_READONLY))))
@@ -5053,6 +5052,38 @@ sBool sRender3DBegin()
 }
 
 
+//void AddPresentClip(int left_, int top_, int width_, int height_) {
+//	sRect rect;
+//	rect.Init
+//	AddPresentClip();
+//}
+// fuck it, was about to add every single imgui window as an extra clip...
+// but i got a better idea, simply press f2=show imgui
+// then i can slowly add a render-path for every gdi function so it renders when imgui_show==true
+void AddPresentClip(sRect *rect) {
+	  RGNDATAHEADER *hdr;
+  sRect *rd;
+
+  //sVERIFY(count*sizeof(sRect)+sizeof(RGNDATAHEADER)<=sizeof(RenderClippingData));
+
+  hdr = (RGNDATAHEADER *) RenderClippingData;
+  rd = (sRect *) (((sU8 *)RenderClippingData)+(sizeof(RGNDATAHEADER)));
+
+  hdr->dwSize = sizeof(RGNDATAHEADER);
+  hdr->iType = RDH_RECTANGLES;
+  //hdr->nCount = count;
+  int oldCount = hdr->nCount;
+  hdr->nCount++;
+  hdr->nRgnSize = hdr->nCount*sizeof(sRect);
+  hdr->rcBound.left = 0;
+  hdr->rcBound.top = 0;
+  hdr->rcBound.right = DXScreenMode.ScreenX;
+  hdr->rcBound.bottom = DXScreenMode.ScreenY;
+
+  sCopyMem(rd + oldCount, rect, sizeof(sRect));
+}
+
+
 void imgui_render() {
     bool show_demo_window = true;
     bool show_another_window = false;
@@ -5121,11 +5152,19 @@ void imgui_render() {
 
         // Rendering
         ImGui::EndFrame();
+#if 1
         DXDev->SetRenderState(D3DRS_ZENABLE, false);
         DXDev->SetRenderState(D3DRS_ALPHABLENDENABLE, false);
         DXDev->SetRenderState(D3DRS_SCISSORTESTENABLE, false);
+#else
+        DXDev->SetRenderState(D3DRS_ZENABLE, true);
+        DXDev->SetRenderState(D3DRS_ALPHABLENDENABLE, true);
+        DXDev->SetRenderState(D3DRS_SCISSORTESTENABLE, false);
+#endif
+
+
         D3DCOLOR clear_col_dx = D3DCOLOR_RGBA((int)(clear_color.x*255.0f), (int)(clear_color.y*255.0f), (int)(clear_color.z*255.0f), (int)(clear_color.w*255.0f));
-        DXDev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, clear_col_dx, 1.0f, 0);
+        //DXDev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, clear_col_dx, 1.0f, 0);
         if (DXDev->BeginScene() >= 0)
         {
             ImGui::Render();
@@ -5133,6 +5172,62 @@ void imgui_render() {
             DXDev->EndScene();
         }
 	//}
+}
+
+void imgui_present() {
+	HRESULT result = DXDev->Present(NULL, NULL, NULL, NULL);
+	return;
+
+
+		//sSetRenderClipping(&Region3D.Rects[0],Region3D.Rects.GetCount());
+		//sRect rect(0,0,1000,1000);
+		//sSetRenderClipping(&rect, 1);
+		///Region3D.Clear();
+		ImDrawData *draw_data = ImGui::GetDrawData();
+		//ImGui::GetWindowDrawList();
+    // Render command lists
+    int vtx_offset = 0;
+    int idx_offset = 0;
+    ImVec2 pos = draw_data->DisplayPos;
+    for (int n = 0; n < draw_data->CmdListsCount; n++)
+    {
+        const ImDrawList* cmd_list = draw_data->CmdLists[n];
+        for (int cmd_i = 0; cmd_i < cmd_list->CmdBuffer.Size; cmd_i++)
+        {
+            const ImDrawCmd* pcmd = &cmd_list->CmdBuffer[cmd_i];
+            if (pcmd->UserCallback)
+            {
+                pcmd->UserCallback(cmd_list, pcmd);
+            }
+            else
+            {
+                //const RECT r = { (LONG)(pcmd->ClipRect.x - pos.x), (LONG)(pcmd->ClipRect.y - pos.y), (LONG)(pcmd->ClipRect.z - pos.x), (LONG)(pcmd->ClipRect.w - pos.y) };
+                //g_pd3dDevice->SetTexture(0, (LPDIRECT3DTEXTURE9)pcmd->TextureId);
+                //g_pd3dDevice->SetScissorRect(&r);
+                //g_pd3dDevice->DrawIndexedPrimitive(D3DPT_TRIANGLELIST, vtx_offset, 0, (UINT)cmd_list->VtxBuffer.Size, idx_offset, pcmd->ElemCount/3);
+
+				LONG a = (LONG)(pcmd->ClipRect.x - pos.x);
+				LONG b = (LONG)(pcmd->ClipRect.y - pos.y);
+				LONG c = (LONG)(pcmd->ClipRect.z - pos.x);
+				LONG d = (LONG)(pcmd->ClipRect.w - pos.y);
+				sRect rect;
+				rect.x0 = a / 2;
+				rect.y0 = b / 2;
+				rect.x1 = c / 2;
+				rect.y1 = d / 2;
+				//sSetRenderClipping(&rect, 1);
+				//AddPresentClip(&rect);
+            }
+            idx_offset += pcmd->ElemCount;
+        }
+        vtx_offset += cmd_list->VtxBuffer.Size;
+    }
+
+
+
+        result = DXDev->Present(NULL, NULL, NULL, (RGNDATA *) RenderClippingData);
+		
+		
 }
 
 void sRender3DEnd(sBool flip)
@@ -5172,14 +5267,26 @@ void sRender3DEnd(sBool flip)
 
   sGeoBufferFrame();
 
+	//IDirect3DSurface9*  idk;
+	//DXErr(DXDev->GetRenderTarget(0, &idk));
+	//DXDev->SetRenderTarget(0, idk);
+	//imgui_render();
 
-  imgui_render();
+
+#if 0
+		// sSetRenderClipping(0,0);
+		
+		//sSetRenderClipping(&Region3D.Rects[0],Region3D.Rects.GetCount());
+		sRect rect(0,0,1000,1000);
+		sSetRenderClipping(&rect, 1);
+		imgui_render();
+#endif
 
   // perform flip
-
   if(flip)
   {
     HRESULT hr = DXDev->Present(0,0,0,RenderClippingFlag ? (RGNDATA *) RenderClippingData : 0);
+    //HRESULT hr = DXDev->Present(0,0,0,0);
     if(hr==D3DERR_DEVICELOST)
       DXRestore = 1;
     else if(hr==0x88760879)
