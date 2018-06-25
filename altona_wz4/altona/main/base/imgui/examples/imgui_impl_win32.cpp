@@ -31,7 +31,7 @@
 static HWND                 g_hWnd = 0;
 static INT64                g_Time = 0;
 static INT64                g_TicksPerSecond = 0;
-static ImGuiMouseCursor     g_LastMouseCursor = ImGuiMouseCursor_COUNT;
+//static ImGuiMouseCursor     g_LastMouseCursor = ImGuiMouseCursor_COUNT;
 
 // Functions
 bool    ImGui_ImplWin32_Init(void* hwnd)
@@ -44,8 +44,8 @@ bool    ImGui_ImplWin32_Init(void* hwnd)
     // Setup back-end capabilities flags
     g_hWnd = (HWND)hwnd;
     ImGuiIO& io = ImGui::GetIO();
-    io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;         // We can honor GetMouseCursor() values (optional)
-    io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;          // We can honor io.WantSetMousePos requests (optional, rarely used)
+    //io.BackendFlags |= ImGuiBackendFlags_HasMouseCursors;         // We can honor GetMouseCursor() values (optional)
+    //io.BackendFlags |= ImGuiBackendFlags_HasSetMousePos;          // We can honor io.WantSetMousePos requests (optional, rarely used)
     io.ImeWindowHandle = hwnd;
 
     // Keyboard mapping. ImGui will use those indices to peek into the io.KeysDown[] array that we will update during the application lifetime.
@@ -58,10 +58,10 @@ bool    ImGui_ImplWin32_Init(void* hwnd)
     io.KeyMap[ImGuiKey_PageDown] = VK_NEXT;
     io.KeyMap[ImGuiKey_Home] = VK_HOME;
     io.KeyMap[ImGuiKey_End] = VK_END;
-    io.KeyMap[ImGuiKey_Insert] = VK_INSERT;
+    //io.KeyMap[ImGuiKey_Insert] = VK_INSERT;
     io.KeyMap[ImGuiKey_Delete] = VK_DELETE;
     io.KeyMap[ImGuiKey_Backspace] = VK_BACK;
-    io.KeyMap[ImGuiKey_Space] = VK_SPACE;
+    //io.KeyMap[ImGuiKey_Space] = VK_SPACE;
     io.KeyMap[ImGuiKey_Enter] = VK_RETURN;
     io.KeyMap[ImGuiKey_Escape] = VK_ESCAPE;
     io.KeyMap[ImGuiKey_A] = 'A';
@@ -82,8 +82,8 @@ void    ImGui_ImplWin32_Shutdown()
 static bool ImGui_ImplWin32_UpdateMouseCursor()
 {
     ImGuiIO& io = ImGui::GetIO();
-    if (io.ConfigFlags & ImGuiConfigFlags_NoMouseCursorChange)
-        return false;
+    //if (io.ConfigFlags & ImGuiConfigFlags_NoMouseCursorChange)
+    //    return false;
 
     ImGuiMouseCursor imgui_cursor = ImGui::GetMouseCursor();
     if (imgui_cursor == ImGuiMouseCursor_None || io.MouseDrawCursor)
@@ -99,7 +99,7 @@ static bool ImGui_ImplWin32_UpdateMouseCursor()
         {
         case ImGuiMouseCursor_Arrow:        win32_cursor = IDC_ARROW; break;
         case ImGuiMouseCursor_TextInput:    win32_cursor = IDC_IBEAM; break;
-        case ImGuiMouseCursor_ResizeAll:    win32_cursor = IDC_SIZEALL; break;
+        //case ImGuiMouseCursor_ResizeAll:    win32_cursor = IDC_SIZEALL; break;
         case ImGuiMouseCursor_ResizeEW:     win32_cursor = IDC_SIZEWE; break;
         case ImGuiMouseCursor_ResizeNS:     win32_cursor = IDC_SIZENS; break;
         case ImGuiMouseCursor_ResizeNESW:   win32_cursor = IDC_SIZENESW; break;
@@ -115,12 +115,12 @@ static void ImGui_ImplWin32_UpdateMousePos()
     ImGuiIO& io = ImGui::GetIO();
 
     // Set OS mouse position if requested (rarely used, only when ImGuiConfigFlags_NavEnableSetMousePos is enabled by user)
-    if (io.WantSetMousePos)
-    {
-        POINT pos = { (int)io.MousePos.x, (int)io.MousePos.y };
-        ::ClientToScreen(g_hWnd, &pos);
-        ::SetCursorPos(pos.x, pos.y);
-    }
+    //if (io.WantSetMousePos)
+    //{
+    //    POINT pos = { (int)io.MousePos.x, (int)io.MousePos.y };
+    //    ::ClientToScreen(g_hWnd, &pos);
+    //    ::SetCursorPos(pos.x, pos.y);
+    //}
 
     // Set mouse position
     io.MousePos = ImVec2(-FLT_MAX, -FLT_MAX);
@@ -156,12 +156,12 @@ void    ImGui_ImplWin32_NewFrame()
     ImGui_ImplWin32_UpdateMousePos();
 
     // Update OS mouse cursor with the cursor requested by imgui
-    ImGuiMouseCursor mouse_cursor = io.MouseDrawCursor ? ImGuiMouseCursor_None : ImGui::GetMouseCursor();
-    if (g_LastMouseCursor != mouse_cursor)
-    {
-        g_LastMouseCursor = mouse_cursor;
-        ImGui_ImplWin32_UpdateMouseCursor();
-    }
+    //ImGuiMouseCursor mouse_cursor = io.MouseDrawCursor ? ImGuiMouseCursor_None : ImGui::GetMouseCursor();
+    //if (g_LastMouseCursor != mouse_cursor)
+    //{
+    //    g_LastMouseCursor = mouse_cursor;
+    //    ImGui_ImplWin32_UpdateMouseCursor();
+    //}
 }
 
 // Allow compilation with old Windows SDK. MinGW doesn't have default _WIN32_WINNT/WINVER versions.
@@ -176,7 +176,7 @@ void    ImGui_ImplWin32_NewFrame()
 // Generally you may always pass all inputs to dear imgui, and hide them from your application based on those two flags.
 // PS: In this Win32 handler, we use the capture API (GetCapture/SetCapture/ReleaseCapture) to be able to read mouse coordinations when dragging mouse outside of our window bounds.
 // PS: We treat DBLCLK messages as regular mouse down messages, so this code will work on windows classes that have the CS_DBLCLKS flag set. Our own example app code doesn't set this flag.
-IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
     if (ImGui::GetCurrentContext() == NULL)
         return 0;
@@ -192,8 +192,8 @@ IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARA
         if (msg == WM_LBUTTONDOWN || msg == WM_LBUTTONDBLCLK) button = 0;
         if (msg == WM_RBUTTONDOWN || msg == WM_RBUTTONDBLCLK) button = 1;
         if (msg == WM_MBUTTONDOWN || msg == WM_MBUTTONDBLCLK) button = 2;
-        if (!ImGui::IsAnyMouseDown() && ::GetCapture() == NULL)
-            ::SetCapture(hwnd);
+        //if (!ImGui::IsAnyMouseDown() && ::GetCapture() == NULL)
+        //    ::SetCapture(hwnd);
         io.MouseDown[button] = true;
         return 0;
     }
@@ -206,15 +206,15 @@ IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hwnd, UINT msg, WPARA
         if (msg == WM_RBUTTONUP) button = 1;
         if (msg == WM_MBUTTONUP) button = 2;
         io.MouseDown[button] = false;
-        if (!ImGui::IsAnyMouseDown() && ::GetCapture() == hwnd)
-            ::ReleaseCapture();
+        //if (!ImGui::IsAnyMouseDown() && ::GetCapture() == hwnd)
+        //    ::ReleaseCapture();
         return 0;
     }
     case WM_MOUSEWHEEL:
         io.MouseWheel += (float)GET_WHEEL_DELTA_WPARAM(wParam) / (float)WHEEL_DELTA;
         return 0;
     case WM_MOUSEHWHEEL:
-        io.MouseWheelH += (float)GET_WHEEL_DELTA_WPARAM(wParam) / (float)WHEEL_DELTA;
+        //io.MouseWheelH += (float)GET_WHEEL_DELTA_WPARAM(wParam) / (float)WHEEL_DELTA;
         return 0;
     case WM_KEYDOWN:
     case WM_SYSKEYDOWN:

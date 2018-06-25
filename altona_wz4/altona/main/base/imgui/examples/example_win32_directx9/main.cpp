@@ -78,7 +78,7 @@ int main_nope(int, char**)
     }
 
     // Setup Dear ImGui binding
-    IMGUI_CHECKVERSION();
+    //IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;  // Enable Keyboard Controls
@@ -195,7 +195,7 @@ int main_nope(int, char**)
 
     ImGui_ImplDX9_Shutdown();
     ImGui_ImplWin32_Shutdown();
-    ImGui::DestroyContext();
+    //ImGui::DestroyContext();
 
     if (g_pd3dDevice) g_pd3dDevice->Release();
     if (pD3D) pD3D->Release();

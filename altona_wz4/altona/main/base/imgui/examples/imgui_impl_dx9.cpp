@@ -44,6 +44,7 @@ struct CUSTOMVERTEX
 // (this used to be set in io.RenderDrawListsFn and called by ImGui::Render(), but you can now call this directly from your main loop)
 void ImGui_ImplDX9_RenderDrawData(ImDrawData* draw_data)
 {
+#if 0
     // Avoid rendering when minimized
     if (draw_data->DisplaySize.x <= 0.0f || draw_data->DisplaySize.y <= 0.0f)
         return;
@@ -195,6 +196,7 @@ void ImGui_ImplDX9_RenderDrawData(ImDrawData* draw_data)
     // Restore the DX9 state
     d3d9_state_block->Apply();
     d3d9_state_block->Release();
+#endif
 }
 
 bool ImGui_ImplDX9_Init(IDirect3DDevice9* device)

@@ -426,18 +426,19 @@ void InitGFX(sInt flags_,sInt xs_,sInt ys_)
 
     HRESULT hr = DX9->CreateDevice(adapter,DevType,sHWND,behaviorfFlags |D3DCREATE_PUREDEVICE|D3DCREATE_FPU_PRESERVE | D3DCREATE_NOWINDOWCHANGES | D3DCREATE_MULTITHREADED,d3dpp,&DXDev);
 
+#if 0
 	//// hook libangle into this device
-	//force_this_d3d9_device(DXDev, DX9);
-	//EGLWindow_initializeGL();
+	force_this_d3d9_device(DXDev, DX9);
+	EGLWindow_initializeGL();
 	//compile_program();
 	//compile_program();
-	//compile_program();
-	
+	compile_program();
+#endif
 
 
 
     // Setup Dear ImGui binding
-    IMGUI_CHECKVERSION();
+    //IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;  // Enable Keyboard Controls
@@ -5201,9 +5202,9 @@ void imgui_render() {
         // Rendering
         ImGui::EndFrame();
 #if 1
-        DXDev->SetRenderState(D3DRS_ZENABLE, false);
-        DXDev->SetRenderState(D3DRS_ALPHABLENDENABLE, false);
-        DXDev->SetRenderState(D3DRS_SCISSORTESTENABLE, false);
+        //DXDev->SetRenderState(D3DRS_ZENABLE, false);
+        //DXDev->SetRenderState(D3DRS_ALPHABLENDENABLE, false);
+        //DXDev->SetRenderState(D3DRS_SCISSORTESTENABLE, false);
 #else
         DXDev->SetRenderState(D3DRS_ZENABLE, true);
         DXDev->SetRenderState(D3DRS_ALPHABLENDENABLE, true);
@@ -5212,21 +5213,61 @@ void imgui_render() {
 
 
         D3DCOLOR clear_col_dx = D3DCOLOR_RGBA((int)(clear_color.x*255.0f), (int)(clear_color.y*255.0f), (int)(clear_color.z*255.0f), (int)(clear_color.w*255.0f));
-        DXDev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, clear_col_dx, 1.0f, 0);
-        if (DXDev->BeginScene() >= 0)
-        {
-            ImGui::Render();
-            ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
-            DXDev->EndScene();
-        }
+        //DXDev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, clear_col_dx, 1.0f, 0);
+        //if (DXDev->BeginScene() >= 0)
+        //{
+        //    ImGui::Render();
+        //    ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
+        //    DXDev->EndScene();
+        //}
 	//}
 }
 
 void imgui_present() {
-	HRESULT result = DXDev->Present(NULL, NULL, NULL, NULL);
+	//HRESULT result = DXDev->Present(NULL, NULL, NULL, NULL);
+
+	static int first = 1;
+	if (first) {
+		first = 0;
+			force_this_d3d9_device(DXDev, DX9);
+	EGLWindow_initializeGL();
+	//compile_program();
+	//compile_program();
+	compile_program();
+	}
+
+
+    // Set the viewport
+    glViewport(0, 0, 800, 600);
+	glClearColor(0.5, 0, 0, 0.5);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(/*GL_COLOR_BUFFER_BIT |*/ GL_DEPTH_BUFFER_BIT);
+	glDisable(GL_DEPTH_TEST);
+	glEnable(GL_SCISSOR_TEST);
+	glEnable(GL_ALPHA);
+    // Clear the color buffer
+    glClear(GL_COLOR_BUFFER_BIT);
+
+	
+				//glScissor(0,0,800,600);
+				//glViewport(0, 0, 800, 600);
+				glClearColor(0,1,0,0.5);
+				glClear(GL_COLOR_BUFFER_BIT);
+				triangle_draw();
+				ImGui::Render();
+
+				
+				//g_pd3dDevice->BeginScene();
+				//ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
+				//g_pd3dDevice->EndScene();
+				eglSwapBuffers(mDisplay, mSurface);
+
+
+
+
 	return;
 
-
+#if 0
 		//sSetRenderClipping(&Region3D.Rects[0],Region3D.Rects.GetCount());
 		//sRect rect(0,0,1000,1000);
 		//sSetRenderClipping(&rect, 1);
@@ -5274,7 +5315,7 @@ void imgui_present() {
 
 
         result = DXDev->Present(NULL, NULL, NULL, (RGNDATA *) RenderClippingData);
-		
+#endif
 		
 }
 
