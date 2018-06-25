@@ -5176,6 +5176,25 @@ void imgui_render() {
 		//}
 		//EndDock();
 
+		static int second = 0;
+		if (second==2) {
+			//first = 0;
+			//CDock *all = findDock("All");
+			CDock *demostuff = findDock("DemoStuff");
+			//CDock *tex = findDock("Textures");
+			CDock *con = findDock("Console");
+			CDock *node = findDock("Node");
+
+			dockTop(demostuff, NULL);
+
+			dockBottom(con, demostuff);
+			dockRight(node, con);
+			//dockTab(tex, node);
+		} else {
+			if (second < 4)
+				second++;
+		}
+
         // Rendering
         ImGui::EndFrame();
 #if 1

@@ -131,4 +131,13 @@
 
 extern DockContext g_dock;
 
+CCALL CDock *findDock(char *name);
+CCALL CDock *rootDock();
+CCALL bool undock(CDock *dock);
+CCALL bool dockLeft(CDock *from, CDock *to);
+CCALL bool dockTop(CDock *from, CDock *to);
+CCALL bool dockBottom(CDock *from, CDock *to);
+CCALL bool dockRight(CDock *from, CDock *to);
+CCALL bool dockTab(CDock *from, CDock *to);
+
 #endif

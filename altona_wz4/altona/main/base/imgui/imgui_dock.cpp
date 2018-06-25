@@ -23,6 +23,94 @@ DockContext g_dock;
 #define ASSERT(x) IM_ASSERT(x)
 
 
+/*
+findDock(name) = ccall( (:findDock, libradiant), Ptr{Int}, (Cstring,), name)
+dockTop(from, to) = ccall( (:dockTop, libradiant), Bool, (Ptr{Int}, Ptr{Int}), from, to)
+dockTab(from, to) = ccall( (:dockTab, libradiant), Bool, (Ptr{Int}, Ptr{Int}), from, to)
+dockRight(from, to) = ccall( (:dockRight, libradiant), Bool, (Ptr{Int}, Ptr{Int}), from, to)
+
+
+all = findDock("All")
+tex = findDock("Textures")
+con = findDock("Console")
+node = findDock("Node")
+
+dockTop(all, C_NULL)
+
+dockTab(con, all)
+dockRight(node, all)
+dockTab(tex, node)
+*/
+CDock *findDock(char *name) {
+	for (CDock *dock : g_dock.m_docks) {
+		if (strcmp(dock->label, name) == 0)
+			return dock;
+	}
+	return NULL;
+}
+CDock *rootDock() {
+	return g_dock.getRootDock();
+}
+
+bool undock(CDock *dock) {
+	if (dock == NULL)
+		return false;
+	//if (dock->status != Status_::Status_Docked)
+	//	return false;
+	g_dock.doUndock(*dock);
+	dock->status = Status_Float;
+}
+
+bool dockLeft(CDock *from, CDock *to) {
+	if (from == NULL || to == NULL)
+		return false;
+	g_dock.doUndock(*from);
+	from->status = Status_Float;
+	g_dock.doDock(*from, to, Slot_::Slot_Left);
+	from->status = Status_Docked;
+	return true;
+}
+bool dockTop(CDock *from, CDock *to) {
+	//if (from == NULL || to == NULL)
+	//	return false;
+	g_dock.doUndock(*from);
+	from->status = Status_Float;
+	g_dock.doDock(*from, to, Slot_::Slot_Top);
+	from->status = Status_Docked;
+	return true;
+}
+bool dockBottom(CDock *from, CDock *to) {
+	if (from == NULL || to == NULL)
+		return false;
+	g_dock.doUndock(*from);
+	from->status = Status_Float;
+	g_dock.doDock(*from, to, Slot_::Slot_Bottom);
+	from->status = Status_Docked;
+	return true;
+}
+bool dockRight(CDock *from, CDock *to) {
+	if (from == NULL || to == NULL)
+		return false;
+	g_dock.doUndock(*from);
+	from->status = Status_Float;
+	g_dock.doDock(*from, to, Slot_::Slot_Right);
+	from->status = Status_Docked;
+	return true;
+}
+bool dockTab(CDock *from, CDock *to) {
+	if (from == NULL || to == NULL)
+		return false;
+	if (to->status != Status_::Status_Docked)
+		return false;
+	g_dock.doUndock(*from);
+	from->status = Status_Float;
+	g_dock.doDock(*from, to, Slot_::Slot_Tab);
+	from->status = Status_::Status_Docked;
+	return true;
+}
+
+
+
 char *SlotToString(Slot_ slot) {
 	switch (slot) {
 		case Slot_Left:	   return "Slot_Left";
