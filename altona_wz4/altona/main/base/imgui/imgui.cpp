@@ -817,7 +817,7 @@ static const ImU64  IM_U64_MAX = 0xFFFFFFFFFFFFFFFFull;
 // Forward Declarations
 //-------------------------------------------------------------------------
 
-static bool             IsKeyPressedMap(ImGuiKey key, bool repeat = true);
+bool             IsKeyPressedMap(ImGuiKey key, bool repeat = true);
 
 static ImFont*          GetDefaultFont();
 static void             SetCurrentWindow(ImGuiWindow* window);
@@ -4793,7 +4793,7 @@ bool ImGui::IsMouseHoveringRect(const ImVec2& r_min, const ImVec2& r_max, bool c
     return rect_for_touch.Contains(g.IO.MousePos);
 }
 
-static bool IsKeyPressedMap(ImGuiKey key, bool repeat)
+bool IsKeyPressedMap(ImGuiKey key, bool repeat)
 {
     const int key_index = GImGui->IO.KeyMap[key];
     return (key_index >= 0) ? ImGui::IsKeyPressed(key_index, repeat) : false;

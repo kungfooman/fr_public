@@ -57,6 +57,27 @@
     <ClInclude Include="imgui\imgui_c_utils.h">
       <Filter>imgui</Filter>
     </ClInclude>
+    <ClInclude Include="imgui_docks\dock.h">
+      <Filter>imgui_docks</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_docks\dock_console.h">
+      <Filter>imgui_docks</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_docks\dock_julia.h">
+      <Filter>imgui_docks</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_docks\dock_node.h">
+      <Filter>imgui_docks</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_docks\dock_repl.h">
+      <Filter>imgui_docks</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_docks\dock_skeleton.h">
+      <Filter>imgui_docks</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_default_docks.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
@@ -106,6 +127,27 @@
     <ClCompile Include="imgui\imgui_c_utils.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
+    <ClCompile Include="imgui_docks\dock.cpp">
+      <Filter>imgui_docks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_docks\dock_console.cpp">
+      <Filter>imgui_docks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_docks\dock_julia.cpp">
+      <Filter>imgui_docks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_docks\dock_node.cpp">
+      <Filter>imgui_docks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_docks\dock_repl.cpp">
+      <Filter>imgui_docks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_docks\dock_skeleton.cpp">
+      <Filter>imgui_docks</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_default_docks.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="npplugin.def" />
@@ -120,6 +162,9 @@
     </Filter>
     <Filter Include="imgui\dx9">
       <UniqueIdentifier>{790186bc-aa99-4d56-932f-646c8c9bc30e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui_docks">
+      <UniqueIdentifier>{23ee02e9-b351-4cc3-a842-a98a188f82a5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

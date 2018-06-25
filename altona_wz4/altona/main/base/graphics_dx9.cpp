@@ -5090,6 +5090,8 @@ void AddPresentClip(sRect *rect) {
 }
 
 
+#include "imgui/imgui_default_docks.h"
+
 void imgui_render() {
     bool show_demo_window = true;
     bool show_another_window = false;
@@ -5156,23 +5158,23 @@ void imgui_render() {
             ImGui::ShowDemoWindow(&show_demo_window);
         }
 
-
-		RootDock(ImVec2(0,0), ImGui::GetIO().DisplaySize);
-		bool closed = true;
-		if (BeginDock("test", &closed)) {
-			//dock->imgui();
-			ImGui::Button("asd");
-			ImGui::Button("asd");
-			ImGui::Button("asd");
-		}
-		EndDock();
-		if (BeginDock("testa sd", &closed)) {
-			//dock->imgui();
-			ImGui::Button("asd");
-			ImGui::Button("addsd");
-			ImGui::Button("asd");
-		}
-		EndDock();
+		imgui_default_docks();
+		//RootDock(ImVec2(0,0), ImGui::GetIO().DisplaySize);
+		//bool closed = true;
+		//if (BeginDock("test", &closed)) {
+		//	//dock->imgui();
+		//	ImGui::Button("asd");
+		//	ImGui::Button("asd");
+		//	ImGui::Button("asd");
+		//}
+		//EndDock();
+		//if (BeginDock("testa sd", &closed)) {
+		//	//dock->imgui();
+		//	ImGui::Button("asd");
+		//	ImGui::Button("addsd");
+		//	ImGui::Button("asd");
+		//}
+		//EndDock();
 
         // Rendering
         ImGui::EndFrame();
