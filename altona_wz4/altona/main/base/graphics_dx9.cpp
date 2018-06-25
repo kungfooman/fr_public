@@ -5091,6 +5091,7 @@ void AddPresentClip(sRect *rect) {
 
 
 #include "imgui/imgui_default_docks.h"
+#include "imgui_wz4/all_wz4.h"
 
 void imgui_render() {
     bool show_demo_window = true;
@@ -5159,6 +5160,8 @@ void imgui_render() {
         }
 
 		imgui_default_docks();
+		render_all_wz4_docks();
+
 		//RootDock(ImVec2(0,0), ImGui::GetIO().DisplaySize);
 		//bool closed = true;
 		//if (BeginDock("test", &closed)) {

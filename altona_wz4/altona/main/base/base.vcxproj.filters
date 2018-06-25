@@ -78,6 +78,12 @@
     <ClInclude Include="imgui\imgui_default_docks.h">
       <Filter>imgui</Filter>
     </ClInclude>
+    <ClInclude Include="imgui_wz4\dock_script.h">
+      <Filter>imgui_wz4</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui_wz4\all_wz4.h">
+      <Filter>imgui_wz4</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
@@ -148,6 +154,12 @@
     <ClCompile Include="imgui\imgui_default_docks.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
+    <ClCompile Include="imgui_wz4\dock_script.cpp">
+      <Filter>imgui_wz4</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_wz4\all_wz4.cpp">
+      <Filter>imgui_wz4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="npplugin.def" />
@@ -165,6 +177,9 @@
     </Filter>
     <Filter Include="imgui_docks">
       <UniqueIdentifier>{23ee02e9-b351-4cc3-a842-a98a188f82a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui_wz4">
+      <UniqueIdentifier>{1ad63335-a156-46fa-9736-493f74d16bd2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
