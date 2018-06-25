@@ -35,11 +35,17 @@
 #include "opengles2_shaderutils.h"
 
 
+// fucking "new" aids
+#undef __PLACEMENT_NEW_INLINE
+#undef __PLACEMENT_VEC_NEW_INLINE
 #undef new
 #include "imgui/imgui.h"
 #include "imgui/examples/imgui_impl_dx9.h"
 #include "imgui/examples/imgui_impl_win32.h"
+#include "imgui/imgui_dock.h"
 #define new sDEFINE_NEW
+#define __PLACEMENT_NEW_INLINE
+#define __PLACEMENT_VEC_NEW_INLINE
 
 extern sInt sSystemFlags;
 
@@ -5150,6 +5156,24 @@ void imgui_render() {
             ImGui::ShowDemoWindow(&show_demo_window);
         }
 
+
+		RootDock(ImVec2(0,0), ImGui::GetIO().DisplaySize);
+		bool closed = true;
+		if (BeginDock("test", &closed)) {
+			//dock->imgui();
+			ImGui::Button("asd");
+			ImGui::Button("asd");
+			ImGui::Button("asd");
+		}
+		EndDock();
+		if (BeginDock("testa sd", &closed)) {
+			//dock->imgui();
+			ImGui::Button("asd");
+			ImGui::Button("addsd");
+			ImGui::Button("asd");
+		}
+		EndDock();
+
         // Rendering
         ImGui::EndFrame();
 #if 1
@@ -5164,7 +5188,7 @@ void imgui_render() {
 
 
         D3DCOLOR clear_col_dx = D3DCOLOR_RGBA((int)(clear_color.x*255.0f), (int)(clear_color.y*255.0f), (int)(clear_color.z*255.0f), (int)(clear_color.w*255.0f));
-        //DXDev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, clear_col_dx, 1.0f, 0);
+        DXDev->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, clear_col_dx, 1.0f, 0);
         if (DXDev->BeginScene() >= 0)
         {
             ImGui::Render();

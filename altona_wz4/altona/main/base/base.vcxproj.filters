@@ -51,6 +51,12 @@
     <ClInclude Include="imgui\examples\imgui_impl_win32.h">
       <Filter>imgui\dx9</Filter>
     </ClInclude>
+    <ClInclude Include="imgui\imgui_dock.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_c_utils.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
@@ -93,6 +99,12 @@
     </ClCompile>
     <ClCompile Include="imgui\examples\imgui_impl_win32.cpp">
       <Filter>imgui\dx9</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_dock.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_c_utils.cpp">
+      <Filter>imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
