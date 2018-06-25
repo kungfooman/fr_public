@@ -1963,6 +1963,8 @@ void GenBitmap::Twirl(GenBitmap *src,sF32 strength,sF32 gamma,sF32 rx,sF32 ry,sF
       for(x=0;x<xs;x++)
       {
         dx = px - fcx;
+		if (frx == 0)
+			frx = 1;
         sInt dist = distb - sMulDiv(dx,dx,frx);
         
         if(dist>0)
