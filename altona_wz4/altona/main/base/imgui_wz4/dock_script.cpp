@@ -12,7 +12,11 @@ const char *DockScript::label() {
 }
 
 
+
+
 void DockScript::imgui() {
-	ImGui::Button("bla");
+	if (ImGui::Button("bla")) {
+
+	}
 
 }

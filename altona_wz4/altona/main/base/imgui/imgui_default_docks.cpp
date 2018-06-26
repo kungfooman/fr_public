@@ -92,6 +92,8 @@ int main_menu_GUIasd() {
     return menu_height;
 }
 
+void alignTabsDefault();
+
 CCALL int imgui_default_docks() {
     ImGuiIO& io = ImGui::GetIO();
 
@@ -147,7 +149,10 @@ CCALL int imgui_default_docks() {
 
 	static bool closed = true;
 	if (BeginDock("DemoStuff", &closed)) {
-		ImGui::ShowDemoWindow(&show_demo_window);
+		//ImGui::ShowDemoWindow(&show_demo_window);
+		if (ImGui::Button("bla todo")) {
+			alignTabsDefault();
+		}
 	}
 	EndDock();
 
