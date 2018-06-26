@@ -2072,6 +2072,7 @@ void MainWindow::CmdCreateInclude(sDInt i)
 
 void MainWindow::CmdLoadConfig()
 {
+#if 0
   if(!sCOMMANDLINE)
   {
     sLoadObject<wEditOptions>(L"config_wz4",&Doc->EditOptions);
@@ -2082,10 +2083,12 @@ void MainWindow::CmdLoadConfig()
     Doc->EditOptions.ApplyTheme();
     CmdUpdateMultisample();
   }
+#endif
 }
 
 void MainWindow::CmdSaveConfig()
 {
+#if 0
   if(!sCOMMANDLINE)
   {
     sString<sMAXPATH> path;
@@ -2098,6 +2101,7 @@ void MainWindow::CmdSaveConfig()
     path.AddPath(L"config_wz4");
     sSaveObject<wEditOptions>(path,&Doc->EditOptions);
   }
+#endif
 }
 
 void MainWindow::CmdUpdateMultisample()

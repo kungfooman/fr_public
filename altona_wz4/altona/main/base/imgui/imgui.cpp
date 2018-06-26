@@ -4080,6 +4080,7 @@ void ImGui::LoadIniSettingsFromMemory(const char* ini_data, size_t ini_size)
 
 void ImGui::SaveIniSettingsToDisk(const char* ini_filename)
 {
+#if 0
     ImGuiContext& g = *GImGui;
     g.SettingsDirtyTimer = 0.0f;
     if (!ini_filename)
@@ -4092,6 +4093,7 @@ void ImGui::SaveIniSettingsToDisk(const char* ini_filename)
         return;
     fwrite(ini_data, sizeof(char), ini_data_size, f);
     fclose(f);
+#endif
 }
 
 // Call registered handlers (e.g. SettingsHandlerWindow_WriteAll() + custom handlers) to write their stuff into a text buffer
