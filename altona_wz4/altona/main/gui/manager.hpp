@@ -64,7 +64,7 @@ enum sGuiPaintButtonFlags
 
 class sGui_ : public sObject
 {
-private:
+public:
   enum
   {
     sIED_NONE = 0,
@@ -100,7 +100,7 @@ private:
   sArray<sWindow *> Window3D;       // while scanning the Region3D, crate a list of windows that have 3d painting
 public:
   sRectRegion Region3D;
-private:
+public:
 
   sWindowDrag DragData;
   sBool Dragging;

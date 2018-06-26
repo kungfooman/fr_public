@@ -426,6 +426,7 @@
     <ClInclude Include="imgui\examples\imgui_impl_win32.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_api.h" />
     <ClInclude Include="imgui\imgui_c_utils.h" />
     <ClInclude Include="imgui\imgui_default_docks.h" />
     <ClInclude Include="imgui\imgui_dock.h" />
@@ -599,6 +600,7 @@
     <ClCompile Include="imgui\examples\imgui_impl_dx9.cpp" />
     <ClCompile Include="imgui\examples\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_api.cpp" />
     <ClCompile Include="imgui\imgui_c_utils.cpp" />
     <ClCompile Include="imgui\imgui_default_docks.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />

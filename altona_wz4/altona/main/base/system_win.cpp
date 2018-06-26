@@ -1870,8 +1870,9 @@ namespace sWin32
 #define INPUT2_EVENT_QUEUE_SIZE 64
 extern sLockQueue<sInput2Event, INPUT2_EVENT_QUEUE_SIZE>* sInput2EventQueue;
 
-void imgui_render();
-void imgui_present();
+
+#include "imgui/imgui_api.h"
+
 extern bool show_imgui;
 LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
 {
@@ -1971,7 +1972,9 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
 	  
 	  
 	  if (show_imgui) {
-		imgui_render();
+		imgui_frame_start();
+
+		imgui_frame_end();
 		imgui_present();
 
 		sInPaint=0;

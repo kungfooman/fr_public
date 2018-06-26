@@ -590,7 +590,7 @@ struct ImGuiNextWindowData
         PosCond = SizeCond = ContentSizeCond = CollapsedCond = SizeConstraintCond = FocusCond = BgAlphaCond = 0;
     }
 };
-
+#ifndef DO_DONT_DEFINE_IMGUI_NEW
 // Main imgui context
 struct ImGuiContext
 {
@@ -844,7 +844,7 @@ struct ImGuiContext
         memset(TempBuffer, 0, sizeof(TempBuffer));
     }
 };
-
+#endif
 // Transient per-window flags, reset at the beginning of the frame. For child window, inherited from parent on first Begin().
 // This is going to be exposed in imgui.h when stabilized enough.
 enum ImGuiItemFlags_
@@ -936,7 +936,6 @@ struct IMGUI_API ImGuiWindowTempData
         ColumnsSet = NULL;
     }
 };
-
 // Storage for one window
 struct IMGUI_API ImGuiWindow
 {
@@ -1026,14 +1025,16 @@ public:
     ImGuiID     GetIDFromRectangle(const ImRect& r_abs);
 
     // We don't use g.FontSize because the window may be != g.CurrentWidow.
+	
+#ifndef DO_DONT_DEFINE_IMGUI_NEW
     ImRect      Rect() const                            { return ImRect(Pos.x, Pos.y, Pos.x+Size.x, Pos.y+Size.y); }
     float       CalcFontSize() const                    { return GImGui->FontBaseSize * FontWindowScale; }
     float       TitleBarHeight() const                  { return (Flags & ImGuiWindowFlags_NoTitleBar) ? 0.0f : CalcFontSize() + GImGui->Style.FramePadding.y * 2.0f; }
     ImRect      TitleBarRect() const                    { return ImRect(Pos, ImVec2(Pos.x + SizeFull.x, Pos.y + TitleBarHeight())); }
     float       MenuBarHeight() const                   { return (Flags & ImGuiWindowFlags_MenuBar) ? DC.MenuBarOffset.y + CalcFontSize() + GImGui->Style.FramePadding.y * 2.0f : 0.0f; }
     ImRect      MenuBarRect() const                     { float y1 = Pos.y + TitleBarHeight(); return ImRect(Pos.x, y1, Pos.x + SizeFull.x, y1 + MenuBarHeight()); }
+#endif
 };
-
 // Backup and restore just enough data to be able to use IsItemHovered() on item A after another B in the same window has overwritten the data.
 struct ImGuiItemHoveredDataBackup
 {
@@ -1042,11 +1043,13 @@ struct ImGuiItemHoveredDataBackup
     ImRect                  LastItemRect;
     ImRect                  LastItemDisplayRect;
 
+#ifndef DO_DONT_DEFINE_IMGUI_NEW
     ImGuiItemHoveredDataBackup() { Backup(); }
+	
     void Backup()           { ImGuiWindow* window = GImGui->CurrentWindow; LastItemId = window->DC.LastItemId; LastItemStatusFlags = window->DC.LastItemStatusFlags; LastItemRect = window->DC.LastItemRect; LastItemDisplayRect = window->DC.LastItemDisplayRect; }
     void Restore() const    { ImGuiWindow* window = GImGui->CurrentWindow; window->DC.LastItemId = LastItemId; window->DC.LastItemStatusFlags = LastItemStatusFlags; window->DC.LastItemRect = LastItemRect; window->DC.LastItemDisplayRect = LastItemDisplayRect; }
+#endif
 };
-
 //-----------------------------------------------------------------------------
 // Internal API
 // No guarantee of forward compatibility here.
@@ -1058,8 +1061,11 @@ namespace ImGui
     // If this ever crash because g.CurrentWindow is NULL it means that either
     // - ImGui::NewFrame() has never been called, which is illegal.
     // - You are calling ImGui functions after ImGui::EndFrame()/ImGui::Render() and before the next ImGui::NewFrame(), which is also illegal.
+
+#ifndef DO_DONT_DEFINE_IMGUI_NEW
     inline    ImGuiWindow*  GetCurrentWindowRead()      { ImGuiContext& g = *GImGui; return g.CurrentWindow; }
     inline    ImGuiWindow*  GetCurrentWindow()          { ImGuiContext& g = *GImGui; g.CurrentWindow->WriteAccessed = true; return g.CurrentWindow; }
+#endif
     IMGUI_API ImGuiWindow*  FindWindowByName(const char* name);
     IMGUI_API void          FocusWindow(ImGuiWindow* window);
     IMGUI_API void          BringWindowToFront(ImGuiWindow* window);
@@ -1077,9 +1083,13 @@ namespace ImGui
     IMGUI_API ImGuiSettingsHandler* FindSettingsHandler(const char* type_name);
     IMGUI_API ImGuiWindowSettings*  FindWindowSettings(ImGuiID id);
 
+	
+#ifndef DO_DONT_DEFINE_IMGUI_NEW
     inline ImGuiID          GetItemID()     { ImGuiContext& g = *GImGui; return g.CurrentWindow->DC.LastItemId; }
     inline ImGuiID          GetActiveID()   { ImGuiContext& g = *GImGui; return g.ActiveId; }
     inline ImGuiID          GetFocusID()    { ImGuiContext& g = *GImGui; return g.NavId; }
+	
+#endif
     IMGUI_API void          SetActiveID(ImGuiID id, ImGuiWindow* window);
     IMGUI_API void          SetFocusID(ImGuiID id, ImGuiWindow* window);
     IMGUI_API void          ClearActiveID();

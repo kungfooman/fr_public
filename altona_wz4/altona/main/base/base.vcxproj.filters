@@ -84,6 +84,9 @@
     <ClInclude Include="imgui_wz4\all_wz4.h">
       <Filter>imgui_wz4</Filter>
     </ClInclude>
+    <ClInclude Include="imgui\imgui_api.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
@@ -159,6 +162,9 @@
     </ClCompile>
     <ClCompile Include="imgui_wz4\all_wz4.cpp">
       <Filter>imgui_wz4</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_api.cpp">
+      <Filter>imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
