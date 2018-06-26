@@ -159,17 +159,51 @@ void dumpWindows(sWindow *window) {
 					subwindow->Inner.x0 + (stackOp->PosX * scale_w) + (stackOp->SizeX * scale_w),
 					subwindow->Inner.y0 + (stackOp->PosY * scale_h) + (stackOp->SizeY * scale_h)
 				);
+
+				const float left   = oprect.x0;
+				const float top    = oprect.y0;
+				const float right  = oprect.x1;
+				const float bottom = oprect.y1;
+
 				//auto innerPlusOpRect = sRect(subwindow->Inner);
 				//innerPlusOpRect.Add(oprect);
-				imgui_draw_wz_rect(oprect, 0xff00ffff);
+				//imgui_draw_wz_rect(oprect, 0xff00ffff);
+				auto winpos = ImGui::GetWindowPos();
+				ImDrawList *drawList = ImGui::GetWindowDrawList();
+				drawList->AddRectFilled(
+					winpos + ImVec2(left , top   ),
+					winpos + ImVec2(right, bottom),
+					0xff0000ff
+				);
+
 				const sChar *opName = winStack->MakeOpName(stackOp);
 				char opNameChar[256];
 				to_narrow(opName, opNameChar, sizeof(opNameChar));
-				ImVec2 textpos = ImVec2(oprect.CenterX(), oprect.y0); // y0 is top
+				ImVec2 textpos = ImVec2(oprect.CenterX(), top - 1); // y0 is top
 				textpos.x -= strlen(opNameChar) * 3; // one char is 6px, so go back 3px for each char, to center the string
-
 				ImGui::SetCursorPos(textpos);
 				ImGui::Text("%s", opNameChar);
+				
+				drawList->AddLine( // right gray line
+					winpos + ImVec2(right - 1, top),
+					winpos + ImVec2(right - 1, bottom),
+					0xff808080
+				);
+				drawList->AddLine( // bottom gray line
+					winpos + ImVec2(left,  bottom - 1),
+					winpos + ImVec2(right, bottom - 1),
+					0xff808080
+				);
+				drawList->AddLine( // left white line
+					winpos + ImVec2(left, top   ),
+					winpos + ImVec2(left, bottom),
+					0xffffffff
+				);
+				drawList->AddLine( // top white line
+					winpos + ImVec2(left , top),
+					winpos + ImVec2(right, top),
+					0xffffffff
+				);
 			}
 
 			//page->
