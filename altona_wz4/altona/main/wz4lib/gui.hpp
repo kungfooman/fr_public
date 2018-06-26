@@ -469,8 +469,7 @@ public:
 
 /****************************************************************************/
 
-class WinStack : public sWireClientWindow
-{
+class WinStack : public sWireClientWindow { public:
   wPage *Page;
   wStackOp *LastOp;
   wStackOp *HoverOp;

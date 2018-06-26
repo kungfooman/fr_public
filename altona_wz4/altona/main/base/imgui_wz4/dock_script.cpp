@@ -22,6 +22,8 @@
 #endif
 
 #include "gui/manager.hpp"
+#include "gui/frames.hpp"
+#include "wz4lib/gui.hpp"
 
 #include "../imgui/include_imgui.h"
 #include "dock_script.h"
@@ -82,13 +84,118 @@ void imgui_draw_wz_rect(sRect &rect, unsigned int color) {
 
 }
 
+size_t to_narrow(const wchar_t * src, char * dest, size_t dest_len){
+  size_t i;
+  wchar_t code;
+
+  i = 0;
+
+  while (src[i] != '\0' && i < (dest_len - 1)){
+    code = src[i];
+    if (code < 128)
+      dest[i] = char(code);
+    else{
+      dest[i] = '?';
+      if (code >= 0xD800 && code <= 0xD8FF)
+        // lead surrogate, skip the next code unit, which is the trail
+        i++;
+    }
+    i++;
+  }
+
+  dest[i] = '\0';
+
+  return i - 1;
+
+}
+
 int depth = 0;
 void dumpWindows(sWindow *window) {
 	sWindow *subwindow;
 	//if(w->Flags & sWF_BEFOREPAINT)
 	//w->OnBeforePaint();
-
+	
 	sFORALL(window->Childs, subwindow)
+	{
+		ImGui::PushID(subwindow);
+
+		char classname[256];
+		to_narrow(subwindow->GetClassName(), classname, sizeof(classname));
+		//sWireMasterWindow
+		
+		// dynamic_cast throws an error, probably because of the custom new/delete
+		//sGridFrame *gridFrame = dynamic_cast<sGridFrame *>(subwindow);
+		if (strcmp(classname, "sGridFrame") == 0) {
+		//if (gridFrame) {
+			sGridFrame *gridFrame = (sGridFrame *)subwindow;
+			sGridFrameLayout *gridFrameLayout = NULL;
+			sFORALL(gridFrame->Layout, gridFrameLayout)
+			{
+				imgui_draw_wz_rect(gridFrameLayout->GridRect, 0x0000ffff);
+			}
+
+			
+		}
+		
+		if (strcmp(classname, "WinStack") == 0) {
+			WinStack *winStack = (WinStack *) subwindow;
+			//printf("asd");
+			/*
+				sArray<wStackOp *> Ops;
+				sArray<wTreeOp *> Tree;
+			*/
+
+			wPage *page = winStack->Page;
+
+			wStackOp *stackOp;
+
+			sFORALL(page->Ops, stackOp)
+			{
+				int scale_w = 24;
+				int scale_h = 12;
+				sRect oprect(
+					subwindow->Inner.x0 + (stackOp->PosX * scale_w),
+					subwindow->Inner.y0 + (stackOp->PosY * scale_h),
+					subwindow->Inner.x0 + (stackOp->PosX * scale_w) + (stackOp->SizeX * scale_w),
+					subwindow->Inner.y0 + (stackOp->PosY * scale_h) + (stackOp->SizeY * scale_h)
+				);
+				//auto innerPlusOpRect = sRect(subwindow->Inner);
+				//innerPlusOpRect.Add(oprect);
+				imgui_draw_wz_rect(oprect, 0xff00ffff);
+			}
+
+			//page->
+		}
+			//sLayoutFrame
+		ImGui::Text("Got %s depth=%d: %s %d %d %d %d",
+			classname,
+			depth, subwindow->ToolTip,
+			subwindow->Outer.x0, 
+			subwindow->Outer.y0, 
+			subwindow->Outer.x1, 
+			subwindow->Outer.y1
+		);
+		
+
+		//
+		
+		imgui_draw_wz_rect(subwindow->Outer, 0xff00ffff);
+		imgui_draw_wz_rect(subwindow->Inner, 0xff0000ff);
+
+
+		
+			if (ImGui::Button("bla")) {
+				subwindow->AddButton(L"bla",sMessage(testMessage,&TestMessage::bla));
+			}
+
+			ImGui::PopID();
+		depth++;
+		dumpWindows(subwindow);
+		depth--;
+	}
+
+#if 0
+	sFORALL(window->Borders, subwindow)
 	{
 		ImGui::PushID(subwindow);
 		ImGui::Text("Got Window depth=%d: %s %d %d %d %d", depth, subwindow->ToolTip,
@@ -115,13 +222,14 @@ void dumpWindows(sWindow *window) {
 		dumpWindows(subwindow);
 		depth--;
 	}
+#endif
 }
 
 void DockScript::imgui() {
 	depth = 0;
 	ImGui::Text("Root=%p", sGui->Root);
 	
-
+	
 	dumpWindows(sGui->Root);
 
 }
