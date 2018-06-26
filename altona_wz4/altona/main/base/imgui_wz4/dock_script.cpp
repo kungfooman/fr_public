@@ -162,6 +162,14 @@ void dumpWindows(sWindow *window) {
 				//auto innerPlusOpRect = sRect(subwindow->Inner);
 				//innerPlusOpRect.Add(oprect);
 				imgui_draw_wz_rect(oprect, 0xff00ffff);
+				const sChar *opName = winStack->MakeOpName(stackOp);
+				char opNameChar[256];
+				to_narrow(opName, opNameChar, sizeof(opNameChar));
+				ImVec2 textpos = ImVec2(oprect.CenterX(), oprect.y0); // y0 is top
+				textpos.x -= strlen(opNameChar) * 3; // one char is 6px, so go back 3px for each char, to center the string
+
+				ImGui::SetCursorPos(textpos);
+				ImGui::Text("%s", opNameChar);
 			}
 
 			//page->
