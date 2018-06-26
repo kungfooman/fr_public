@@ -327,3 +327,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
+
+
+# wz4 specific, this saves last used project file and selected stack
+config_wz4 

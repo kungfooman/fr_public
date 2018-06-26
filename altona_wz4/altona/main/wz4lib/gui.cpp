@@ -2072,7 +2072,7 @@ void MainWindow::CmdCreateInclude(sDInt i)
 
 void MainWindow::CmdLoadConfig()
 {
-#if 0
+#if 1
   if(!sCOMMANDLINE)
   {
     sLoadObject<wEditOptions>(L"config_wz4",&Doc->EditOptions);
@@ -2088,7 +2088,7 @@ void MainWindow::CmdLoadConfig()
 
 void MainWindow::CmdSaveConfig()
 {
-#if 0
+#if 1
   if(!sCOMMANDLINE)
   {
     sString<sMAXPATH> path;
