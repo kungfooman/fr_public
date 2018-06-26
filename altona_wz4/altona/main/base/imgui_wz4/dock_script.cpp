@@ -109,6 +109,37 @@ size_t to_narrow(const wchar_t * src, char * dest, size_t dest_len){
 
 }
 
+struct ColorWZ4 {
+	unsigned char a;
+	unsigned char b;
+	unsigned char c; // blue
+	unsigned char d;
+};
+struct ColorImGui {
+	unsigned char a;
+	unsigned char b;
+	unsigned char c; // blue
+	unsigned char d;
+};
+
+sU32 Color_WZ4_to_ImGui(sU32 col) {
+	//ColorWZ4 *wz4 = (ColorWZ4 *)&col;
+	//ColorImGui imgui = {0,0,0,0};
+	
+	unsigned char a = (col >> 24) & 0xff;
+	unsigned char b = (col >> 16) & 0xff;
+	unsigned char c = (col >>  8) & 0xff;
+	unsigned char d = (col >>  0) & 0xff;
+
+	unsigned int ret = 0;
+	ret |= a << 24;
+	ret |= d << 16;
+	ret |= c <<  8;
+	ret |= b <<  0;
+	//return *(unsigned int *)&imgui;
+	return ret;
+}
+
 int depth = 0;
 void dumpWindows(sWindow *window) {
 	sWindow *subwindow;
@@ -138,6 +169,26 @@ void dumpWindows(sWindow *window) {
 		}
 		
 		if (strcmp(classname, "WinStack") == 0) {
+			
+				auto winpos = ImGui::GetWindowPos();
+				ImDrawList *drawList = ImGui::GetWindowDrawList();
+
+				
+				const float left   = subwindow->Inner.x0;
+				const float top    = subwindow->Inner.y0;
+				const float right  = subwindow->Inner.x1;
+				const float bottom = subwindow->Inner.y1;
+
+				drawList->AddRectFilled(
+					winpos + ImVec2(left , top   ),
+					winpos + ImVec2(right, bottom),
+					0xFFcdc8c0
+				);
+
+			
+
+
+
 			WinStack *winStack = (WinStack *) subwindow;
 			//printf("asd");
 			/*
@@ -168,12 +219,12 @@ void dumpWindows(sWindow *window) {
 				//auto innerPlusOpRect = sRect(subwindow->Inner);
 				//innerPlusOpRect.Add(oprect);
 				//imgui_draw_wz_rect(oprect, 0xff00ffff);
-				auto winpos = ImGui::GetWindowPos();
-				ImDrawList *drawList = ImGui::GetWindowDrawList();
 				drawList->AddRectFilled(
 					winpos + ImVec2(left , top   ),
 					winpos + ImVec2(right, bottom),
-					0xff0000ff
+					Color_WZ4_to_ImGui(stackOp->Class->OutputType->Color)
+					//ImColor(stackOp->Class->OutputType->Color)
+					//0xffff0000
 				);
 
 				const sChar *opName = winStack->MakeOpName(stackOp);
@@ -182,7 +233,7 @@ void dumpWindows(sWindow *window) {
 				ImVec2 textpos = ImVec2(oprect.CenterX(), top - 1); // y0 is top
 				textpos.x -= strlen(opNameChar) * 3; // one char is 6px, so go back 3px for each char, to center the string
 				ImGui::SetCursorPos(textpos);
-				ImGui::Text("%s", opNameChar);
+				ImGui::TextColored(ImColor(0xff000000), "%s", opNameChar);
 				
 				drawList->AddLine( // right gray line
 					winpos + ImVec2(right - 1, top),
@@ -204,6 +255,8 @@ void dumpWindows(sWindow *window) {
 					winpos + ImVec2(right, top),
 					0xffffffff
 				);
+
+				
 			}
 
 			//page->
