@@ -426,10 +426,13 @@
     <ClInclude Include="imgui\examples\imgui_impl_win32.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_api.h" />
     <ClInclude Include="imgui\imgui_c_utils.h" />
     <ClInclude Include="imgui\imgui_default_docks.h" />
     <ClInclude Include="imgui\imgui_dock.h" />
+    <ClInclude Include="imgui\imgui_impl_idtech3_gles.h" />
     <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="imgui\qgldefines.h" />
     <ClInclude Include="imgui\stb_rect_pack.h" />
     <ClInclude Include="imgui\stb_textedit.h" />
     <ClInclude Include="imgui\stb_truetype.h" />
@@ -599,11 +602,13 @@
     <ClCompile Include="imgui\examples\imgui_impl_dx9.cpp" />
     <ClCompile Include="imgui\examples\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_api.cpp" />
     <ClCompile Include="imgui\imgui_c_utils.cpp" />
     <ClCompile Include="imgui\imgui_default_docks.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
     <ClCompile Include="imgui\imgui_dock.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_idtech3_gles.cpp" />
     <ClCompile Include="imgui_docks\dock.cpp" />
     <ClCompile Include="imgui_docks\dock_console.cpp" />
     <ClCompile Include="imgui_docks\dock_julia.cpp" />

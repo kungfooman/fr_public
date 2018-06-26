@@ -5094,7 +5094,7 @@ void AddPresentClip(sRect *rect) {
 #include "imgui/imgui_default_docks.h"
 #include "imgui_wz4/all_wz4.h"
 
-void imgui_render() {
+void imgui_render_dx9() {
     bool show_demo_window = true;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
@@ -5223,6 +5223,8 @@ void imgui_render() {
 	//}
 }
 
+#include "imgui/imgui_api.h"
+
 void imgui_present() {
 	//HRESULT result = DXDev->Present(NULL, NULL, NULL, NULL);
 
@@ -5231,32 +5233,46 @@ void imgui_present() {
 		first = 0;
 			force_this_d3d9_device(DXDev, DX9);
 	EGLWindow_initializeGL();
-	//compile_program();
-	//compile_program();
 	compile_program();
+	//compile_program();
+	//compile_program();
+
+		imgui_init();
+
 	}
 
 
     // Set the viewport
     glViewport(0, 0, 800, 600);
 	glClearColor(0.5, 0, 0, 0.5);
-	glClear(GL_COLOR_BUFFER_BIT);
-	glClear(/*GL_COLOR_BUFFER_BIT |*/ GL_DEPTH_BUFFER_BIT);
+	//glClear(GL_COLOR_BUFFER_BIT);
+	//glClear(/*GL_COLOR_BUFFER_BIT |*/ GL_DEPTH_BUFFER_BIT);
 	glDisable(GL_DEPTH_TEST);
-	glEnable(GL_SCISSOR_TEST);
-	glEnable(GL_ALPHA);
+	//glEnable(GL_SCISSOR_TEST);
+	//glEnable(GL_ALPHA);
     // Clear the color buffer
     glClear(GL_COLOR_BUFFER_BIT);
 
 	
 				//glScissor(0,0,800,600);
 				//glViewport(0, 0, 800, 600);
-				glClearColor(0,1,0,0.5);
-				glClear(GL_COLOR_BUFFER_BIT);
-				triangle_draw();
-				ImGui::Render();
+				//glClearColor(0,1,0,0.5);
+				//glClear(GL_COLOR_BUFFER_BIT);
+				//triangle_draw();
+				//ImGui::Render();
 
-				
+#if 1
+				imgui_new_frame();
+				ImGui::Begin("test");
+				ImGui::Button("what");
+				ImGui::End();
+				//imgui_default_docks();
+				//render_all_wz4_docks();
+
+				imgui_end_frame();
+
+#endif
+				//imgui_render();
 				//g_pd3dDevice->BeginScene();
 				//ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
 				//g_pd3dDevice->EndScene();
