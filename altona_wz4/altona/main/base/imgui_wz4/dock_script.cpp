@@ -135,6 +135,13 @@ void draw_outline(sRect rect, ImU32 color) {
 	drawList->AddRect(ImVec2(left, top), ImVec2(right, bottom), color);
 }
 
+// translate the absolute sRect wz4 position to the ImGui window position
+ImRect translateImGui(sRect rect) {
+	ImGuiWindow *window = ImGui::GetCurrentWindow();
+	ImVec2 delta = window->Pos - window->Scroll;
+	return ImRect(rect.x0 + delta.x, rect.y0 + delta.y, rect.x1 + delta.x, rect.y1 + delta.y);
+}
+
 int depth = 0;
 void dumpWindows(sWindow *window) {
 	sWindow *subwindow;
@@ -193,7 +200,8 @@ void dumpWindows(sWindow *window) {
 			char charText[256];
 			to_narrow(stringControl->GetText(), charText, sizeof(charText));
 			
-			ImGui::ItemAdd(ImRect(left, top, right, bottom), (ImGuiID)subwindow);
+			ImGui::ItemAdd(translateImGui(subwindow->Inner), (ImGuiID)subwindow);
+			//ImGui::ItemAdd(translateImGui(sRect(left, top, right, bottom)), (ImGuiID)subwindow);
 			if (ImGui::IsItemHovered()) {
 				ImGui::SetTooltip("Classname: %s", classname);
 			}
