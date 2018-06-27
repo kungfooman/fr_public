@@ -89,8 +89,7 @@ enum sListWindowTreeInfoFlags
   sLWTI_HIDDEN = 0x0002,
 };
 
-class sStaticListWindow : public sWireClientWindow    // static list: can't select, only display and edit columns
-{
+class sStaticListWindow : public sWireClientWindow { public:   // static list: can't select, only display and edit columns
   friend class sListWindow2Header;
   sArray<sListWindow2Field *> Fields;
   sArray<sListWindow2Column> Columns;
@@ -103,19 +102,8 @@ class sStaticListWindow : public sWireClientWindow    // static list: can't sele
   sInt DragSelectOther;
   sInt Width;
   sInt IndentPixels;
-
-  void Construct();
-protected:
   sArray<sObject *> *Array;
-  virtual sListWindowTreeInfo<sObject *> *GetTreeInfo(sObject *obj) { return 0; }
   sBool IsMulti;
-public:
-  virtual sBool GetSelectStatus(sInt n) { return 0; }
-  virtual sInt GetLastSelect() { return 0; }
-  virtual void SetSelectStatus(sInt n,sInt select) {}
-  virtual void ClearSelectStatus() {}
-  virtual void CheckSelectStatus() {}
-
   sMessage SelectMsg;       // send when selection has changed
   sMessage ClickMsg;       // send when selection was made, even if it did not change
   sMessage DoneMsg;         // send while editing items
@@ -127,23 +115,26 @@ public:
 
   sWindow *ChoiceDropper;     // just to keep the object alive
 
+  void Construct();
+  virtual sListWindowTreeInfo<sObject *> *GetTreeInfo(sObject *obj) { return 0; }
+  virtual sBool GetSelectStatus(sInt n) { return 0; }
+  virtual sInt GetLastSelect() { return 0; }
+  virtual void SetSelectStatus(sInt n,sInt select) {}
+  virtual void ClearSelectStatus() {}
+  virtual void CheckSelectStatus() {}
   template <class T> sStaticListWindow(sArray<T *> *a) { Array = (sArray<sObject *> *) a; Construct(); }
   ~sStaticListWindow();
   void Tag();
   void InitWire(const sChar *name);
   void AddHeader();
   template <class T> void SetArray(sArray<T *> *a) { Array = (sArray<sObject *> *) a; CheckSelectStatus(); Update(); DragMode=0; }
-
-
   void OnCalcSize();
   void OnPaint2D();
   void OnDrag(const sWindowDrag &dd);
   void ScrollTo(sInt index);
   void ScrollToItem(sObject *item);
-
   void Sort(sListWindow2Field *);
   void Sort();
-
   virtual sInt OnBackColor(sInt line,sInt select,sObject *obj);
   virtual sInt OnCalcFieldHeight(sListWindow2Field *field,sObject *);
   virtual sBool OnPaintField(const sRect &client,sListWindow2Field *field,sObject *,sInt line,sInt select);
@@ -153,7 +144,6 @@ public:
   void PaintField(const sRect &client,sInt select,const sChar *text);
   void EditField(const sRect &client,sListWindow2Field *field,sObject *,sInt line);
   sInt CompareField(sListWindow2Field *field,sObject *o0,sObject *o1,sInt line0,sInt line1);
-
   void AddField(sListWindow2Field *field,sInt width);
   sListWindow2Field *AddField(const sChar *label,sInt flags,sInt width,sInt id,sInt size);    // custom field. set width to add field, too
   sListWindow2Field *AddField(const sChar *label,sInt flags,sInt width,sMemberPtr<sInt> ref,sInt min=0,sInt max=255,sF32 step=0.25f);   // int
@@ -165,7 +155,6 @@ public:
   sListWindow2Field *AddField(const sChar *label,sInt flags,sInt width,sMemberPtr<sChar> ref,sInt size); // string
   sListWindow2Field *AddField(const sChar *label,sInt flags,sInt width,sMemberPtr<sPoolString> ref);   // pool string
   void AddColumn(sListWindow2Field *field,sInt width);                          // add column from field
-
   template <int n> sListWindow2Field *AddField(const sChar *label,sInt flags,sInt width,sMemberPtr<sString<n> > ref) { return AddField(label,flags,width,sMemberPtr<sChar>(ref.Offset),n); }
   /*
   template <class T> sListWindow2Field *AddField(const sChar *label,sInt flags,sInt width,sInt T::*ref,sInt min=0,sInt max=255,sF32 step=0.25f) { return AddField(label,flags,width,(sInt sObject::*) ref,min,max); }
@@ -184,7 +173,6 @@ public:
   void UpdateTreeInfo();
   void HitOpenClose(sInt line);
   sInt ForceEditField(sInt line,sInt column);
-
   void DragSelectSingle(const sWindowDrag &dd);
   void DragSelectMulti(const sWindowDrag &dd,sDInt mode);
   void DragEdit(const sWindowDrag &dd);
@@ -235,15 +223,14 @@ public:
 };
 
 template <class Type>
-class sSingleTreeWindow : public sSingleListWindow<Type>
-{
+class sSingleTreeWindow : public sSingleListWindow<Type> { public:
   sListWindowTreeInfo<Type *> Type::*TreeInfoMember;
-protected:
-  sListWindowTreeInfo<sObject *> *GetTreeInfo(sObject *obj) 
-    { return (sListWindowTreeInfo<sObject *> *)(&(((Type *)obj)->*TreeInfoMember)); }
-public:
-  sSingleTreeWindow(sArray<Type *> *a,sListWindowTreeInfo<Type *> Type::*treeinfo) 
-  : sSingleListWindow<Type>(a) { TreeInfoMember = treeinfo; }
+
+  sListWindowTreeInfo<sObject *> *GetTreeInfo(sObject *obj) {
+	  return (sListWindowTreeInfo<sObject *> *)(&(((Type *)obj)->*TreeInfoMember));
+  }
+
+  sSingleTreeWindow(sArray<Type *> *a,sListWindowTreeInfo<Type *> Type::*treeinfo) : sSingleListWindow<Type>(a) { TreeInfoMember = treeinfo; }
 };
 
 template <class Type>

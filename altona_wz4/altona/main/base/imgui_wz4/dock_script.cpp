@@ -242,7 +242,7 @@ void dumpWindows(sWindow *window) {
 				sArray<wTreeOp *> Tree;
 			*/
 
-			
+			//winStack->scree
 
 			wPage *page = winStack->Page;
 
@@ -306,6 +306,51 @@ void dumpWindows(sWindow *window) {
 		} else if (strcmp(classname, "WinPara") == 0) {
 			WinPara *winPara = (WinPara *) subwindow;
 			ImGui::Text("WinPara... CurrentLinkId=%d", winPara->CurrentLinkId);
+
+			sGridFrameLayout *gridFrameLayout;
+			sFORALL(winPara->Layout, gridFrameLayout) {
+
+
+				sRect tmp = gridFrameLayout->GridRect;
+
+				
+				
+				int left   = tmp.x0;
+				int top    = tmp.y0;
+				int right  = tmp.x1;
+				int bottom = tmp.y1;
+				sRect full = sRect(
+					winPara->Inner.x0 + (left   * 12),
+					winPara->Inner.y0 + (top    * 12),
+					winPara->Inner.x0 + (right  * 12),
+					winPara->Inner.y0 + (bottom * 12)
+				);
+
+
+				if (gridFrameLayout->Window == NULL) {
+					draw_outline(full, 0xffff00ff);
+
+
+					char buf[256];
+					to_narrow(gridFrameLayout->Label, buf, sizeof(buf));
+
+					auto imfull = translateImGui(full);
+
+					//ImGui::SetCursorPos(imfull.Min);
+					ImGui::Text("%d %d %d %d...%d %d %d %d...  %s",
+						tmp.x0,
+						tmp.y0,
+						tmp.x1,
+						tmp.y1,
+						winPara->Inner.x0,
+						winPara->Inner.y0,
+						winPara->Inner.x1,
+						winPara->Inner.y1,
+						buf
+					);
+				}
+			}
+
 		} else if (strcmp(classname, "WinTreeView") == 0) {
 			WinTreeView *winTreeView = (WinTreeView *) subwindow;
 			ImGui::Text("WinTreeView... Page=%p", winTreeView->Page);
@@ -317,6 +362,62 @@ void dumpWindows(sWindow *window) {
 			{
 				ImGui::Text("Got treeOp=%p", treeOp);
 			}
+		} else if (strcmp(classname, "WinPageList") == 0) {
+			WinPageList *winPageList = (WinPageList *) subwindow;
+			ImGui::Text("WinPageList... Childs=%p", winPageList->Childs);
+			sWindow *child = NULL;
+
+			sObject *obj;
+			sFORALL(*(winPageList->Array), obj) {
+				sListWindowTreeInfo<sObject *> *treeinfo = winPageList->GetTreeInfo(obj);
+				wPage *page = (wPage *)treeinfo->FirstChild;
+
+				wPage *thisPage = (wPage *)obj;
+
+				
+				char objbufname[256] = {0};
+				to_narrow(thisPage->Name, objbufname, sizeof(objbufname));
+				
+				
+				ImGui::Text("name=%s tree=%d", objbufname, thisPage->IsTree);
+
+				if (page) {
+					char bufname[256] = {0};
+					to_narrow(page->GetClassName(), bufname, sizeof(bufname));
+					//ImGui::Text("pagename=%s treeinfo=%p obj=%p", bufname, treeinfo, obj);
+				} else {
+					//ImGui::Text("page==NULL treeinfo=%p obj=%p", treeinfo, obj);
+				}
+				//treeinfo->
+			}
+			//sFORALL(winPageList->Childs, child)
+			//{
+			//	ImGui::Text("Got child=%p", child);
+			//}
+
+			//winPageList->GetTreeInfo(
+
+  //
+  //sListWindowTreeInfo<sObject *> *ti;
+  //sListWindow2Column *column;
+  //sInt max = Columns.GetCount();
+  //IndentPixels = sGui->PropFont->GetWidth(L"nn");
+  //
+  //Height = sGui->PropFont->GetHeight()+2;
+  //if(max>0)
+  //  ReqSizeX = Columns[max-1].Pos;
+  //else
+  //  ReqSizeX = 0;
+  //ReqSizeY = 0;
+  //
+  //if(!Array) return;
+  //
+  //sFORALL(*Array,obj)
+  //{
+  //  ti = GetTreeInfo(obj);
+  //  if(ti && (ti->Flags & sLWTI_HIDDEN))
+  //    continue;
+
 		} else {
 			// just print classname, when there is no case for the class
 			ImGui::Text("%s", classname);
