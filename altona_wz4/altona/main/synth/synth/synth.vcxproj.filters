@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\parcxx">
+      <UniqueIdentifier>{aa47fc49-fea0-406c-b141-a5f11045c4f2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\adsr.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\biquad_filter.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\butterworth.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\circular.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\comb.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\envelop.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\first_order_filter.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\fm.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\freqs.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\interpreter.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\merger.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\mono_source.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\mono_to_stereo.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\osc.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\params.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\parser.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\resonant_filter.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\saw.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sinus.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\square.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stereo_merge.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\stereo_source.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\triangle.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\wav_export.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\wavetable.hh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\parcxx\src\combinators.h">
+      <Filter>Source Files\parcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\parcxx\src\optional.h">
+      <Filter>Source Files\parcxx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\parcxx\src\parcxx.h">
+      <Filter>Source Files\parcxx</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\adsr.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\biquad_filter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\butterworth.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\comb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\first_order_filter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\fm.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\freqs.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\merger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\mono_to_stereo.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\osc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\resonant_filter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\saw.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sinus.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\square.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stereo_merge.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\triangle.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\wav_export.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\wavetable.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

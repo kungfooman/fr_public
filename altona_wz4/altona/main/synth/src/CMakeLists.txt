@@ -1,0 +1,40 @@
+ADD_EXECUTABLE(synth
+    fm.hh
+    osc.hh
+    saw.hh
+    adsr.hh
+    freqs.hh
+    sinus.hh
+    parser.hh
+    merger.hh
+    square.hh
+    triangle.hh
+    wavetable.hh
+    wav_export.hh
+    interpreter.hh
+    butterworth.hh
+    stereo_merge.hh
+    biquad_filter.hh
+    mono_to_stereo.hh
+    resonant_filter.hh
+    first_order_filter.hh
+    fm.cc
+    osc.cc
+    saw.cc
+    adsr.cc
+    main.cc
+    freqs.cc
+    sinus.cc
+    merger.cc
+    square.cc
+    triangle.cc
+    wavetable.cc
+    wav_export.cc
+    butterworth.cc
+    stereo_merge.cc
+    biquad_filter.cc
+    mono_to_stereo.cc
+    resonant_filter.cc
+    first_order_filter.cc
+)
+

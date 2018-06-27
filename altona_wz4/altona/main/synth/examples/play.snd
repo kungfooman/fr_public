@@ -1,0 +1,7 @@
+sinus a
+set_note a C4
+play 500 a
+set_note a Eb4
+play 500 a
+set_note a G4
+play 500 a
