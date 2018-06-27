@@ -160,13 +160,13 @@ void dumpWindows(sWindow *window) {
 
 		
 		ImDrawList *drawList = ImGui::GetWindowDrawList();
-
+		
+		draw_rect(subwindow->Inner, 0xFFcdc8c0); // the blue-grayish color
 				
 		const float left   = subwindow->Inner.x0;
 		const float top    = subwindow->Inner.y0;
 		const float right  = subwindow->Inner.x1;
 		const float bottom = subwindow->Inner.y1;
-		draw_rect(subwindow->Inner, 0xFFcdc8c0);
 
 		draw_outline(subwindow->Outer, 0xff00ffff);
 		draw_outline(subwindow->Inner, 0xff0000ff);
@@ -206,6 +206,33 @@ void dumpWindows(sWindow *window) {
 				ImGui::SetTooltip("Classname: %s", classname);
 			}
 
+			
+			//draw_rect(subwindow->Inner, Color_WZ4_to_ImGui(stringControl->BackColor)); // for whatever reason BackColor is 0xffff0000 (red)
+			draw_rect(subwindow->Inner, 0xffffffff);
+
+
+			sRect rect = subwindow->Inner;
+			const float left   = rect.x0;
+			const float top    = rect.y0;
+			const float right  = rect.x1;
+			const float bottom = rect.y1;
+			draw_outline(rect, 0xffd77800);
+			//draw_line( // bottom gray line
+			//	ImVec2(left,  bottom - 1),
+			//	ImVec2(right, bottom - 1),
+			//	0xffd77800
+			//);
+			//draw_line( // left white line
+			//	ImVec2(left, top   ),
+			//	ImVec2(left, bottom),
+			//	0xffd77800
+			//);
+			//draw_line( // top white line
+			//	ImVec2(left , top),
+			//	ImVec2(right, top),
+			//	0xffd77800
+			//);
+
 			ImGui::Text("%s", charText);
 		} else if (strcmp(classname, "WinStack") == 0) {
 			WinStack *winStack = (WinStack *) subwindow;
@@ -214,6 +241,8 @@ void dumpWindows(sWindow *window) {
 				sArray<wStackOp *> Ops;
 				sArray<wTreeOp *> Tree;
 			*/
+
+			
 
 			wPage *page = winStack->Page;
 
