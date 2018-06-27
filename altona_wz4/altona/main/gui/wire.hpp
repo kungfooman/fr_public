@@ -25,27 +25,21 @@
 /***                                                                      ***/
 /****************************************************************************/
 
-namespace sWireNamespace
-{
-  struct FormInstance;
-  struct Form;
-  struct Screen;
-  struct Layout;
-  struct CommandBase;
-  struct CommandMenu;
-  struct CommandTool;
-  struct Shortcut;
-  struct RawShortcut;
+namespace sWireNamespace {
+	struct FormInstance;
+	struct Form;
+	struct Screen;
+	struct Layout;
+	struct CommandBase;
+	struct CommandMenu;
+	struct CommandTool;
+	struct Shortcut;
+	struct RawShortcut;
 }
 
-class sWireMasterWindow : public sWindow
-{
-public:
+class sWireMasterWindow : public sWindow { public:
   typedef void(sWindow::*DragFuncType)(const sWindowDrag &dd,sDInt);
   typedef void(sWindow::*CmdFuncType)(sDInt);
-private:
-
-  // document
 
   sArray<sWireNamespace::Form *> Classes;
   sArray<sObject *> Forms;                  // registered forms, some of them being windows
@@ -56,24 +50,27 @@ private:
   sArray<sWireNamespace::CommandBase *> Garbage;   // various intermediate commands
   sArray<sLayoutFrameWindow *> ScreenSwitchAdd;     // add screenswitched to these toolbars...
   sArray<sWireNamespace::Shortcut *> GlobalKeys;
-
+  
   class sLayoutFrame *LayoutFrame;
   class sLayoutFrame *PopupFrame;
-  sWireNamespace::Form *FindClass(sPoolString name);
-  sWireNamespace::Form *MakeClass(sPoolString name);
-  sWireNamespace::FormInstance *FindInstance(sObject *obj);
-  sWindow *FindWindow(sPoolString name,sInt index=0);
-
   sBool ProcessEndWasCalled;
   sInt CurrentScreen;
   sWindow *FullscreenWindow;
   const sChar *CurrentToolName;
-
-  // the parser
-
   class sScanner *Scan;
   const sChar *Filename;
+  sMessage DragMessage;
+  sWindow *DragModeFocus;
+  sInt DragModeQual;
+  sWindow *MainWindow;
+  sU32 QualScope;
+  sMenuFrame *CurrentMenu;                    // menu creation. strictly intern
 
+  
+  sWireNamespace::Form *FindClass(sPoolString name);
+  sWireNamespace::Form *MakeClass(sPoolString name);
+  sWireNamespace::FormInstance *FindInstance(sObject *obj);
+  sWindow *FindWindow(sPoolString name,sInt index=0);
 //  void Error(const sChar *str);
   sWireNamespace::FormInstance *_FormName(sBool window);
   void _Key(sU32 &key,sInt &qual,sInt &hit);
@@ -99,20 +96,12 @@ private:
 
   void AddForm(const sChar *classname,sObject *win,const sChar *instancename,sBool iswindow);
   void DoLayout();
-  sMessage DragMessage;
-  sWindow *DragModeFocus;
-  sInt DragModeQual;
-  sWindow *MainWindow;
-  sU32 QualScope;
 
   sBool IsGlobal(sU32 m);
   sBool CanBeGlobal(sU32 m);
-public:
-  sMenuFrame *CurrentMenu;                    // menu creation. strictly intern
-private:
 
-  enum sWireMasterParaType
-  {
+
+  enum sWireMasterParaType {
     sWPT_INT = 1,
     sWPT_FLOAT,
     sWPT_CHOICE,
@@ -196,50 +185,37 @@ extern sWireMasterWindow *sWire;
 /***                                                                      ***/
 /****************************************************************************/
 
-class sWireClientWindow : public sWindow
-{
-public:
+class sWireClientWindow : public sWindow { public:
   sCLASSNAME(sWireClientWindow);
   sWireClientWindow();
   ~sWireClientWindow();
   virtual void InitWire(const sChar *name);
-
   virtual sBool OnCheckHit(const sWindowDrag &dd) { return 0; }
   sBool OnKey(sU32 key) { return sWire->HandleKey(this,key); }
   sBool OnCommand(sInt cmd) { return sWire->HandleCommand(this,cmd); }
   sBool OnShortcut(sU32 key) { return sWire->HandleShortcut(this,key); }
   void OnDrag(const sWindowDrag &dd) { sWire->HandleDrag(this,dd,OnCheckHit(dd)); }
-
-  // common functions
-
   void DragScroll(const sWindowDrag &dd,sDInt);
   void CmdMaximize() { sWire->SetFullscreen(this,1); }     // maximise this windows
   void CmdHelp();
   void OpenCode(const sChar *);
 };
 
-class sWireDummyWindow : public sWireClientWindow
-{
-public:
+class sWireDummyWindow : public sWireClientWindow { public:
+  const sChar *Label;
   sCLASSNAME(sWireDummyWindow);
   sWireDummyWindow();
-  const sChar *Label;
   void OnPaint2D();
 };
 
-class sWireGridFrame : public sGridFrame
-{
-public:
+class sWireGridFrame : public sGridFrame { public:
   sBool OnKey(sU32 key) { if(sGridFrame::OnKey(key)) return 1; return sWire->HandleKey(this,key); }
   sBool OnCommand(sInt cmd) { return sWire->HandleCommand(this,cmd); }
   sBool OnShortcut(sU32 key) { return sWire->HandleShortcut(this,key); }
   void OnDrag(const sWindowDrag &dd) { sWire->HandleDrag(this,dd,0); }
-
   void InitWire(const sChar *name);
   void DragScroll(const sWindowDrag &dd,sDInt);
   void CmdMaximize() { sWire->SetFullscreen(this,1); }     // maximise this windows
 };
-
-/****************************************************************************/
 
 #endif

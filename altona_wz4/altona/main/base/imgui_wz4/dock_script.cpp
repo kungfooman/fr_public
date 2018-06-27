@@ -303,6 +303,20 @@ void dumpWindows(sWindow *window) {
 			}
 
 			//page->
+		} else if (strcmp(classname, "WinPara") == 0) {
+			WinPara *winPara = (WinPara *) subwindow;
+			ImGui::Text("WinPara... CurrentLinkId=%d", winPara->CurrentLinkId);
+		} else if (strcmp(classname, "WinTreeView") == 0) {
+			WinTreeView *winTreeView = (WinTreeView *) subwindow;
+			ImGui::Text("WinTreeView... Page=%p", winTreeView->Page);
+			wTreeOp *treeOp = NULL;
+
+			//sArray<wTreeOp *> *Tree;
+			// am i creating a copy each time her?
+			sFORALL(*(winTreeView->Tree), treeOp)
+			{
+				ImGui::Text("Got treeOp=%p", treeOp);
+			}
 		} else {
 			// just print classname, when there is no case for the class
 			ImGui::Text("%s", classname);
