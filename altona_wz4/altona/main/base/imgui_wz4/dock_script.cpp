@@ -310,34 +310,74 @@ void dumpWindows(sWindow *window) {
 			sGridFrameLayout *gridFrameLayout;
 			sFORALL(winPara->Layout, gridFrameLayout) {
 
+				/*
 
+  sArray<sGridFrameLayout> Layout;
+  sInt Columns;
+  sInt Height;
+				*/
 				sRect tmp = gridFrameLayout->GridRect;
+				//winPara->ReqSizeX
+				
+				
 
-				
-				
+/*
+enum sGridFrameLayoutFlags
+{
+  sGFLF_GROUP = 1,                // display label as group. has different layout.
+  sGFLF_NARROWGROUP = 2,          // add this to group for a more narrow display
+  sGFLF_HALFUP = 4,               // moves the box up by half a gridheight
+  sGFLF_CENTER = 8,               // center horizontally
+  sGFLF_LEAD = 16,                // draw leading - a line that makes tables to read easier
+};
+*/
+
+				int windowWidth = winPara->Inner.SizeX();
+				int windowHeight = winPara->Inner.SizeY();
+
+				//winPara->Columns is maximal grid size... so when we have 2 columns and a window width of 100, each columns is 50px e.g.
+				int columnPixelWidth  = windowWidth  / winPara->Columns;
+				//int columnPixelHeight = windowHeight / winPara->Height;
+				const int columnPixelHeight = 18; // aha, height isnt proportional with window height, but fixed at 18 pixels
+
 				int left   = tmp.x0;
 				int top    = tmp.y0;
 				int right  = tmp.x1;
 				int bottom = tmp.y1;
-				sRect full = sRect(
-					winPara->Inner.x0 + (left   * 12),
-					winPara->Inner.y0 + (top    * 12),
-					winPara->Inner.x0 + (right  * 12),
-					winPara->Inner.y0 + (bottom * 12)
+				sRect gridrect = sRect(
+					winPara->Inner.x0 + (left   * columnPixelWidth),
+					winPara->Inner.y0 + (top    * columnPixelHeight),
+					winPara->Inner.x0 + (right  * columnPixelWidth),
+					winPara->Inner.y0 + (bottom * columnPixelHeight)
 				);
 
 
+				//sRect textpos = gridrect.x0;
+
+
 				if (gridFrameLayout->Window == NULL) {
-					draw_outline(full, 0xffff00ff);
+					draw_outline(gridrect, 0xffff00ff);
 
 
 					char buf[256];
 					to_narrow(gridFrameLayout->Label, buf, sizeof(buf));
 
-					auto imfull = translateImGui(full);
+					//auto imfull = translateImGui(full);
+					
+					// right/top
+					ImVec2 textpos = ImVec2(
+						gridrect.x1,
+						gridrect.y0
+					);
 
-					//ImGui::SetCursorPos(imfull.Min);
-					ImGui::Text("%d %d %d %d...%d %d %d %d...  %s",
+					// each char is 6px, aligning the text to right border
+					textpos.x -= strlen(buf) * 7;
+					textpos.x -= 10; // add some padding, looks better
+
+
+					ImGui::SetCursorPos(textpos);
+#if 0
+					ImGui::Text("%d %d %d %d...%d %d %d %d...  columns=%d height=%d %s",
 						tmp.x0,
 						tmp.y0,
 						tmp.x1,
@@ -346,8 +386,12 @@ void dumpWindows(sWindow *window) {
 						winPara->Inner.y0,
 						winPara->Inner.x1,
 						winPara->Inner.y1,
+						winPara->Columns,
+						winPara->Height,
 						buf
 					);
+#endif
+					ImGui::Text("%s", buf);
 				}
 			}
 
