@@ -223,11 +223,19 @@ const char *DockPortaudio::label() {
 	return "Portaudio";
 }
 
+#include <Windows.h>
+
+DWORD WINAPI thread_portaudio(LPVOID lpParam)
+{
+	startPinkNoise();
+	return 0;
+}
+
 void DockPortaudio::imgui() {
 	//depth = 0;
 	ImGui::Text("Root=%p", 321);
 	if (ImGui::Button("startPinkNoise()")) {
-		startPinkNoise();
+		CreateThread(NULL, 0, thread_portaudio, 0, 0, 0);
 	}
 
 
