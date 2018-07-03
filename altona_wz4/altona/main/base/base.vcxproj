@@ -273,7 +273,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared;G:\angle\include;G:\angle\src\common\third_party\numerics;G:\angle\src;G:\angle\src\libANGLE;C:\Users\kung\Desktop\portaudio\include</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared;G:\angle\include;G:\angle\src\common\third_party\numerics;G:\angle\src;G:\angle\src\libANGLE;C:\Users\kung\Desktop\portaudio\include;E:\DATA\DESKTOP\angelscript_2.32.0\sdk\angelscript\include;E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on</IncludePath>
     <LibraryPath>C:\Users\kung\Desktop\portaudio\build\msvc\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">
@@ -425,6 +425,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="angelscript\as_array.h" />
+    <ClInclude Include="angelscript\as_atomic.h" />
+    <ClInclude Include="angelscript\as_builder.h" />
+    <ClInclude Include="angelscript\as_bytecode.h" />
+    <ClInclude Include="angelscript\as_callfunc.h" />
+    <ClInclude Include="angelscript\as_compiler.h" />
+    <ClInclude Include="angelscript\as_config.h" />
+    <ClInclude Include="angelscript\as_configgroup.h" />
+    <ClInclude Include="angelscript\as_context.h" />
+    <ClInclude Include="angelscript\as_criticalsection.h" />
+    <ClInclude Include="angelscript\as_datatype.h" />
+    <ClInclude Include="angelscript\as_debug.h" />
+    <ClInclude Include="angelscript\as_gc.h" />
+    <ClInclude Include="angelscript\as_generic.h" />
+    <ClInclude Include="angelscript\as_map.h" />
+    <ClInclude Include="angelscript\as_memory.h" />
+    <ClInclude Include="angelscript\as_module.h" />
+    <ClInclude Include="angelscript\as_namespace.h" />
+    <ClInclude Include="angelscript\as_objecttype.h" />
+    <ClInclude Include="angelscript\as_outputbuffer.h" />
+    <ClInclude Include="angelscript\as_parser.h" />
+    <ClInclude Include="angelscript\as_property.h" />
+    <ClInclude Include="angelscript\as_restore.h" />
+    <ClInclude Include="angelscript\as_scriptcode.h" />
+    <ClInclude Include="angelscript\as_scriptengine.h" />
+    <ClInclude Include="angelscript\as_scriptfunction.h" />
+    <ClInclude Include="angelscript\as_scriptnode.h" />
+    <ClInclude Include="angelscript\as_scriptobject.h" />
+    <ClInclude Include="angelscript\as_string.h" />
+    <ClInclude Include="angelscript\as_string_util.h" />
+    <ClInclude Include="angelscript\as_symboltable.h" />
+    <ClInclude Include="angelscript\as_texts.h" />
+    <ClInclude Include="angelscript\as_thread.h" />
+    <ClInclude Include="angelscript\as_tokendef.h" />
+    <ClInclude Include="angelscript\as_tokenizer.h" />
+    <ClInclude Include="angelscript\as_typeinfo.h" />
+    <ClInclude Include="angelscript\as_variablescope.h" />
+    <ClInclude Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptbuilder\scriptbuilder.h" />
+    <ClInclude Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptstdstring\scriptstdstring.h" />
     <ClInclude Include="gl.h" />
     <ClInclude Include="glext.h" />
     <ClInclude Include="imgui\examples\imgui_impl_dx9.h" />
@@ -510,6 +549,47 @@
     <ClInclude Include="windows.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="angelscript\as_atomic.cpp" />
+    <ClCompile Include="angelscript\as_builder.cpp" />
+    <ClCompile Include="angelscript\as_bytecode.cpp" />
+    <ClCompile Include="angelscript\as_callfunc.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_arm.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_mips.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_ppc.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_ppc_64.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_sh4.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_x64_gcc.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_x64_mingw.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_x64_msvc.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_x86.cpp" />
+    <ClCompile Include="angelscript\as_callfunc_xenon.cpp" />
+    <ClCompile Include="angelscript\as_compiler.cpp" />
+    <ClCompile Include="angelscript\as_configgroup.cpp" />
+    <ClCompile Include="angelscript\as_context.cpp" />
+    <ClCompile Include="angelscript\as_datatype.cpp" />
+    <ClCompile Include="angelscript\as_gc.cpp" />
+    <ClCompile Include="angelscript\as_generic.cpp" />
+    <ClCompile Include="angelscript\as_globalproperty.cpp" />
+    <ClCompile Include="angelscript\as_memory.cpp" />
+    <ClCompile Include="angelscript\as_module.cpp" />
+    <ClCompile Include="angelscript\as_objecttype.cpp" />
+    <ClCompile Include="angelscript\as_outputbuffer.cpp" />
+    <ClCompile Include="angelscript\as_parser.cpp" />
+    <ClCompile Include="angelscript\as_restore.cpp" />
+    <ClCompile Include="angelscript\as_scriptcode.cpp" />
+    <ClCompile Include="angelscript\as_scriptengine.cpp" />
+    <ClCompile Include="angelscript\as_scriptfunction.cpp" />
+    <ClCompile Include="angelscript\as_scriptnode.cpp" />
+    <ClCompile Include="angelscript\as_scriptobject.cpp" />
+    <ClCompile Include="angelscript\as_string.cpp" />
+    <ClCompile Include="angelscript\as_string_util.cpp" />
+    <ClCompile Include="angelscript\as_thread.cpp" />
+    <ClCompile Include="angelscript\as_tokenizer.cpp" />
+    <ClCompile Include="angelscript\as_typeinfo.cpp" />
+    <ClCompile Include="angelscript\as_variablescope.cpp" />
+    <ClCompile Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptbuilder\scriptbuilder.cpp" />
+    <ClCompile Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptstdstring\scriptstdstring.cpp" />
+    <ClCompile Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptstdstring\scriptstdstring_utils.cpp" />
     <ClCompile Include="glprocs.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'">true</ExcludedFromBuild>
@@ -691,6 +771,15 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="angelscript\as_callfunc_arm_gcc.S">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="angelscript\as_callfunc_arm_vita.S">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="angelscript\as_callfunc_arm_xcode.S">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">true</ExcludedFromBuild>
+    </None>
     <None Include="npplugin.def">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debugfast_blank|x64'">true</ExcludedFromBuild>
@@ -710,6 +799,14 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='stripped_dx9_shell|x64'">true</ExcludedFromBuild>
     </None>
     <None Include="base.mp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <YASM Include="angelscript\as_callfunc_arm_msvc.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">true</ExcludedFromBuild>
+    </YASM>
+    <YASM Include="angelscript\as_callfunc_x64_msvc_asm.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">true</ExcludedFromBuild>
+    </YASM>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

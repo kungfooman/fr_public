@@ -93,6 +93,123 @@
     <ClInclude Include="imgui_wz4\dock_angelscript.h">
       <Filter>imgui_wz4</Filter>
     </ClInclude>
+    <ClInclude Include="angelscript\as_objecttype.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_outputbuffer.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_parser.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_property.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_restore.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_scriptcode.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_scriptengine.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_scriptfunction.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_scriptnode.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_scriptobject.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_string.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_string_util.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_symboltable.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_texts.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_thread.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_tokendef.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_tokenizer.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_typeinfo.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_variablescope.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_array.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_atomic.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_builder.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_bytecode.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_callfunc.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_compiler.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_config.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_configgroup.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_context.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_criticalsection.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_datatype.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_debug.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_gc.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_generic.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_map.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_memory.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_module.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="angelscript\as_namespace.h">
+      <Filter>angelscript</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptstdstring\scriptstdstring.h">
+      <Filter>angelscript\scriptstdstring</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptbuilder\scriptbuilder.h">
+      <Filter>angelscript\scriptbuilder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
@@ -178,10 +295,142 @@
     <ClCompile Include="imgui_wz4\dock_angelscript.cpp">
       <Filter>imgui_wz4</Filter>
     </ClCompile>
+    <ClCompile Include="angelscript\as_outputbuffer.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_parser.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_restore.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_scriptcode.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_scriptengine.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_scriptfunction.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_scriptnode.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_scriptobject.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_string.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_string_util.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_thread.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_tokenizer.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_typeinfo.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_variablescope.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_atomic.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_builder.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_bytecode.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_arm.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_mips.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_ppc.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_ppc_64.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_sh4.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_x64_gcc.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_x64_mingw.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_x64_msvc.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_x86.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_callfunc_xenon.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_compiler.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_configgroup.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_context.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_datatype.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_gc.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_generic.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_globalproperty.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_memory.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_module.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="angelscript\as_objecttype.cpp">
+      <Filter>angelscript</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptstdstring\scriptstdstring.cpp">
+      <Filter>angelscript\scriptstdstring</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptstdstring\scriptstdstring_utils.cpp">
+      <Filter>angelscript\scriptstdstring</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on\scriptbuilder\scriptbuilder.cpp">
+      <Filter>angelscript\scriptbuilder</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="npplugin.def" />
     <None Include="base.mp.txt" />
+    <None Include="angelscript\as_callfunc_arm_gcc.S">
+      <Filter>angelscript</Filter>
+    </None>
+    <None Include="angelscript\as_callfunc_arm_vita.S">
+      <Filter>angelscript</Filter>
+    </None>
+    <None Include="angelscript\as_callfunc_arm_xcode.S">
+      <Filter>angelscript</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="glsdk">
@@ -199,5 +448,22 @@
     <Filter Include="imgui_wz4">
       <UniqueIdentifier>{1ad63335-a156-46fa-9736-493f74d16bd2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="angelscript">
+      <UniqueIdentifier>{42904871-fb97-4e2a-8f48-41bd9a2fdf07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="angelscript\scriptstdstring">
+      <UniqueIdentifier>{399b1e7a-f93e-46a1-8dee-f71028341b25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="angelscript\scriptbuilder">
+      <UniqueIdentifier>{ea6f130a-31e6-4138-bee8-fd1f70fe8bfd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <YASM Include="angelscript\as_callfunc_arm_msvc.asm">
+      <Filter>angelscript</Filter>
+    </YASM>
+    <YASM Include="angelscript\as_callfunc_x64_msvc_asm.asm">
+      <Filter>angelscript</Filter>
+    </YASM>
   </ItemGroup>
 </Project>
