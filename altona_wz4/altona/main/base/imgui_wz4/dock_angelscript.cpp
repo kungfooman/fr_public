@@ -12,10 +12,11 @@ DockAngelscript::DockAngelscript() {}
 #include <angelscript.h>
 #include <scriptstdstring/scriptstdstring.h>
 #include <scriptbuilder/scriptbuilder.h>
+#include <as_module.h>
+#include <as_typeinfo.h>
+#include <as_scriptengine.h>
 
-class Auto
-{
-public:
+class Auto { public:
 	void starten() {};
 	void bremsen() {};
 };
@@ -44,12 +45,46 @@ void printz(std::string &msg)
 }
 
 
+asCScriptEngine *as_scriptengine = NULL;
+
+
+
 void DockAngelscript::imgui() {
 	ImGui::Text("asd");
+
+	if (as_scriptengine) {
+		asIScriptModule *mod = as_scriptengine->GetModule("MyModule", asGM_ONLY_IF_EXISTS);
+		asCModule *cmod = (asCModule *)mod;
+		if (mod) {
+
+			int n;
+
+			n = cmod->funcDefs.GetLength();
+			ImGui::Text("funcDefs (%d)", n);
+			for (int i = 0; i < n; i++) {
+				asCFuncdefType *funcDef = cmod->funcDefs[i];
+				ImGui::Text("Name: %s", funcDef->name.AddressOf());
+
+			}
+
+			n = cmod->scriptFunctions.GetLength();
+			ImGui::Text("scriptFunctions (%d)", n);
+			for (int i = 0; i < n; i++) {
+				asCScriptFunction *scriptFunction = cmod->scriptFunctions[i];
+				ImGui::Text("Name: %s", scriptFunction->name.AddressOf());
+
+			}
+		}
+		else {
+			ImGui::Text("mod == NULL");
+		}
+	}
+	
+
 	if (ImGui::Button("test some shit")) {
 
 
-		asIScriptEngine *engine = asCreateScriptEngine(ANGELSCRIPT_VERSION);
+		as_scriptengine = (asCScriptEngine *)asCreateScriptEngine(ANGELSCRIPT_VERSION);
 
 		//engine->RegisterObjectType("Auto", 0, asOBJ_REF);
 		//engine->RegisterObjectMethod("Auto", "void starten()", asMETHOD(Auto, starten), asCALL_THISCALL);
@@ -58,14 +93,14 @@ void DockAngelscript::imgui() {
 		// Create the script engine
 		//asIScriptEngine *engine = asCreateScriptEngine();
 		// Set the message callback to receive information on errors in human readable form.
-		int r = engine->SetMessageCallback(asFUNCTION(MessageCallback), 0, asCALL_CDECL); assert(r >= 0);
+		int r = as_scriptengine->SetMessageCallback(asFUNCTION(MessageCallback), 0, asCALL_CDECL); assert(r >= 0);
 		// AngelScript doesn't have a built-in string type, as there is no definite standard 
 		// string type for C++ applications. Every developer is free to register its own string type.
 		// The SDK do however provide a standard add-on for registering a string type, so it's not
 		// necessary to implement the registration yourself if you don't want to.
-		RegisterStdString(engine);
+		RegisterStdString(as_scriptengine);
 		// Register the function that we want the scripts to call 
-		r = engine->RegisterGlobalFunction("void print(const string &in)", asFUNCTION(printz), asCALL_CDECL); assert(r >= 0);
+		r = as_scriptengine->RegisterGlobalFunction("void print(const string &in)", asFUNCTION(printz), asCALL_CDECL); assert(r >= 0);
 		
 
 
@@ -75,7 +110,7 @@ void DockAngelscript::imgui() {
 		// performs a pre-processing pass if necessary, and then tells
 		// the engine to build a script module.
 		CScriptBuilder builder;
-		r = builder.StartNewModule(engine, "MyModule");
+		r = builder.StartNewModule(as_scriptengine, "MyModule");
 		if (r < 0)
 		{
 			// If the code fails here it is usually because there
@@ -104,7 +139,7 @@ void DockAngelscript::imgui() {
 
 
 		// Find the function that is to be called. 
-		asIScriptModule *mod = engine->GetModule("MyModule");
+		asIScriptModule *mod = as_scriptengine->GetModule("MyModule", asGM_ONLY_IF_EXISTS);
 		asIScriptFunction *func = mod->GetFunctionByDecl("void main()");
 		if (func == 0)
 		{
@@ -114,7 +149,7 @@ void DockAngelscript::imgui() {
 			return;
 		}
 		// Create our context, prepare it, and then execute
-		asIScriptContext *ctx = engine->CreateContext();
+		asIScriptContext *ctx = as_scriptengine->CreateContext();
 		ctx->Prepare(func);
 		r = ctx->Execute();
 		if (r != asEXECUTION_FINISHED)

@@ -273,7 +273,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debugfast_dx9|x64'">
-    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared;G:\angle\include;G:\angle\src\common\third_party\numerics;G:\angle\src;G:\angle\src\libANGLE;C:\Users\kung\Desktop\portaudio\include;E:\DATA\DESKTOP\angelscript_2.32.0\sdk\angelscript\include;E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on</IncludePath>
+    <IncludePath>C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\shared;G:\angle\include;G:\angle\src\common\third_party\numerics;G:\angle\src;G:\angle\src\libANGLE;C:\Users\kung\Desktop\portaudio\include;E:\DATA\DESKTOP\angelscript_2.32.0\sdk\angelscript\include;E:\DATA\DESKTOP\angelscript_2.32.0\sdk\add_on;G:\fr_public\altona_wz4\altona\main\base\angelscript</IncludePath>
     <LibraryPath>C:\Users\kung\Desktop\portaudio\build\msvc\x64\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_blank|x64'">
