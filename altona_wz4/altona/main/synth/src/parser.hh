@@ -2,6 +2,7 @@
 
 #include <string>
 #include <vector>
+#include <array>
 
 #include "../parcxx/src/parcxx.h"
 
