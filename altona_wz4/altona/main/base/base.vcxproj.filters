@@ -90,6 +90,9 @@
     <ClInclude Include="imgui_wz4\dock_portaudio.h">
       <Filter>imgui_wz4</Filter>
     </ClInclude>
+    <ClInclude Include="imgui_wz4\dock_angelscript.h">
+      <Filter>imgui_wz4</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="graphics.cpp" />
@@ -170,6 +173,9 @@
       <Filter>imgui</Filter>
     </ClCompile>
     <ClCompile Include="imgui_wz4\dock_portaudio.cpp">
+      <Filter>imgui_wz4</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui_wz4\dock_angelscript.cpp">
       <Filter>imgui_wz4</Filter>
     </ClCompile>
   </ItemGroup>

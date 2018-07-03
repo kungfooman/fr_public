@@ -445,6 +445,7 @@
     <ClInclude Include="imgui_docks\dock_node.h" />
     <ClInclude Include="imgui_docks\dock_repl.h" />
     <ClInclude Include="imgui_docks\dock_skeleton.h" />
+    <ClInclude Include="imgui_wz4\dock_angelscript.h" />
     <ClInclude Include="imgui_wz4\dock_portaudio.h" />
     <ClInclude Include="imgui_wz4\all_wz4.h" />
     <ClInclude Include="imgui_wz4\dock_script.h" />
@@ -618,6 +619,7 @@
     <ClCompile Include="imgui_docks\dock_node.cpp" />
     <ClCompile Include="imgui_docks\dock_repl.cpp" />
     <ClCompile Include="imgui_docks\dock_skeleton.cpp" />
+    <ClCompile Include="imgui_wz4\dock_angelscript.cpp" />
     <ClCompile Include="imgui_wz4\dock_portaudio.cpp" />
     <ClCompile Include="imgui_wz4\all_wz4.cpp" />
     <ClCompile Include="imgui_wz4\dock_script.cpp" />

@@ -4,6 +4,7 @@
 // custom docks
 #include "dock_script.h"
 #include "dock_portaudio.h"
+#include "dock_angelscript.h"
 
 
 #include <list>
@@ -15,6 +16,7 @@ void render_all_wz4_docks() {
 
 		(*imgui_wz4_docks).push_back(new DockScript());
 		(*imgui_wz4_docks).push_back(new DockPortaudio());
+		(*imgui_wz4_docks).push_back(new DockAngelscript());
 	}
 
 	for (Dock *dock : *imgui_wz4_docks) {
