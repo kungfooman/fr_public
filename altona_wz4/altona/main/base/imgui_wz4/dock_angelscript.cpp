@@ -130,8 +130,12 @@ class HurrScript { public:
 
 HurrScript *hurr = NULL;
 
-void igButton(std::string &msg) {
-	ImGui::Button(msg.c_str());
+void hurr_eval(char *code) {
+	imgui_log("try to eval code: %s\n", code);
+}
+
+bool igButton(std::string &msg) {
+	return ImGui::Button(msg.c_str());
 }
 
 void DockAngelscript::imgui() {
@@ -189,11 +193,11 @@ void DockAngelscript::imgui() {
 		RegisterStdString(as_scriptengine);
 		// Register the function that we want the scripts to call 
 		r = as_scriptengine->RegisterGlobalFunction("void print(const string &in)", asFUNCTION(printz), asCALL_CDECL); assert(r >= 0);
-		r = as_scriptengine->RegisterGlobalFunction("void igButton(const string &in)", asFUNCTION(igButton), asCALL_CDECL); assert(r >= 0);
+		r = as_scriptengine->RegisterGlobalFunction("bool igButton(const string &in)", asFUNCTION(igButton), asCALL_CDECL); assert(r >= 0);
 		
 
 
-
+			
 
 		// The CScriptBuilder helper is an add-on that loads the file,
 		// performs a pre-processing pass if necessary, and then tells

@@ -36,6 +36,8 @@ static int repl_callback(ImGuiTextEditCallbackData *data) {
 	return 0;
 }
 
+void hurr_eval(char *code);
+
 void DockNode::imgui() {
 	ImGui::InputTextMultiline("", replbuffer, sizeof replbuffer, ImGui::GetWindowSize() + ImVec2(-15, -35 - 20), ImGuiInputTextFlags_CallbackAlways | ImGuiInputTextFlags_AllowTabInput, repl_callback, (void *)this);
 
@@ -102,11 +104,12 @@ void DockNode::imgui() {
 			}, select_start, select_end, replbuffer);
 #else
 
-			if (callback_repl_node) {
-				callback_repl_node(select_start, select_end, replbuffer);
-			} else {
-				imgui_log("dock_node.cpp, set callback_repl_node via ffi first\n");
-			}
+			//if (callback_repl_node) {
+			//	callback_repl_node(select_start, select_end, replbuffer);
+			//} else {
+			//	imgui_log("dock_node.cpp, set callback_repl_node via ffi first\n");
+			//}
+			hurr_eval(replbuffer);
 #endif
 		}
 
