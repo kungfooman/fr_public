@@ -2179,30 +2179,46 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
     }
     return 0;
 
-  case WM_KEYUP:
-  case WM_SYSKEYUP:
-    i = sInt(lparam & 0x01000000);
-    if(wparam==VK_SHIFT && !i)    sKeyQual &= ~sKEYQ_SHIFTL;
-    if(wparam==VK_SHIFT &&  i)    sKeyQual &= ~sKEYQ_SHIFTR;
-    if(wparam==VK_CONTROL && !i)  sKeyQual &= ~sKEYQ_CTRLL;
-    if(wparam==VK_CONTROL &&  i)  sKeyQual &= ~sKEYQ_CTRLR;
-    if(wparam==VK_MENU && !i)     sKeyQual &= ~sKEYQ_ALT;
-    if(wparam==VK_MENU &&  i)     sKeyQual &= ~sKEYQ_ALTGR;
 
-    t=0;
-    if((sKeyQual&sKEYQ_SHIFT) || (sKeyQual&sKEYQ_CAPS)) t = 1;
-    if(sKeyQual&sKEYQ_ALTGR) { t = 2; sKeyQual&=~sKEYQ_CTRLL; }
-    i = sKeyTable[t][wparam&255];
-    if(i==0) i = sKeyTable[0][wparam&255];
-    if(i)
-    {
-      i |= sKEYQ_BREAK;
-      sInput2SendEvent(sInput2Event(i | sKeyQual));
-    }
-    InputThreadLock->Lock();
-    Keyboard->keys[(lparam >> 16) & 0xff] = sFALSE;
-    InputThreadLock->Unlock();
-    break;
+  case WM_CHAR:
+
+	  // You can also use ToAscii()+GetKeyboardState() to retrieve characters.
+	  if (wparam > 0 && wparam < 0x10000)
+		  io.AddInputCharacter((unsigned short)wparam);
+
+	  break;
+
+	case WM_KEYUP:
+	case WM_SYSKEYUP:
+
+
+		if (show_imgui) {
+			if (wparam < 256)
+				io.KeysDown[wparam] = 0;
+		} else {
+			i = sInt(lparam & 0x01000000);
+			if (wparam == VK_SHIFT   && !i)    sKeyQual &= ~sKEYQ_SHIFTL;
+			if (wparam == VK_SHIFT   &&  i)    sKeyQual &= ~sKEYQ_SHIFTR;
+			if (wparam == VK_CONTROL && !i)    sKeyQual &= ~sKEYQ_CTRLL;
+			if (wparam == VK_CONTROL &&  i)    sKeyQual &= ~sKEYQ_CTRLR;
+			if (wparam == VK_MENU    && !i)    sKeyQual &= ~sKEYQ_ALT;
+			if (wparam == VK_MENU    &&  i)    sKeyQual &= ~sKEYQ_ALTGR;
+
+			t = 0;
+			if ((sKeyQual&sKEYQ_SHIFT) || (sKeyQual&sKEYQ_CAPS)) t = 1;
+			if (sKeyQual&sKEYQ_ALTGR) { t = 2; sKeyQual &= ~sKEYQ_CTRLL; }
+			i = sKeyTable[t][wparam & 255];
+			if (i == 0) i = sKeyTable[0][wparam & 255];
+			if (i)
+			{
+			i |= sKEYQ_BREAK;
+			sInput2SendEvent(sInput2Event(i | sKeyQual));
+			}
+			InputThreadLock->Lock();
+			Keyboard->keys[(lparam >> 16) & 0xff] = sFALSE;
+			InputThreadLock->Unlock();
+		}
+	break;
 
   case WM_KEYDOWN:
   case WM_SYSKEYDOWN:
@@ -2213,6 +2229,10 @@ LRESULT WINAPI MsgProc(HWND win,UINT msg,WPARAM wparam,LPARAM lparam)
 	}
 
   if (show_imgui) {
+
+	  if (wparam < 256)
+		  io.KeysDown[wparam] = 1;
+	  redraw();
 
   } else {
 
